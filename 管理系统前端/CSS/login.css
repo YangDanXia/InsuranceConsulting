@@ -1,0 +1,116 @@
+/* 
+* @Author: YDX
+* @Date:   2017-12-09 22:24:25
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-12-11 10:19:45
+*/
+       body{
+    background-image:url("../Image/bg.jpg") ;
+    background-repeat:no-repeat;
+     overflow-y:hidden;
+     overflow-x:hidden;
+     background-size:1580px 800px;
+    }
+
+        #login{
+            width: 450px;
+            height:370px;
+            background-color:whitesmoke;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            margin-left: -250px;
+            margin-top: -220px;
+            border: 3px solid lightskyblue;
+            padding: 10px;
+            -webkit-border-radius: 60px;
+            -moz-border-radius: 60px;
+            border-radius:60px;
+        }
+       .title{
+        margin-top: 27px;
+        margin-bottom: 45px;
+        text-align:center;
+          font-size:28px;
+         color:#000000;
+
+}
+        #login label,input{
+            margin:10px;
+            float: left;
+        }
+        #login input{
+            /*border: 1px solid grey;*/
+            padding: 3px;
+            height:25px;
+            font-size: 17px;
+            width: 230px;
+            line-height: 16px;
+            border-radius: 5px;
+            text-shadow: 0px 1px #F0F0F0 ; /*文本框内字体阴影*/
+            background:     #FFFFFF;
+        }
+        #login input:focus{  
+             outline: none;
+          
+             border-color:lightskyblue;
+         }
+        #login .admin{
+            margin-left: 50px;
+            color:black;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        #login .code{
+            margin-left: 80px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        #check{
+            width: 80px;
+            height: 25px;
+            margin-left: 250px;
+            margin-right: 5px;
+        }
+        #submit{
+            margin:40px 0px 0px 120px;
+            display:inline-block;
+            width: 50%;
+            height:47px;
+            margin-bottom:15px;
+            font-size:20px;
+            font-weight:bold;
+           color:  #FFFFFF;
+           background:#66B3FF;
+            border:1px solid #284473;
+            border-radius:5px;
+           cursor: pointer;  /*显示的光标的类型（形状）*/
+        }
+        #submit:active{
+           background:#a4c2f3;
+        }
+        #refresh{
+            font-size: 14px;
+        }
+        #refresh:active,#refresh:hover{
+            font-weight: bold;
+            color: blue;
+            text-decoration:underline ;
+            cursor: pointer;
+        }
+        #refresh:visited,#refresh:link{
+            font-weight: normal;
+            color: black;
+            text-decoration:none ;
+        }
+        .iserror{
+            border: 1px solid red;
+        }
+        #demoForm .help-block{
+            margin-left: 162px;
+            display:none;
+        }
+        #demoForm .form-group{
+            line-height: 30px;
+            width:100%;
+        }

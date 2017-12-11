@@ -1,0 +1,84 @@
+/* 
+* @Author: YDX
+* @Date:   2017-12-09 22:32:23
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-12-10 16:00:41
+*/
+#main h4{
+            font-size:25px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        #keyword{
+            width: 300px;
+            float: left;
+            margin: 10px 10px 10px 270px;
+        }
+        #search{
+            margin: 10px 0;
+        }
+        #studentdetail{
+            margin: 0 auto;
+            width: 480px;
+            text-align: center;
+        }
+        #studentdetail th{
+            text-align: center;
+        }
+        #pagination{
+            margin-left: 350px;
+            bottom:20px;
+            position: absolute;
+        }
+
+.container{
+float:left;
+}
+#selectnav{
+    background-color: rgb(245,245,245);
+    top:67px;
+    border-left:1px solid #eee ;
+    border-right:1px solid #eee ;
+    line-height: 20px;
+    font-size: 16px;
+    z-index: 1000;
+    display: block;
+    padding: 15px;
+    width: 250px;
+    border-right: 1px solid #ddd;
+}
+#selectnav ul li a{
+    padding: 5px 0px 10px 46px;
+    font-size: 15px;
+}
+#selectnav ul li{
+    margin-bottom: 5px;
+}
+#selectnav h4{
+    font-size: 17px;
+}
+#selectnav .navhead:visited,.navhead:link{
+    color: #337ab7;
+    text-decoration: none;
+}
+#selectnav .navhead:hover,.navhead:active{
+    color: blue;
+    text-decoration: none;
+    
+}
+#selectnav .navhead{
+    padding:10px 40px;
+}
+#selectnav .option:visited,.option:link{
+    color: #337ab7;
+    text-decoration: none;
+}
+#selectnav .option:hover,.option:active{
+    color: blue;
+    text-decoration: none;
+    background-color: inherit;
+}
+.selected{
+    color:blue;
+}

@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>查看详情</title>
+<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/thems.css">
+<script type="text/javascript" src="JS/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自适应屏幕宽度
+	window.onresize=function(){ location=location }; 
+	
+	var main_h = $(window).height();
+	$('.hy_list').css('height',main_h-45+'px');
+	
+	var search_w = $(window).width()-40;
+	$('.search').css('width',search_w+'px');
+	$('.list_hy').css('width',search_w+'px');
+});
+</script>
+<!--框架高度设置-->
+</head>
+
+<body onLoad="Resize();">
+<div id="right_ctn">
+	<div class="right_m">
+		<!--会议列表-->
+        <div class="hy_list">
+        	<div class="box_t">
+            	<span class="name">查看详情</span>
+                <!--当前位置-->
+                <div class="position">
+                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                    <a href="">首页</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">审核管理</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">顾问资格审核</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">资料详情</a>
+                </div>
+                <!--当前位置-->
+            </div>
+            <div class="space_hx">&nbsp;</div>
+            <!--列表-->
+            <form action="" method="post">
+            <table cellpadding="0" cellspacing="0" class="list_hy">
+              <tr>
+                <th scope="col" width="215">类型</th>
+                <th scope="col">内容</th>
+              </tr>
+              <tr>
+                <td>姓名</td>
+                <td>
+                	<div class="mkkz">
+                        <ul class="clearfix">
+                        	<li><a href="">UDP环回</a></li>
+                            <li><a href="">RTP环回</a></li>
+                            <li><a href="">PCI环回</a></li>
+                            <li><a href="" class="hui">取消</a></li>
+                        </ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>照片</td>
+                <td>
+                	<div class="mkkz">
+                        <ul class="clearfix">
+                        	<li><a href="">音频PCI环回</a></li>
+                            <li><a href="">视频PCI环回</a></li>
+                            <li><a href="">媒体PCI环回</a></li>
+                            <li><a href="">音频编解码环回</a></li>
+                            <li><a href="">音频AHW环回</a></li>
+                            <li><a href="">视频VHW环回</a></li>
+                            <li><a href="">媒体总线环回</a></li>
+                            <li><a href="" class="hui">取消</a></li>
+                        </ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>手机号</td>
+                <td>
+                	<div class="mkkz">
+                    	<div class="space_hx">&nbsp;</div>
+                        <ul class="clearfix">
+                        	<li><a href="">音频BSP环回</a></li>
+                            <li><a href="">音频MHW环回</a></li>
+                            <li><a href="" class="hui">取消</a></li>
+                        </ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>专业资格证</td>
+                <td>
+                    <div class="mkkz">
+                        <div class="space_hx">&nbsp;</div>
+                        <ul class="clearfix">人寿保险</ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>工作经历</td>
+                <td>
+                    <div class="mkkz">
+                        <div class="space_hx">&nbsp;</div>
+                        <ul class="clearfix">免费问题</ul>
+                    </div>
+                </td>
+              </tr>
+            </table>
+            <!--列表-->
+            </form>
+            <ul class="hypz">
+              <li class="tj_btn">
+                <a href="">通过</a>
+                <a href="" class="back">驳回</a>
+              </li>
+            </ul>
+        </div>
+        <!--会议列表-->
+    </div>
+</div>
+</body>
+</html>

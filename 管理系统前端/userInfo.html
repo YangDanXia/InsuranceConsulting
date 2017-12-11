@@ -1,0 +1,191 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" > 
+<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/thems.css">
+<script type="text/javascript" src="JS/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="JS/userInfo.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自适应屏幕宽度
+	window.onresize=function(){ location=location }; 
+	
+
+	var search_w = $(window).width()-40;
+	$('.search').css('width',search_w+'px');
+	//$('.list_hy').css('width',search_w+'px');
+});
+</script>
+<!--框架高度设置-->
+</head>
+
+<body onLoad="Resize();">
+<div id="right_ctn">
+	<div class="right_m">
+		<!--会议列表-->
+        <div class="hy_list">
+        	<div class="box_t">
+            	<span class="name">用户列表</span>
+                <!--当前位置-->
+
+                <div class="position">
+                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                    <a href="">首页</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">用户管理</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">查看用户</a>
+                </div>
+                <!--当前位置-->
+            </div>
+            <!--查询-->
+            <div class="search gzrj">
+                <div class="leix">
+                    <span>查询类型：</span>
+                    <div class="xial_w xial_l">
+                      <select name="findType" class="xial_m">
+                       <option value="volvo">&nbsp;用户编号</option>
+                       <option value="saab">&nbsp;用户昵称</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="riqi">
+                    <span>关键字：</span>
+                    <input name="" type="text">
+                </div>
+                <a href="" class="btn">查询</a>
+            </div>
+            <!--查询-->
+            <div class="space_hx">&nbsp;</div>
+            <!--列表-->
+            <form action="" method="post">
+            <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
+              <thead>
+                   <th data-field="id" class="xz" scope="col">选择</th>
+                   <th data-field="name" data-sortable="true" scope="col">用户编号</th>
+                   <th data-field="salary" data-sortable="true" class="zt" scope="col">用户昵称</th>
+                   <th data-field="country" data-sortable="true" scope="col">手机号</th>
+                   <th data-field="actions" class="col">&nbsp;&nbsp;历史提问</th>
+              </thead>            
+              <tbody>
+              <tr>
+                <td class="xz"><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td class="zt">-</td>
+                <td>2012-10-11</td>
+                <td class="detailBtn"><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2012-10-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2012-10-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2012-10-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2012-10-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2017-12-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+              <tr>
+                <td><input name="" type="checkbox" value=""></td>
+                <td>ip64/1</td>
+                <td>-</td>
+                <td>2012-10-11</td>
+                <td><a href="" class="btn" >查看</a></td>
+              </tr>
+           </tbody>
+            </table>
+            <!--列表-->
+            <!--右边底部-->
+<!--             <div class="r_foot">
+            	<div class="r_foot_m">
+            	<span>
+                	<input name="" type="checkbox" value="">
+                    <em>全部选中</em>
+                </span>
+                <a href="" class="btn">删除</a>
+                <a href="" class="btn">刷新</a> -->
+                
+                <!--分页-->
+<!--                 <div class="page">
+                	<a href="" class="prev"><img src="Image/icon7.png" alt=""/></a>
+                    <a class="now">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">5</a>
+                    <a href="">6</a>
+                    <a href="" class="next"><img src="Image/icon8.png" alt=""/></a>
+                </div> -->
+                <!--分页-->
+  <!--               </div>
+            </div> -->
+            </form>
+            <!--右边底部-->
+        </div>
+        <!--会议列表-->
+    </div>
+</div>
+    <script type="text/javascript" src="JS/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="JS/bootstrap.js"></script>
+    <script type="text/javascript" src="JS/bootstrap-table.js"></script>
+       <script type="text/javascript">
+        var $table = $('#fresh-table'),
+            $alertBtn = $('#alertBtn'),
+            full_screen = false;
+            
+        $().ready(function(){
+            $table.bootstrapTable({
+                toolbar: ".toolbar",
+    
+                showRefresh: true,
+                search: true,
+                showToggle: true,
+                showColumns: true,
+                pagination: true,
+                striped: true,
+                pageSize: 8,
+                pageList: [8,10,25,50,100],
+                
+                formatShowingRows: function(pageFrom, pageTo, totalRows){
+                    //do nothing here, we don't want to show the text "showing x of y from..." 
+                }
+
+            });
+            
+                        
+            $(window).resize(function () {
+                $table.bootstrapTable('resetView');
+            });
+
+        });
+         
+    </script>
+</body>
+</html>
