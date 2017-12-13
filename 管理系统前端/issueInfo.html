@@ -2,7 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" >
-<title>会议列表</title>
 <link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
 <link rel="stylesheet" type="text/css" href="CSS/common.css"/>
 <link rel="stylesheet" type="text/css" href="CSS/thems.css">
@@ -10,8 +9,7 @@
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
-	window.onresize=function(){ location=location }; 
-	
+	window.onresize=function(){ location=location };  
 	var search_w = $(window).width()-40;
 	$('.search').css('width',search_w+'px');
 	//$('.list_hy').css('width',search_w+'px');
@@ -20,76 +18,62 @@ $(function(){
 <!--框架高度设置-->
 </head>
 
-<body onLoad="Resize();">
+<body>
 <div id="right_ctn">
 	<div class="right_m">
 		<!--会议列表-->
         <div class="hy_list">
         	<div class="box_t">
-            	<span class="name">精品列表</span>
+            	<span class="name">问题列表</span>
                 <!--当前位置-->
                 <div class="position">
                 	<a href=""><img src="Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
                     <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">精品案例</a>
+                    <a href="">问题管理</a>
                     <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">查看案例</a>
+                    <a href="">问题列表</a>
                 </div>
-                <!--当前位置-->
             </div>
-            <!--查询-->
-            <div class="search gzrj">
-                <div class="leix">
-                    <span>查询类型：</span>
-                    <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;问题编号</option>
-                       <option value="saab">&nbsp;问题类型</option>
-                      </select>
-                    </div>
-                </div>
-                <div class="riqi">
-                    <span>关键字：</span>
-                    <input name="" type="text">
-                </div>
-                <a href="" class="btn">查询</a>
-            </div>
-            <!--查询-->
+
             <div class="space_hx">&nbsp;</div>
-            <!--列表-->
             <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                    <th class="xz" scope="col">选择</th>
-                   <th data-sortable="true" scope="col">问题编号</th> 
+                   <th data-sortable="true" scope="col">问题编号</th>
+                   <th data-sortable="true" class="zt" scope="col">提问者</th>
                    <th data-sortable="true" scope="col">问题类型</th>
-                   <th data-sortable="true" scope="col">问题标题</th> 
-                   <th data-field="actions" class="col">&nbsp;&nbsp;查看详情</th> 
+                   <th data-sortable="true" scope="col">问题标题</th>
+                   <th data-sortable="true" scope="col">解决情况</th>
+                   <th class="col">&nbsp;&nbsp;查看详情</th>
+                   <th data-field="actions" class="col">&nbsp;&nbsp;设为精品</th>
               </thead>  
               <tr>
                 <td class="xz"><input name="" type="checkbox" value=""></td>
                 <td>ip64/1</td>
                 <td class="zt">-</td>
                 <td>2012-10-11</td>
-                <td class="detailBtn"><a href="passIssueDetail.html" class="btn" >查看</a></td>
+                <td>2012-10-11</td>
+                <td>2012-10-11</td>
+                <td style="width:100px;"><a href="passIssueDetail.html" class="btn" >查看</a></td>
+                <td class="issue"><img src="Image/classic.png" height="35" width="35"/></td>
               </tr>
               <tr>
                 <td class="xz"><input name="" type="checkbox" value=""></td>
                 <td>ip64/1</td>
                 <td class="zt">-</td>
                 <td>2012-10-11</td>
-                <td class="detailBtn"><a href="passIssueDetail.html" class="btn" >查看</a></td>
+                <td>2012-10-11</td>
+                <td>2012-10-11</td>
+                <td style="width:100px;"><a href="passIssueDetail.html" class="btn" >查看</a></td>
+                <td class="issue"><img src="Image/classic.png" height="35" width="35"/></td>
               </tr>
-
-            </table>
+             </table>
             </form>
-            <!--右边底部-->
         </div>
-        <!--会议列表-->
     </div>
 </div>
-<script type="text/javascript" src="JS/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="JS/bootstrap.js"></script>
     <script type="text/javascript" src="JS/bootstrap-table.js"></script>
        <script type="text/javascript">

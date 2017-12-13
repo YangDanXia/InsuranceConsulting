@@ -252,7 +252,7 @@
         sidePagination: 'client', // client or server
         totalRows: 0, // server side need to set
         pageNumber: 1,
-        pageSize: 10,
+        pageSize: 8,
         pageList: [10, 25, 50, 100],
         paginationHAlign: 'right', //right, left
         paginationVAlign: 'bottom', //bottom, top, both
@@ -1057,11 +1057,11 @@
 
         html.push(
             '<div class="pull-left pagination-detail">',
-            '<span class="pagination-info"><input name="" type="checkbox" value=""/><em>全部选中</em>',
+            '<span class="pagination-info">',
             this.options.formatShowingRows(this.pageFrom, this.pageTo, this.options.totalRows),
             '</span>');
         
-        html.push('<a href="" class="btn">删除</a><a href="" class="btn">刷新</a>')
+        html.push('<a class="btn" style="cursor:pointer" onclick="deleteData()">删除</a><a href="" class="btn">刷新</a>')
         html.push('<span class="page-list">');
 
         var pageNumber = [
