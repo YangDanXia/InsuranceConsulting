@@ -12,20 +12,16 @@ $(function(){
 	window.onresize=function(){ location=location };  
 	var search_w = $(window).width()-40;
 	$('.search').css('width',search_w+'px');
-	//$('.list_hy').css('width',search_w+'px');
 });
 </script>
-<!--框架高度设置-->
 </head>
 
 <body>
 <div id="right_ctn">
 	<div class="right_m">
-		<!--会议列表-->
         <div class="hy_list">
         	<div class="box_t">
             	<span class="name">问题列表</span>
-                <!--当前位置-->
                 <div class="position">
                 	<a href=""><img src="Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
@@ -34,10 +30,9 @@ $(function(){
                     <span><img src="Image/icon3.png" alt=""/></span>
                     <a href="">问题审核</a>
                 </div>
-                <!--当前位置-->
-            </div>
-            <!--查询-->
-            <div class="search gzrj">
+          </div>
+
+          <div class="search gzrj">
                 <div class="leix">
                     <span>查询类型：</span>
                     <div class="xial_w xial_l">
@@ -55,46 +50,36 @@ $(function(){
                 <a href="" class="btn">查询</a>
             </div>
             <div class="space_hx">&nbsp;</div>
-            <form action="" method="post">
-            <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
+            <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table" style="width:750px">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                   <th data-field="id" scope="col">问题编号</th>
-                   <th data-field="" class="zt" scope="col">提问者</th>
-                   <th data-field="" scope="col">费用类型</th>
-                   <th data-field="" scope="col">问题类型</th>
-                   <th data-field="" scope="col">问题标题</th>
+                   <th data-field="questionId" scope="col">问题编号</th>
+                   <th data-field="userNickName" class="zt" scope="col">提问者</th>
+                   <th data-field="questionCost" scope="col">费用类型</th>
+                   <th data-field="questionType" scope="col">问题类型</th>
+                   <th data-field="questionTitle" scope="col" class="limit-length">问题标题</th>
                    <th class="col" data-formatter="checkOpinionFormatter" data-events="checkOpinionEvents">&nbsp;&nbsp;&nbsp;审核意见</th>
-                   <th data-field="actions" class="col" data-formatter="issueCheckFormatter" data-events="issueCheckEvents">&nbsp;&nbsp;问题详情</th>
+                   <th class="col" data-formatter="detailFormatter" data-events="issueCheckEvents">&nbsp;&nbsp;问题详情</th>
               </thead>  
-              <tr>
-                <td class="xz"></td>
-                <td></td>
-                <td class="zt"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-
-
             </table>
-            </form>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-      $.get('http://123.207.117.67/studentsignin/admin/student/search?keyword=0', function(res) {
+    var data={
+        key:"haiqian"
+      };
+      $.post('http://120.78.89.170/question/list',data, function(res) {
+         console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
-            data:res.data,
+            data:JSON.parse(res).data,
             formatShowingRows: function(pageFrom, pageTo, totalRows){
                 //do nothing here, we don't want to show the text "showing x of y from..." 
             }

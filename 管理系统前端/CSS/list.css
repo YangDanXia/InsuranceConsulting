@@ -2,7 +2,7 @@
 * @Author: YDX
 * @Date:   2017-12-09 22:32:23
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-10 16:00:41
+* @Last Modified time: 2017-12-22 19:48:06
 */
 #main h4{
             font-size:25px;
@@ -48,8 +48,12 @@ float:left;
     width: 250px;
     border-right: 1px solid #ddd;
 }
+
+#selectnav ul{
+   list-style: none;
+}
+
 #selectnav ul li a{
-    padding: 5px 0px 10px 46px;
     font-size: 15px;
 }
 #selectnav ul li{

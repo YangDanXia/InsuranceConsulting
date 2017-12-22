@@ -13,20 +13,16 @@ $(function(){
 
 	var search_w = $(window).width()-40;
 	$('.search').css('width',search_w+'px');
-	//$('.list_hy').css('width',search_w+'px');
 });
 </script>
-<!--框架高度设置-->
 </head>
 
-<body onLoad="Resize();">
+<body>
 <div id="right_ctn">
 	<div class="right_m">
-		<!--会议列表-->
         <div class="hy_list">
         	<div class="box_t">
             	<span class="name">注册列表</span>
-                <!--当前位置-->
                 <div class="position">
                 	<a href=""><img src="Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
@@ -35,9 +31,7 @@ $(function(){
                     <span><img src="Image/icon3.png" alt=""/></span>
                     <a href="">顾问资格审核</a>
                 </div>
-                <!--当前位置-->
             </div>
-            <!--查询-->
             <div class="search gzrj">
                 <div class="leix">
                     <span>查询类型：</span>
@@ -55,83 +49,53 @@ $(function(){
                 </div>
                 <a href="" class="btn">查询</a>
             </div>
-            <!--查询-->
             <div class="space_hx">&nbsp;</div>
-            <!--列表-->
             <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
-                   <th data-field="id" class="xz" scope="col">选择</th>
-                   <th data-field="name" data-sortable="true" scope="col">用户编号</th>
-                   <th data-field="salary" data-sortable="true" class="zt" scope="col">姓名</th>
-                   <th data-field="country" data-sortable="true" scope="col">手机号</th>
-                   <th>审核意见</th>
-                   <th scope="col">&nbsp;&nbsp;信息详情</th>
+                   <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
+                   <th data-field="userId" scope="col">用户编号</th>
+                   <th data-field="consultantName" class="zt" scope="col">姓名</th>
+                   <th data-field="consultantPhone" scope="col">手机号</th>
+                   <th data-formatter="checkOpinionFormatter" data-events="advisorOpinionEvents" class="detailBtn">审核意见</th>
+                   <th scope="col" class="detailBtn" data-formatter="detailFormatter" data-events="advisorCheckEvents">&nbsp;&nbsp;信息详情</th>
               </thead> 
               <tr>
-                <td class="xz"><input name="" type="checkbox" value=""></td>
-                <td>1</td>
-                <td class="zt">张三</td>
-                <td>13420115874</td>
-                <td class="checkOpinion">
-                  <img src="Image/pass.png" height="25" width="25"/>
-                  <img src="Image/fail.png" height="20" width="20"/>
-                </td>
-                <td><a href="advisorInfoDetail .html" class="btn" >查看</a></td>
+                <td class="xz"></td>
+                <td></td>
+                <td class="zt"></td>
+                <td></td>
+                <td></td>
+                <td></td>
               </tr>
-              <tr>
-                <td class="xz"><input name="" type="checkbox" value=""></td>
-                <td>1</td>
-                <td class="zt">张三</td>
-                <td>13420115874</td>
-                <td class="checkOpinion">
-                  <img src="Image/pass.png" height="25" width="25"/>
-                  <img src="Image/fail.png" height="20" width="20"/>
-                </td>
-                <td><a href="advisorInfoDetail .html" class="btn" >查看</a></td>
-              </tr>
-
             </table>
             </form>
-            <!--右边底部-->
         </div>
-        <!--会议列表-->
     </div>
 </div>
-    <script type="text/javascript" src="JS/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="JS/bootstrap.js"></script>
-    <script type="text/javascript" src="JS/bootstrap-table.js"></script>
-       <script type="text/javascript">
-        var $table = $('#fresh-table'),
-            $alertBtn = $('#alertBtn'),
-            full_screen = false;
-            
-        $().ready(function(){
-            $table.bootstrapTable({
-                toolbar: ".toolbar",
-    
-                showRefresh: true,
-                search: true,
-                showToggle: true,
-                showColumns: true,
-                pagination: true,
-                striped: true,
-                pageSize: 8,
-                pageList: [8,10,25,50,100],
-                
-                formatShowingRows: function(pageFrom, pageTo, totalRows){
-                    //do nothing here, we don't want to show the text "showing x of y from..." 
-                }
+<script type="text/javascript" src="JS/bootstrap-table.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+      var data = {
+        key:"haiqian"
+      }
 
-            });
-            
-                        
-            $(window).resize(function () {
-                $table.bootstrapTable('resetView');
-            });
+      $.post('http://120.78.89.170/consultant/application/list',data,function(res) {
+         $('#fresh-table').bootstrapTable({
+            toolbar: ".toolbar",
+            pagination: true,
+            striped: true,
+            pageSize: 8,
+            pageList: [8,10,25,50,100],
+            data:JSON.parse(res).data,
+            formatShowingRows: function(pageFrom, pageTo, totalRows){
+                //do nothing here, we don't want to show the text "showing x of y from..." 
+            }
+         });
+    }); 
+  });
 
-        });
-         
-    </script>
+</script>
+<script type="text/javascript" src="JS/common.js"></script>
 </body>
 </html>

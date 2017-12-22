@@ -55,35 +55,31 @@ $(function(){
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                  <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                 <th data-field="id" data-sortable="true" scope="col">用户编号</th>
-                 <th data-field="salary" data-sortable="true" class="zt" scope="col">用户昵称</th>
-                 <th data-field="phoneNumber" data-sortable="true" scope="col">手机号</th>
-                 <th class="col" data-formatter="operateFormatter" data-events="operateEvents">&nbsp;&nbsp;历史提问</th>
+                 <th data-field="userId" data-sortable="true" scope="col">用户编号</th>
+                 <th data-field="userNickName" data-sortable="true" class="zt" scope="col">用户昵称</th>
+                 <th data-field="userPhone" data-sortable="true" scope="col">手机号</th>
+                 <th class="col detailBtn" data-formatter="detailFormatter" data-events="historicalQEvents">&nbsp;&nbsp;历史提问</th>
               </thead>            
-              <tr v-for="info in infos">
-                <td class="xz"></td>
-                <td></td>
-                <td class="zt"></td>
-                <td></td>
-                <td class="detailBtn"></td>
-              </tr>
             </table>
             </form>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="JS/vue.min.js"></script>
+
 <script type="text/javascript" src="JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-      $.get('http://123.207.117.67/studentsignin/admin/student/search?keyword=0', function(res) {
+      var data={
+        key:"haiqian"
+      };
+      $.post('http://120.78.89.170/user/list',data,function(res) { 
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
-            data:res.data,
+            data:JSON.parse(res).data,
             formatShowingRows: function(pageFrom, pageTo, totalRows){
                 //do nothing here, we don't want to show the text "showing x of y from..." 
             }

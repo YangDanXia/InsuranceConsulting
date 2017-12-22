@@ -1,8 +1,8 @@
 /* 
-* @Author: anchen
+* @Author: YDX
 * @Date:   2017-12-11 10:59:30
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-12 20:45:34
+* @Last Modified time: 2017-12-22 19:28:23
 */
 
 
@@ -11,11 +11,11 @@ var chooseUserId =[];
 
 $(document).ready(function(){ 
 
-   // 查看历史
-    window.operateEvents = {
-       'click .issueBtn': function (e, value, row, index) {
+   // 查看用户的历史提问记录
+    window.historicalQEvents = {
+       'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
-           var userId = row.id;
+           var userId = row.userId;
            window.location = "issueInfo.html?id="+userId;
            console.log('You click like icon, row: ' + row.id);
         }
@@ -41,23 +41,164 @@ $(document).ready(function(){
    
    // 保险顾问的个人资料
     window.detailInfoEvents = {
-       'click .detailInfoBtn': function (e, value, row, index) {
+       'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
-           var userId = row.id;
-           window.location = "advisorInfoDetail.html?id="+userId;
-           console.log('You click like icon, row: ' + row.id);
+           var userId = row.userId; 
+           window.location = "advisorInfoDetail.html?userId="+userId;
         }
     };
 
+
   // 待审核问题的详细资料
     window.issueCheckEvents = {
-       'click .issueCheckBtn': function (e, value, row, index) {
+       'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
            var userId = row.id;
            window.location = "issueInfoDetail.html?id="+userId;
            console.log('You click like icon, row: ' + row.id);
         }
     };
+
+      // 待审核问题的审核意见
+    window.checkOpinionEvents = {
+       'click .agreeBtn': function (e, value, row, index) {  
+           var data = {
+            key:"haiqian",
+            questionId:row.id
+           }
+           $.post('http://120.78.89.170/question/pass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+
+        },
+        'click .failBtn':function(e,value,row,index){
+              var failReason=prompt("请输入驳回原因");
+              if (failReason!=null && failReason!=""){ 
+                 console.log(failReason);
+               }
+        }
+
+    };
+
+    // 待审核顾问的详细资料
+    window.advisorCheckEvents = {
+       'click .advisorCheckBtn': function (e, value, row, index) {
+         //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
+           var userId = row.id;
+           window.location = "issueInfoDetail.html?id="+userId;
+           console.log('You click like icon, row: ' + row.id);
+        }
+    };
+
+      // 待审核顾问的审核意见
+    window.advisorOpinionEvents = {
+        'click .agreeBtn': function (e, value, row, index) {  
+           var data = {
+            key:"haiqian",
+            userId:row.id
+           }
+           $.post('http://120.78.89.170/consultant/pass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+
+        },
+        'click .failBtn':function(e,value,row,index){
+              var data = {
+                key:"haiqian",
+                userId:row.id
+              }
+              var failReason=prompt("请输入驳回原因");
+              if (failReason!=null && failReason!=""){ 
+                 console.log(failReason);
+                 $.post('http://120.78.89.170/consultant/notpass',data, function(res) {
+                   console.log(res);
+                   if(JSON.parse(res).code == "200"){
+                      alert("操作成功！");
+                      location.reload();
+                   }else if(JSON.parse(res).code == "404"){
+                      alert("系统出错，请稍后重试");
+                }
+           });
+               }
+        }
+
+    };
+
+     // 问题详细内容
+    window.issueDetailEvents = {
+       'click .detailBtn':function(e,value,row,index){
+          var id = row.questionId;
+          var data = {
+            key:"haiqian",
+            questionId:id
+           }
+           $.post('http://120.78.89.170/question/list',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   window.location = "issueInfoDetail.html?id="+id;
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+
+       }
+    }
+
+    
+ // 查看精品案例详细内容
+    window.caseDetailEvents = {
+       'click .detailBtn':function(e,value,row,index){
+          var id = row.questionId;
+          var data = {
+            key:"haiqian",
+            questionId:id
+           }
+           $.post('http://120.78.89.170/boutique/list',data, function(res) {
+                console.log(JSON.parse(res));
+                if(JSON.parse(res).code == "200"){
+                   window.location = "issueInfoDetail.html?id="+id;
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+
+       }
+    };
+
+     // 设置为精品
+    window.beCaseEvents = {
+       'click .classBtn':function(e,value,row,index){
+          var id = row.questionId;
+          var data = {
+            key:"haiqian",
+            questionId:id
+           }
+           $.post('http://120.78.89.170/question/boutique',data, function(res) {
+                console.log(JSON.parse(res));
+                if(JSON.parse(res).code == "200"){
+                  alert("设置成功！");
+                  location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+
+       }
+    };
+
+
    
 
 });
@@ -66,32 +207,48 @@ $(document).ready(function(){
    function deleteData(){
       console.log(chooseUserId);
    }
-
-  // 历史提问栏/解答栏内的内容
-   function operateFormatter(value, row, index) {
-        return ['<a class="issueBtn btn" style="cursor:pointer">查看</a>'].join('');
-    }
-
+ 
   // 选项栏内的内容
    function chooseFormatter(value, row, index) {
         return ['<input class="choose" name="" type="checkbox" value="">'].join('');
     }
 
-  // 查看顾问详细资料内的内容
-   function detailInfoFormatter(value, row, index) {
-        return ['<a class="detailInfoBtn btn" style="cursor:pointer">查看</a>'].join('');
-    }
+ 
 
   // 问题审核
    function checkOpinionFormatter(value,row,index){
      return [
-      '<img src="Image/pass.png" height="25" width="25" style="padding:2px 10px 0 10px" />',
-      '<img src="Image/fail.png" height="20" width="20" style="padding:2px 0 0 10px"/>'
+      '<img class="agreeBtn" src="Image/pass.png" height="25" width="25" style="padding:2px 10px 0 10px;cursor:pointer" />',
+      '<img class="failBtn" src="Image/fail.png" height="20" width="20" style="padding:2px 0 0 10px;cursor:pointer"/>'
       ]
       .join('');
    }
 
- // 查看待审核问题详细内的内容
-   function issueCheckFormatter(value, row, index) {
-        return ['<a class="issueCheckBtn btn" style="cursor:pointer">查看</a>'].join('');
+  // 设为精品
+   function beCaseFormatter(value, row, index) {
+        var isClassic= row.isClassic;
+        if(isClassic == "1"){
+         return ['<img src="Image/classic.png" height="35" width="35" style="padding-left: 20px;"/>'].join('');
+        }else{
+         return ['<img class="classBtn" src="Image/notClassic.png" height="35" width="35" style="padding-left: 20px;cursor:pointer"/>'].join('');
+        }
+
     }
+
+  // 解决情况
+   function statusFormatter(value, row, index) {
+        var isResolve = row.isResolve;
+        if(isResolve == "1"){
+         return ['已解决'].join('');
+        }else{
+         return ['未解决'].join('');
+        }
+
+    }
+
+  // 查看详细资料内的内容
+   function detailFormatter(value, row, index) {
+        return ['<a class="detailBtn btn" style="cursor:pointer;">查看</a>'].join('');
+    }
+
+

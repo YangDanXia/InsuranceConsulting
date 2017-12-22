@@ -22,7 +22,7 @@ img{
 	background:#f8f8f8;
 	border-color: #e7e7e7;
 }
-.title{
+.topTitle{
   font-size: 36px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -234,4 +234,15 @@ img{
 
 .issue img{
 	padding-left: 20px;	
+}
+
+.limit-length{
+	max-width: 110px;
+	overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap; 
+}
+
+.detailBtn{
+	width: 90px;
 }

@@ -1,65 +1,63 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<meta http-equiv="X-UA-Compatible" content="IE=8" > 
 <link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
 <link rel="stylesheet" type="text/css" href="CSS/common.css"/>
 <link rel="stylesheet" type="text/css" href="CSS/thems.css">
 <script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
-  //自适应屏幕宽度
-  window.onresize=function(){ location=location }; 
-  
-  var main_h = $(window).height();
-  $('.hy_list').css('height',main_h-40+'px');
-  
-  var search_w = $(window).width()-40;
-  $('.search').css('width',search_w+'px');
+	//自适应屏幕宽度
+	window.onresize=function(){ location=location }; 
+	
+	var search_w = $(window).width()-40;
+	$('.search').css('width',search_w+'px');
+	//$('.list_hy').css('width',search_w+'px');
 });
 </script>
 </head>
 
 <body>
 <div id="right_ctn">
-  <div class="right_m">
+	<div class="right_m">
         <div class="hy_list">
-          <div class="box_t">
-              <span class="name">问题列表</span>
+        	<div class="box_t">
+            	<span class="name">顾问列表</span>
                 <div class="position">
-                  <a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
                     <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">问题管理</a>
+                    <a href="">用户管理</a>
                     <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">历史问题</a>
+                    <a href="">查看官方顾问</a>
                 </div>
             </div>
-
-            <div class="space_hx">&nbsp;</div> 
+            <div class="search gzrj">
+                <a href="addConsultant.html" class="btn">添加顾问</a>
+            </div>
+            <div class="space_hx">&nbsp;</div>
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                   <th data-field="questionId" scope="col">问题编号</th>
-                   <th data-field="userNickName" class="zt" scope="col">提问者</th>
-                   <th data-field="questionType" scope="col">问题类型</th>
-                   <th data-field="questionTitle" scope="col">问题标题</th>
-                   <th data-field="isClassic" scope="col">解决情况</th>
-                   <th class="col" data-formatter="detailFormatter" data-events="issueDetailEvents">&nbsp;&nbsp;查看详情</th>
-                   <th class="col" data-formatter="beCaseFormatter" data-events="beCaseEvents">&nbsp;&nbsp;设为精品</th>
-              </thead>   
-            </table> 
+                   <th data-field="adminAccount"scope="col">顾问账号</th>
+                   <th data-field="adminNickName" class="zt" scope="col">姓名</th>
+                   <th data-field="adminPhone"scope="col">手机号</th>
+                   <th class="col detailBtn" data-formatter="detailFormatter" data-events="operateEvents">&nbsp;&nbsp;历史解答</th> 
+              </thead> 
+            </table>
         </div>
     </div>
-</div> 
+</div>
 <script type="text/javascript" src="JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-      var data = {
+
+      var data={
         key:"haiqian"
-      }
-      $.post('http://120.78.89.170/question/list',data, function(res) {
-        console.log(res);
+      };
+      $.post('http://120.78.89.170/official/list', data,function(res) {
+         console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -73,7 +71,6 @@ $(function(){
          });
     }); 
   });
-
 </script>
 <script type="text/javascript" src="JS/common.js"></script>
 </body>

@@ -109,8 +109,8 @@
 	font-size:12px;
 	border-left:1px solid #DEDEDE;
 	border-top:1px solid #DEDEDE;
-	width:740px;
-	margin-left:20px;
+	width:650px;
+	margin-left:40px;
 }
 .list_hy th , .list_hy td{
 	height:48px;
@@ -119,6 +119,7 @@
 	color:#434343;
 	font-weight:bold;
 	padding-left:10px;
+	padding-right:10px;
 	border-right:1px solid #ddd;
 	border-bottom:1px solid #ddd;
 }
@@ -163,10 +164,8 @@
 	background:none;
 	vertical-align:middle;
 }
-
-.list_hy .detailBtn{
-	width:100px;
-}
+ 
+ 
 /*.list_hy .zt{
 	width:65px;
 }*/
@@ -624,7 +623,6 @@
 	margin-right:30px;
 }
 .mkkz ul{
-	width:60%;
 	margin-bottom:10px;
 }
 .mkkz ul li{
@@ -646,6 +644,12 @@
 	color:#999999;
 	background:url(../images/btn5.png) no-repeat;
 }
+.mkkz img{
+	padding:10px;
+	height: 150px;
+}
+
+
 /*模块控制*/
 /*退出系统*/
 .tcxt{
