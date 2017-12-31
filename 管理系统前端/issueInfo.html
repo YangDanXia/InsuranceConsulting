@@ -43,8 +43,8 @@ $(function(){
                    <th data-field="questionId" scope="col">问题编号</th>
                    <th data-field="userNickName" class="zt" scope="col">提问者</th>
                    <th data-field="questionType" scope="col">问题类型</th>
-                   <th data-field="questionTitle" scope="col">问题标题</th>
-                   <th data-field="isClassic" scope="col">解决情况</th>
+                   <th data-field="questionTitle" scope="col" class="limit-length">问题标题</th>
+                   <th data-formatter="statusFormatter" data-field="isResolve" scope="col">解决情况</th>
                    <th class="col" data-formatter="detailFormatter" data-events="issueDetailEvents">&nbsp;&nbsp;查看详情</th>
                    <th class="col" data-formatter="beCaseFormatter" data-events="beCaseEvents">&nbsp;&nbsp;设为精品</th>
               </thead>   
@@ -54,12 +54,27 @@ $(function(){
 </div> 
 <script type="text/javascript" src="JS/bootstrap-table.js"></script>
 <script type="text/javascript">
+
+
   $(document).ready(function() {
-      var data = {
-        key:"haiqian"
+     var Id = GetQueryString("id"); 
+     var type = GetQueryString("type");
+     console.log(Id+";"+type);
+     var data = {};
+     if(type == "Q"){
+      data = {
+        key:"haiqian",
+        userId:Id
       }
+     }else if(type == "A"){
+      data = {
+        key:"haiqian",
+        consultantId:Id
+      }
+     }
+
       $.post('http://120.78.89.170/question/list',data, function(res) {
-        console.log(res);
+        console.log(JSON.parse(res).data);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -73,6 +88,17 @@ $(function(){
          });
     }); 
   });
+
+    function GetQueryString(variable)
+   {
+       var query = window.location.search.substring(1);//获取?后的内容 
+       var vars = query.split("&");//将每组参数分开 
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");//将键名和键值分开 
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+   }
 
 </script>
 <script type="text/javascript" src="JS/common.js"></script>

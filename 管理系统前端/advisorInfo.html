@@ -33,40 +33,19 @@ $(function(){
                     <a href="">查看保险顾问</a>
                 </div>
             </div>
-            <div class="search gzrj">
-                <div class="leix">
-                    <span>查询类型：</span>
-                    <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;用户编号</option>
-                       <option value="saab">&nbsp;姓名</option>
-                       <option value="">&nbsp;手机号</option>
-                      </select>
-                    </div>
-                </div>
-                <div class="riqi">
-                    <span>关键字：</span>
-                    <input name="" type="text">
-                </div>
-                <a href="" class="btn">查询</a>
-            </div>
             <div class="space_hx">&nbsp;</div>
-            <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                   <th data-field="userId"scope="col">用户编号</th>
+                   <th data-field="userId" scope="col">用户编号</th>
                    <th data-field="consultantName" class="zt" scope="col">姓名</th>
                    <th data-field="consultantPhone"scope="col">手机号</th>
                    <th data-field="consultantExp" scope="col" class="limit-length">工作经历</th>
-                   <th class="col" data-formatter="detailFormatter" data-events="historicalQEvents">&nbsp;&nbsp;历史解答</th>
+                   <th class="col" data-formatter="detailFormatter" data-events="historicalAEvents">&nbsp;&nbsp;历史解答</th>
                    <th class="col" data-formatter="detailFormatter" data-events="detailInfoEvents">&nbsp;&nbsp;详细资料</th>
               </thead> 
             </table>
-            </form>
-            <!--右边底部-->
         </div>
-        <!--会议列表-->
     </div>
 </div>
 <script type="text/javascript" src="JS/bootstrap-table.js"></script>
@@ -82,6 +61,7 @@ $(function(){
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+            search:true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,

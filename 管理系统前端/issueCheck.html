@@ -31,31 +31,14 @@ $(function(){
                     <a href="">问题审核</a>
                 </div>
           </div>
-
-          <div class="search gzrj">
-                <div class="leix">
-                    <span>查询类型：</span>
-                    <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;问题编号</option>
-                       <option value="saab">&nbsp;费用类型</option>
-                       <option value="volvo">&nbsp;问题类型</option> 
-                      </select>
-                    </div>
-                </div>
-                <div class="riqi">
-                    <span>关键字：</span>
-                    <input name="" type="text">
-                </div>
-                <a href="" class="btn">查询</a>
-            </div>
+ 
             <div class="space_hx">&nbsp;</div>
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table" style="width:750px">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
                    <th data-field="questionId" scope="col">问题编号</th>
                    <th data-field="userNickName" class="zt" scope="col">提问者</th>
-                   <th data-field="questionCost" scope="col">费用类型</th>
+                   <th data-formatter="costFormatter" data-field="questionCost" scope="col">费用类型</th>
                    <th data-field="questionType" scope="col">问题类型</th>
                    <th data-field="questionTitle" scope="col" class="limit-length">问题标题</th>
                    <th class="col" data-formatter="checkOpinionFormatter" data-events="checkOpinionEvents">&nbsp;&nbsp;&nbsp;审核意见</th>
@@ -71,12 +54,13 @@ $(function(){
     var data={
         key:"haiqian"
       };
-      $.post('http://120.78.89.170/question/list',data, function(res) {
+      $.post('http://120.78.89.170/question/application/list',data, function(res) {
          console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+            search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,

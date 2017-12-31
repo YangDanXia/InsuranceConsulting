@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/classicCase",
+    "pages/index/detail",
+       
+
+    "pages/index/question",
+
+    "pages/index/search",
+    "pages/discuss/discuss"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#73b4ef",
+    "navigationBarTitleText": "保险百事通",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fff"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "image/icon/head_before.png",
+        "selectedIconPath": "image/icon/head_after.png"
+      },
+      {
+        "pagePath": "pages/discuss/discuss",
+        "text": "话题讨论",
+        "iconPath": "image/icon/tao_before.png",
+        "selectedIconPath": "image/icon/tao_after.png"
+      },
+      {
+        "pagePath": "pages/discuss/discuss",
+        "text": "我",
+        "iconPath": "image/icon/wo_before.png",
+        "selectedIconPath": "image/icon/wo_after.png"
+      }
+    ]
+  }
+}

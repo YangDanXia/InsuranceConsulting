@@ -1,0 +1,313 @@
+/**index.wxss**/
+page {
+    background-color: #f6f6f6;
+  padding: 0;
+}
+
+/*页面*/
+.swiper-box{ display: block; height: 100%; width: 100%;
+ overflow: hidden; }
+
+
+/*含地址、搜索和扫码*/
+.search-box{
+ -webkit-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  background-color:#73b4ef; 
+  padding:0 1% 2% 6%;
+
+}
+ 
+
+
+ /*搜索框*/
+ .search{
+    background-color: rgb(240,240,240);
+    height: 70rpx;
+ }
+
+.search-input{
+  -webkit-box-flex: 1;
+          flex: 1;
+  max-width: 160rpx;
+  padding-left:25rpx;
+}
+
+.search-btn{
+  border-top-left-radius: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  display: -webkit-box;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-left:40rpx;
+
+}
+
+.search-text{
+  line-height:67rpx;
+  color:#707070;
+}
+
+.search-right{
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  display: -webkit-box;
+  -webkit-box-align: center;
+          align-items: center;
+  padding-left:167rpx;
+
+}
+ 
+.swiper-x
+{
+  position: absolute;
+  z-index: 2;
+}
+.slide-image
+{
+  width:100%;
+  height: 100%;
+}
+ 
+
+
+.searchButton{
+  padding-left:190rpx;
+  padding-top:13rpx;
+
+}
+ 
+.themes-list-description{ 
+   font-size: 12px; 
+   color: #999; 
+   /*height: 20px; */
+   line-height: 20px; 
+   text-align:center; 
+   /*overflow: hidden; */
+  }
+
+.list{
+  margin-top:8px;
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  background:white;
+}
+
+.nav-list{
+    padding-bottom:10px;
+}
+
+.navs{
+  border-bottom:1px solid #F6F6F6;
+  padding-bottom:15px;
+}
+
+.items{
+  width: 23%;
+  flex:1;
+  text-align: center;
+  margin-top:20rpx;
+  
+}
+
+.item-down{
+  margin-bottom:20rpx;
+}
+
+.items image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.items image.service-icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+.items text{
+  display: block;
+  text-align: center;
+  margin-top: 10rpx;
+  font-size:32rpx;
+}
+
+.fixed{
+  width: 40px;
+  height: 40px;
+  float:right;
+
+}
+ 
+
+
+.ask-box{
+ -webkit-display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+  padding:3%;
+  padding-top: 40rpx;
+}
+ 
+
+
+ /*搜索框*/
+ .ask{
+    background-color: #1296db;
+    height: 75rpx;
+ }
+
+.ask-center{
+  -webkit-box-flex: 1;
+          flex: 1;
+  max-width: 160rpx;
+}
+
+.ask-left{
+  border-top-left-radius: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  display: -webkit-box;
+  -webkit-box-align: center;
+          align-items: center;
+  margin-left:40rpx;
+    padding-left:40rpx;
+
+}
+
+.ask-text{
+  line-height:71rpx;
+  color:white;
+}
+
+.ask-right{
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  display: -webkit-box;
+  -webkit-box-align: center;
+          align-items: center;
+  padding-left:50rpx;
+
+}
+ 
+ .ask-btn{
+  padding:10px;
+  width:50px;
+  height:50px;
+
+ }
+
+.ask-title{
+  padding-top:10px;
+  margin-left:-30px;
+  font-size:33rpx;
+}
+
+.workbench{
+  font-size: 20rpx;
+  background: #fff;
+  padding-bottom: 30rpx;
+  margin-bottom:10rpx;
+  color: #333;
+  margin:13rpx 0;
+  height:70%;
+
+}
+
+.err{
+   width:60%;
+   height: 100%;
+   padding-left:2%
+  }
+
+.err-list-name{
+   font-size: 28rpx; 
+   color: #999; 
+   height: 20px; 
+   line-height: 20px; 
+   overflow: hidden;
+   width:350rpx;
+   margin-left:-25%;
+ }
+ 
+.err-item{
+   display:inline-block;
+background:#fff;
+margin:20%;
+border-radius:2%;
+width:250rpx;
+height:170rpx;
+margin-left:40%;
+
+}
+
+.themes-list-name{
+  font-size: 32rpx; 
+  color: #444; 
+  display:flex;
+  flex-direction:row;
+  line-height: 20px;  
+  font-weight:normal;
+  margin-left:4%;
+  margin-top:10rpx;
+  }
+
+.themes-list-name text{
+   display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    font-size: 32rpx;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+padding-left:2%;
+    width: 90%
+}
+
+  .themes-top{
+    margin-top:10rpx;
+  }
+
+  .fun-list{
+    flex-flow:row wrap;
+    height:91%;
+margin-top:0px;
+
+}
+
+ .title{ 
+   font-size: 40rpx;
+   color: #666;
+   margin-left:28%;
+   padding-bottom:20rpx;
+   }
+
+.title-btn{
+  width:80rpx;height:60rpx;
+}
+
+.wrap-item{
+    /* background: cover; */
+    display: inline-block;
+    background: #fff;
+    border-radius: 2%;
+    margin-top:8px;
+
+}
+
+.case-btn{
+  width:25px;
+  height:25px;
+
+}
+
+.themes-list-inline{
+  border-bottom:1px soild #bfbfbf;
+}
+
+
+

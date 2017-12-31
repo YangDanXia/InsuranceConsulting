@@ -401,7 +401,7 @@
             return 'Search';
         },
         formatNoMatches: function () {
-            return 'No matching records found';
+            return '查询结果不存在';
         },
         formatPaginationSwitch: function () {
             return 'Hide/Show pagination';
@@ -485,7 +485,7 @@
         this.initHeader();
         this.initData();
         this.initFooter();
-        // this.initToolbar();
+        this.initToolbar();
         this.initPagination();
         this.initBody();
         this.initServer();
@@ -914,8 +914,8 @@
         if (this.options.search) {
             html = [];
             html.push(
-                '<div class="pull-' + this.options.searchAlign + ' search">',
-                sprintf('<input class="form-control' + (this.options.iconSize === undefined ? '' : ' input-' + this.options.iconSize) + '" type="text" placeholder="%s">',
+                '<div class="riqi' + ' search">',
+                sprintf('<span>输入关键字查询：</span><input class="form-control' + (this.options.iconSize === undefined ? '' : ' input-' + this.options.iconSize) + '" type="text" placeholder="%s">',
                     this.options.formatSearch()),
                 '</div>');
 
@@ -2263,9 +2263,19 @@
         this.options.cardView = !this.options.cardView;
         this.initHeader();
         // Fixed remove toolbar when click cardView button.
-        //that.initToolbar();
+        that.initToolbar();
         this.initBody();
         this.trigger('toggle', this.options.cardView);
+    };
+
+     BootstrapTable.prototype.destroy = function () {
+        this.$el.insertBefore(this.$container);
+        $(this.options.toolbar).insertBefore(this.$el);
+        this.$container.next().remove();
+        this.$container.remove();
+        this.$el.html(this.$el_.html())
+            .css('margin-top', '0')
+            .attr('class', this.$el_.attr('class') || ''); // reset the class
     };
 
     BootstrapTable.prototype.refreshOptions = function (options) {

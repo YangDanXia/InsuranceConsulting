@@ -16,7 +16,7 @@ $(function(){
 	
 	var search_w = $(window).width()-40;
 	$('.search').css('width',search_w+'px');
-	$('.list_hy').css('width',search_w+'px');
+	$('.list_hy').css('width',search_w-100+'px');
 });
 </script>
 </head>
@@ -70,8 +70,8 @@ $(function(){
             </form>
             <ul class="hypz">
               <li class="tj_btn">
-                <a href="">通过</a>
-                <a href="" class="back">驳回</a>
+                <a class="publish">通过</a>
+                <a class="back">驳回</a>
               </li>
             </ul>
         </div>
@@ -81,10 +81,10 @@ $(function(){
 <script type="text/javascript">
 
 
-  var userId = GetQueryString("userId"); 
+  var Id = GetQueryString("id"); 
   var data = {
             key:"haiqian",
-            userId:userId
+            userId:Id
            };
   var info = new Vue({
     el:"#detailTable",
@@ -102,7 +102,44 @@ $(function(){
   });
 
   info.getInfo();
+ 
+   $(".publish").click(function(event) {
+     console.log(Id);
+     var data = {
+            key:"haiqian",
+            userId:Id
+           }
+           $.post('http://120.78.89.170/consultant/pass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+  });
 
+  $(".back").click(function(event) {
+    console.log(Id);
+     var failReason=prompt("请输入驳回原因");
+     if (failReason!=null && failReason!=""){ 
+            var data = {
+            key:"haiqian",
+            userId:Id,
+            consultantResult:failReason
+           }
+           $.post('http://120.78.89.170/consultant/notpass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+     }
+  });
 
 
   function GetQueryString(variable)

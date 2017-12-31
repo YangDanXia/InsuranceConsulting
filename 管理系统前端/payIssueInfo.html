@@ -35,23 +35,6 @@ $(function(){
                     <a href="">付费问题</a>
                 </div>
             </div>
-            <div class="search gzrj">
-                <div class="leix">
-                    <span>查询类型：</span>
-                    <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;问题编号</option>
-                       <option value="volvo">&nbsp;问题类型</option>
-                       <option value="saab">&nbsp;解决情况</option> 
-                      </select>
-                    </div>
-                </div>
-                <div class="riqi">
-                    <span>关键字：</span>
-                    <input name="" type="text">
-                </div>
-                <a href="" class="btn">查询</a>
-            </div>
             <div class="space_hx">&nbsp;</div> 
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table" style="width:750px">
               <thead>
@@ -81,6 +64,7 @@ $(function(){
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+            search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,

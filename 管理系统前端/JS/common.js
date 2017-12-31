@@ -2,7 +2,7 @@
 * @Author: YDX
 * @Date:   2017-12-11 10:59:30
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-22 19:28:23
+* @Last Modified time: 2017-12-22 20:47:06
 */
 
 
@@ -16,8 +16,17 @@ $(document).ready(function(){
        'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
            var userId = row.userId;
-           window.location = "issueInfo.html?id="+userId;
-           console.log('You click like icon, row: ' + row.id);
+           window.location = "issueInfo.html?id="+userId+"&type=Q";
+        }
+    };
+
+
+   // 查看顾问的历史解答记录
+    window.historicalAEvents = {
+       'click .detailBtn': function (e, value, row, index) {
+         //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
+           var userId = row.userId;
+           window.location = "issueInfo.html?id="+userId+"&type=A";
         }
     };
 
@@ -53,9 +62,8 @@ $(document).ready(function(){
     window.issueCheckEvents = {
        'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
-           var userId = row.id;
-           window.location = "issueInfoDetail.html?id="+userId;
-           console.log('You click like icon, row: ' + row.id);
+           var Id = row.questionId;
+           window.location = "issueCheckDetail.html?id="+Id;
         }
     };
 
@@ -64,7 +72,7 @@ $(document).ready(function(){
        'click .agreeBtn': function (e, value, row, index) {  
            var data = {
             key:"haiqian",
-            questionId:row.id
+            questionId:row.questionId
            }
            $.post('http://120.78.89.170/question/pass',data, function(res) {
                 console.log(res);
@@ -80,7 +88,20 @@ $(document).ready(function(){
         'click .failBtn':function(e,value,row,index){
               var failReason=prompt("请输入驳回原因");
               if (failReason!=null && failReason!=""){ 
-                 console.log(failReason);
+               var data = {
+                 key:"haiqian",
+                 questionId:row.questionId,
+                 questionResult:failReason
+              }
+              $.post('http://120.78.89.170/question/notpass',data, function(res) {
+                 console.log(res);
+                 if(JSON.parse(res).code == "200"){
+                    alert("操作成功！");
+                    location.reload();
+                 }else if(JSON.parse(res).code == "404"){
+                    alert("系统出错，请稍后重试");
+                 }
+           });
                }
         }
 
@@ -88,11 +109,9 @@ $(document).ready(function(){
 
     // 待审核顾问的详细资料
     window.advisorCheckEvents = {
-       'click .advisorCheckBtn': function (e, value, row, index) {
-         //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
-           var userId = row.id;
-           window.location = "issueInfoDetail.html?id="+userId;
-           console.log('You click like icon, row: ' + row.id);
+       'click .detailBtn': function (e, value, row, index) {
+           var userId = row.userId;
+           window.location = "advisorCheckDetail.html?id="+userId;
         }
     };
 
@@ -242,6 +261,17 @@ $(document).ready(function(){
          return ['已解决'].join('');
         }else{
          return ['未解决'].join('');
+        }
+
+    }
+
+  // 费用情况
+   function costFormatter(value, row, index) {
+        var questionCost = row.questionCost;
+        if(questionCost == "1"){
+         return ['免费'].join('');
+        }else{
+         return ['付费'].join('');
         }
 
     }

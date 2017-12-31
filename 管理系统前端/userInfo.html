@@ -34,30 +34,14 @@ $(function(){
                   <a href="">查看用户</a>
               </div>
           </div>
-          <div class="search gzrj">
-              <div class="leix">
-                  <span>查询类型：</span>
-                  <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;用户编号</option>
-                       <option value="saab">&nbsp;用户昵称</option>
-                      </select>
-                  </div>
-              </div>
-              <div class="riqi">
-                  <span>关键字：</span>
-                  <input name="" type="text">
-              </div>
-              <a href="" class="btn">查询</a>
-          </div>
           <div class="space_hx">&nbsp;</div>
           <form>
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                  <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                 <th data-field="userId" data-sortable="true" scope="col">用户编号</th>
-                 <th data-field="userNickName" data-sortable="true" class="zt" scope="col">用户昵称</th>
-                 <th data-field="userPhone" data-sortable="true" scope="col">手机号</th>
+                 <th data-field="userId" scope="col">用户编号</th>
+                 <th data-field="userNickName" class="zt" scope="col">用户昵称</th>
+                 <th data-field="userPhone" scope="col">手机号</th>
                  <th class="col detailBtn" data-formatter="detailFormatter" data-events="historicalQEvents">&nbsp;&nbsp;历史提问</th>
               </thead>            
             </table>
@@ -73,10 +57,12 @@ $(function(){
         key:"haiqian"
       };
       $.post('http://120.78.89.170/user/list',data,function(res) { 
+         console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+            search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,

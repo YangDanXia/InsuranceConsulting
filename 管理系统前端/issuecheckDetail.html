@@ -1,0 +1,175 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>查看详情</title>
+<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="CSS/thems.css">
+<script type="text/javascript" src="JS/vue.min.js"></script>
+<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自适应屏幕宽度
+	window.onresize=function(){ location=location }; 
+	
+	var main_h = $(window).height();
+	$('.hy_list').css('height',main_h-45+'px');
+	
+	var search_w = $(window).width()-40;
+	$('.search').css('width',search_w+'px');
+	$('.list_hy').css('width',search_w-100+'px');
+});
+</script>
+</head>
+
+<body>
+<div id="right_ctn">
+	<div class="right_m">
+        <div class="hy_list">
+        	<div class="box_t">
+            	<span class="name">查看详情</span>
+                <div class="position">
+                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                    <a href="">首页</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">审核管理</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">问题审核</a>
+                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <a href="">问题详情</a>
+                </div>
+            </div>
+            <div class="space_hx">&nbsp;</div>
+            <table cellpadding="0" cellspacing="0" class="list_hy" id="detailTable">
+              <tr>
+                <th scope="col" width="215">类型</th>
+                <th scope="col">内容</th>
+              </tr>
+              <tr>
+                <td>问题标题</td>
+                <td>
+                	<div class="mkkz">{{infos.questionTitle}} </div>
+                </td>
+              </tr>
+              <tr>
+                <td>详细内容</td>
+                <td>
+                	<div class="mkkz">{{infos.questionDetail}} </div>
+                </td>
+              </tr>
+              <tr>
+                <td>照片资料</td>
+                <td>
+                	<div class="mkkz">
+                    	<img v-bind:src="infos.questionPhoto" alt="" />
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>问题类型</td>
+                <td>
+                    <div class="mkkz">
+                        <ul class="clearfix">{{infos.questionType}}</ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>费用类型</td>
+                <td>
+                    <div class="mkkz">
+                        <ul class="clearfix">{{infos.question}}</ul>
+                    </div>
+                </td>
+              </tr>
+            </table>
+            <ul class="hypz">
+              <li class="tj_btn">
+                <a class="publish">发布</a>
+                <a class="back">驳回</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+  var Id = GetQueryString("id");  
+  console.log(Id);
+  var data = {
+            key:"haiqian",
+            questionId:Id
+           };
+  var info = new Vue({
+    el:"#detailTable",
+    data:{
+       infos:''
+    },
+    methods:{
+       getInfo:function(){
+          $.post('http://120.78.89.170/question/list',data, function(res) {
+               console.log(JSON.parse(res));
+               info.infos = JSON.parse(res).data[0]; 
+           });
+       }
+    }
+  });
+
+  info.getInfo();
+
+  $(".publish").click(function(event) {
+     console.log(Id);
+     var data = {
+            key:"haiqian",
+            questionId:Id
+           }
+           $.post('http://120.78.89.170/question/pass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+  });
+
+  $(".back").click(function(event) {
+    console.log(Id);
+     var failReason=prompt("请输入驳回原因");
+     if (failReason!=null && failReason!=""){ 
+            var data = {
+            key:"haiqian",
+            questionId:Id,
+            questionResult:failReason
+           }
+           $.post('http://120.78.89.170/question/notpass',data, function(res) {
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("操作成功！");
+                   location.reload();
+                }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                }
+           });
+     }
+  });
+
+
+  function GetQueryString(variable)
+   {
+       var query = window.location.search.substring(1);//获取?后的内容 
+       var vars = query.split("&");//将每组参数分开 
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");//将键名和键值分开 
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+   }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--index.wxml-->
+
+<view class="totalsort">
+  <view class="sort_one one" bindtap='selectType' data-name='理财保险'>理财保险</view>
+  <view class="sort_one two" bindtap='selectType' data-name='人寿保险'>人寿保险</view>
+  <view class="sort_one three" bindtap='selectType' data-name='医疗保险'>医疗保险</view>
+
+  <view class="sort_one one" bindtap='selectType' data-name='少儿保险'>少儿保险</view>
+  <view class="sort_one two" bindtap='selectType' data-name='意外保险'>意外保险</view>
+  <view class="sort_one three" bindtap='selectType' data-name='养老保险'>养老保险</view>
+
+  <view class="sort_one one" bindtap='selectType' data-name='社保'>社保</view>
+  <view class="sort_one two" bindtap='selectType' data-name='保险流程'>保险流程</view>
+  <view class="sort_one three more" bindtap='selectType' data-name='all'>全部分类</view>
+</view>
+
+<view class="case-list">
+<scroll-view class="scolly" scroll-y  style="height:{{winHeight}}px" >
+  <view class="hot-box-main">
+      <view wx:for="{{caseList}}" wx:key="questionId">
+
+       <view wx:if="{{showType !='all' && item.questionType === showType}}">
+        <navigator url='detail?id={{item.questionId}}'>
+          <view class="list-box">
+            <view class="list-box-title">{{item.questionTitle}}</view>
+            <view class="list-box-sub">{{item.questionDetail}}</view>
+          </view>
+          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+        </navigator>
+       </view>
+
+       <view wx:elif="{{showType =='all'}}">
+        <navigator url='detail?id={{item.questionId}}'>
+          <view class="list-box">
+            <view class="list-box-title">{{item.questionTitle}}</view>
+            <view class="list-box-sub">{{item.questionDetail}}</view>
+          </view>
+          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+        </navigator>
+       </view>
+
+      </view>
+
+       <view wx:if="{{showType !=='all'  && showNotice}}">
+          <view>
+            <text class='list-warn'>暂无此类型的案例</text>
+          </view>
+       </view>
+
+  </view>
+</scroll-view>
+</view>

@@ -32,25 +32,7 @@ $(function(){
                     <a href="">顾问资格审核</a>
                 </div>
             </div>
-            <div class="search gzrj">
-                <div class="leix">
-                    <span>查询类型：</span>
-                    <div class="xial_w xial_l">
-                      <select name="findType" class="xial_m">
-                       <option value="volvo">&nbsp;用户编号</option>
-                       <option value="saab">&nbsp;姓名</option>
-                       <option value="volvo">&nbsp;手机号</option> 
-                      </select>
-                    </div>
-                </div>
-                <div class="riqi">
-                    <span>关键字：</span>
-                    <input name="" type="text">
-                </div>
-                <a href="" class="btn">查询</a>
-            </div>
             <div class="space_hx">&nbsp;</div>
-            <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
@@ -60,16 +42,7 @@ $(function(){
                    <th data-formatter="checkOpinionFormatter" data-events="advisorOpinionEvents" class="detailBtn">审核意见</th>
                    <th scope="col" class="detailBtn" data-formatter="detailFormatter" data-events="advisorCheckEvents">&nbsp;&nbsp;信息详情</th>
               </thead> 
-              <tr>
-                <td class="xz"></td>
-                <td></td>
-                <td class="zt"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
             </table>
-            </form>
         </div>
     </div>
 </div>
@@ -79,12 +52,12 @@ $(function(){
       var data = {
         key:"haiqian"
       }
-
       $.post('http://120.78.89.170/consultant/application/list',data,function(res) {
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+            search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,

@@ -1,0 +1,108 @@
+/* pages/index/functions/search.wxss */
+page{
+    background-color: #fff;
+}
+
+/*搜索*/
+.search-box{
+  display: -webkit-box;
+  box-sizing: border-box;
+  padding:25rpx 30rpx;
+  position: relative;
+  padding-left:5rpx;
+  background-color: #fff;
+}
+
+.search-radio{
+  display: -webkit-box;
+  box-sizing: border-box;
+  position: relative;
+  padding-left:17%;
+  background-color: #fff;
+}
+.radio-group{
+  width:100%;
+}
+.radio{
+  padding-right:5%;
+
+}
+
+.search-input{
+background-color: #fff;
+  padding-left: 50rpx;
+  -webkit-box-flex: 1;
+ 
+          flex: 1;
+  border-top-left-radius: 200rpx;
+  border-bottom-left-radius: 200rpx;
+  height: 65rpx;
+  max-width: 450rpx;
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+}
+
+.search-btn{
+  background-color: #fff;
+ 
+  display: -webkit-box;
+ 
+  
+  -webkit-box-align: center;
+ 
+          align-items: center;
+  padding-right: 20rpx;
+  border-top-right-radius: 200rpx;
+  border-bottom-right-radius: 200rpx;
+  height: 65rpx;
+    border-bottom: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+}
+
+
+.search-vacate{
+  width:70rpx;
+  height: 70rpx;
+  padding-right: 25rpx; 
+  margin-top: -5rpx;
+}
+
+.icon{
+  margin-top:8rpx;
+}
+
+
+
+/*历史搜索*/
+.history{
+   color:#999;
+   padding:30rpx;
+}
+ 
+
+.content{
+    display: inline-block;
+    padding:20rpx;
+    padding-left:30rpx;
+    padding-bottom: 35rpx;
+    font-size: 26rpx;
+}
+
+ .record{
+  background-color: #e9e9e9;
+  padding: 20rpx 25rpx;
+  display: fixed;
+  border-top-left-radius: 150rpx;
+  border-bottom-left-radius: 150rpx;
+  border-top-right-radius: 150rpx;
+  border-bottom-right-radius: 150rpx;
+  height: 65rpx;
+  max-width: 650rpx;
+ }
+
+
+navigator{
+  width:auto
+}

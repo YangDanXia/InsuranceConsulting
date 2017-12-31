@@ -1,0 +1,59 @@
+<!--pages/me/functions/recommend.wxml-->
+<view class="container">
+
+<view class="box-top">
+   <view class="content">
+    费用类型  
+         <picker bindchange="changeFee" value="{{index_fee}}" range="{{feeType}}"  class="picker">
+          <text>{{feeType[index_fee]}}</text> 
+         </picker>
+         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+    </view>
+
+   <view class="middle"></view>
+
+   <view class="content">
+    问题类型
+          <picker bindchange="changeQuestion"  value="{{index_q}}" range="{{questionArray}}"  class="picker">
+          <text>{{questionArray[index_q]}}</text> 
+         </picker>
+         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+    </view>
+    <view class="middle"></view>
+    <view class="content">
+     公开问题内容
+          <picker bindchange="changePublic"  value="{{index_public}}" range="{{isPublic}}"  class="picker" style='width:41%;'>
+          <text>{{isPublic[index_public]}}</text> 
+         </picker>
+         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+    </view>
+
+
+</view>
+   
+    <text class="issues-label">问题标题</text>
+    <view class="issues-panel">
+        <view class="issues-input">
+        <input placeholder="请输入标题(必填)" bindinput="titleInput"/>
+      </view>
+    </view>
+    
+    <text class="issues-label">详细内容</text>
+    <view class="issues-panel">
+     <textarea  class="issues-textarea" cursor-spacing="50" placeholder="请输入问题详细内容" bindinput="detailInput">
+     </textarea>
+     <view class="issues-photo">
+     <block wx:for="{{img}}" wx:key="*this">
+      <view bindtap="chooseImg" data-index="{{index}}">
+       <image class="camera-picture" src="{{item}}"/>
+      </view>
+      </block>
+     </view>
+    </view>
+
+
+    <view class="submit-btn"  bindtap="submit">
+      <text>提交反馈</text>
+    </view>
+</view>
+ 

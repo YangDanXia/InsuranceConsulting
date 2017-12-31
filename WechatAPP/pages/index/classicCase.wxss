@@ -1,0 +1,141 @@
+page{
+  font-family:"微软雅黑","黑体","宋体";
+}
+
+
+.totalsort{
+width: 100%;
+height:300rpx;
+background-color:#fff;
+padding:1px;
+padding-bottom:10rpx;
+
+}
+
+.sort_one
+{
+  display: inline-block;
+  width: 180rpx;
+  height:62rpx;
+  line-height:62rpx;   
+  border: 9rpx solid #eceff1 ;
+  border-radius:3px;
+  color:black;
+   font-weight:500;
+  font-size:90%;
+  text-align:center;
+  background-color: #eceff1;
+}
+
+.sort_one.one
+{
+ margin-left:46rpx; 
+ margin-top:23rpx;
+}
+.sort_one.two
+{
+  margin-left:23rpx; 
+   margin-top:23rpx;
+}
+.sort_one.three
+{
+  margin-left:23rpx; 
+   margin-top:23rpx;
+}
+.book-list{
+  height:800rpx;
+  position:fixed;
+  top:70rpx;
+  right:0;
+  bottom:0;
+  left:0;
+
+}
+
+.themes-list-box{ 
+  padding: 26rpx 10rpx; 
+
+}
+
+ 
+.themes-list-name{
+  text-align:left;
+  line-height:45rpx;
+} 
+
+.themes-list-description{
+  text-align:left;
+  line-height:45rpx;
+ }
+
+ .list-description {
+   font-size:30rpx;
+ }
+
+.themes-list-thumbnail {
+    left:0;
+
+}
+
+.themes-list-img {
+width:110%;
+height:90%;
+border-radius:2%;
+border:0px solid #999;
+}
+ 
+.hot-box-main{ display: block; overflow: hidden; margin-bottom: 20px; background: #FFF; }
+
+
+.list-box{ 
+  padding: 20px 20px 15px 40px; 
+  display: block; 
+  position: relative;
+  width:71%;
+  }
+
+.list-box::after{ display: block; content: ""; position: absolute; width: 6px; height: 6px; background: #ff6511; border-radius: 50%; top: 25px; left: 20px; }
+.list-box-title{ 
+   font-weight: 400; 
+   line-height: 42rpx;
+   font-size:31rpx;
+    }
+.list-box-sub{ 
+  font-size: 24rpx; 
+  color: #666; 
+  padding-top: 6px;    
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:1;
+  width: 90%
+  
+  }
+
+.case-list{
+  padding-top:10px;
+}
+
+.btn-enter {
+  width:50rpx;
+  height:50rpx;
+  padding-top:9%;
+}
+
+.hot-box-main navigator{
+  display:flex;
+  width:100%;
+  border-bottom:1px solid #F6F6F6;
+}
+.sort_one.more{
+  color:#65b5fa;
+}
+
+.list-warn{
+  text-align:center;
+  padding:20px 0px 15px 0px;
+  display:block;
+  position:relative;
+}
