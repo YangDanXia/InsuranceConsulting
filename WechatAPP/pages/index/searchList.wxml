@@ -1,0 +1,18 @@
+<!--pages/index/searchList.wxml-->
+<view class="case-list">
+<scroll-view class="scolly" scroll-y  style="height:{{screenHeight}}px" >
+  <view class="hot-box-main">
+      <view wx:for="{{List}}" wx:key="questionId">
+       <view>
+        <navigator url='detail?id={{item.questionId}}'>
+          <view class="list-box">
+            <view class="list-box-title">{{item.questionTitle}}</view>
+            <view class="list-box-sub">{{item.questionDetail}}</view>
+          </view>
+          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+        </navigator>
+       </view>
+      </view>
+  </view>
+</scroll-view>
+</view>

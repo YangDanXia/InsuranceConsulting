@@ -1,0 +1,19 @@
+<!--pages/discuss/discuss.wxml-->
+<block wx:for="{{topicList}}">
+<navigator class="background" url='discuss?id={{item.topicId}}'>
+  <view class="headline">
+    <image class="tou" src="../../image/icon/1.jpg"></image>
+    <text class="small">热门话题，来自：医疗保险</text>
+  </view>
+  <view class="border_all">   
+    <text class="two_question">
+      {{item.topicTitle}}
+    </text>
+  </view>
+  <view class="border_all">
+    <text class=" two_question answer">
+      {{item.topicContent}}
+    </text>
+  </view>
+</navigator>
+</block>

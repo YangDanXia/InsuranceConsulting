@@ -21,8 +21,6 @@ Page({
     wx.getStorage({
       key: 'adduserId',
       success: function (res) {
-        console.log("sfdefd")
-        console.log(res.data)
         that.setData({
           UserId: res.data
         })

@@ -1,8 +1,11 @@
 {
   "pages":[
-    
     "pages/index/index",
+    "pages/index/searchList",
+        "pages/discuss/discussList",
+   
     "pages/my/my",
+
     "pages/discuss/discuss",
 
     "pages/index/classicCase",
@@ -39,7 +42,7 @@
         "selectedIconPath": "image/icon/head_after.png"
       },
       {
-        "pagePath": "pages/discuss/discuss",
+        "pagePath": "pages/discuss/discussList",
         "text": "话题讨论",
         "iconPath": "image/icon/tao_before.png",
         "selectedIconPath": "image/icon/tao_after.png"

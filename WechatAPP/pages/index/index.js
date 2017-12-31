@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // loading
+    loadhidden: false,
     imgUrls: [
       "../../image/show/one.jpg",
       "../../image/show/two.jpg",
@@ -25,14 +26,14 @@ Page({
         text:"精品案例"
       },
       {
-        url: 'discuss/discuss',
+        url: 'question',
         img: "../../image/icon/discuss.png",
-        text: "话题讨论"
+        text: "发起提问"
       },
       {
-        url: 'question',
+        url: '../my/insurance_consultant/insurance_consultant',
         img: "../../image/icon/quiz.png",
-        text: "发起提问"
+        text: "成为顾问"
       }
     ],
     errHidden:true,
@@ -112,6 +113,19 @@ Page({
     })
    
     },
+
+  /**
+* 生命周期函数--监听页面初次渲染完成
+*/
+  onReady: function () {
+    var that = this;
+    // 数据加载完成后 延迟隐藏loading
+    setTimeout(function () {
+      that.setData({
+        loadhidden: true
+      })
+    }, 500);
+  },
 
     /**
      * 搜索

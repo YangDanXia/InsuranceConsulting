@@ -16,7 +16,8 @@ Page({
     showView: true
   }, 
 
-  onLoad: function () {
+  onLoad: function (options) {
+    var id = options.id
     var that=this
     wx.request({
       url: 'http://120.78.89.170/topic/now',

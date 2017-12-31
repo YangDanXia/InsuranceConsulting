@@ -42,48 +42,14 @@ padding-bottom:10rpx;
   margin-left:23rpx; 
    margin-top:23rpx;
 }
-.book-list{
-  height:800rpx;
-  position:fixed;
-  top:70rpx;
-  right:0;
-  bottom:0;
-  left:0;
 
-}
 
-.themes-list-box{ 
-  padding: 26rpx 10rpx; 
-
-}
-
- 
-.themes-list-name{
-  text-align:left;
-  line-height:45rpx;
-} 
-
-.themes-list-description{
-  text-align:left;
-  line-height:45rpx;
- }
 
  .list-description {
    font-size:30rpx;
  }
 
-.themes-list-thumbnail {
-    left:0;
 
-}
-
-.themes-list-img {
-width:110%;
-height:90%;
-border-radius:2%;
-border:0px solid #999;
-}
- 
 .hot-box-main{ display: block; overflow: hidden; margin-bottom: 20px; background: #FFF; }
 
 

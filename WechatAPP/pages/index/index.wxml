@@ -2,9 +2,9 @@
 <!--index.wxml-->
 
 <!-- loading -->
-<!-- <loading hidden="{{loadhidden}}">
+ <loading hidden="{{loadhidden}}">
     加载中...
-</loading> -->
+</loading> 
 
 <!--标题栏-->
 <view>
