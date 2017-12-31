@@ -1,0 +1,42 @@
+<form>
+<view class="first">
+  <view class="shunxu">
+    <view class="one">
+      <view class="a">
+        <text class="text"> 姓名：</text><input class="i_p" type="text"  name="input" value="{{t_name}}" placeholder='请输入姓名' bindinput="form_name"></input>
+      </view>
+      <view class="a">
+      <text class="text">手机号：</text><input class="i_p" type="text" name="input" value="{{t_phone}}" placeholder='请输入手机号' bindinput="form_phone"></input>
+    </view>
+  </view>
+    <view class="a b">
+     <image class="photo" src="../../../image/icon/ti.png">
+     <image class="photo" wx:for="{{headpaths}}" wx:key="unique" src="{{item}}" data-index="{{index}}" bindtap="previewImage" ></image>
+     </image>
+    </view>
+  </view>
+</view>
+<view class="t">
+  <text>请上传一张清晰的本人正面照片:</text>
+  <text class="shangchuan" bindtap="gotohead">点击上传</text>
+</view>
+<view class="t">
+  <text >请填写工作经历:</text>
+</view>
+ <view class="question_border two">
+    <input type="text" value="{{q_content}}" bindinput="formtext" name="textarea" placeholder='请输入详细内容...'  auto-height="true" maxlength="500"></input>
+  </view>
+<view class="t">
+  <text>请上传证件照</text>
+  <text class="shangchuantwo" bindtap="gotophoto">点击上传</text>
+</view>
+
+<view class="question_two">
+    <image class="q_img" wx:for="{{photopaths}}" wx:key="unique" src="{{item}}" data-index="{{index}}" bindtap="PreviewImage" ></image>
+</view>
+
+<view>  
+  <button formType="submit" class="sure" bindtap="tijiao">提交</button>
+</view>
+</form>
+

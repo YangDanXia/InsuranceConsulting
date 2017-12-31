@@ -1,0 +1,66 @@
+<!--index.wxml-->
+
+<!-- 头像信息 -->
+<view class="w_h one">
+  <image wx:if="{{!hasUserInfo && canIUse}}" class="userinfo-avatar" src="../../image/icon/ti.png"  background-size="cover"></image>
+  <image wx:else="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"  bindgetuserinfo="getUserInfo"></image>
+  <text class="userinfo-hi">Hi,{{userInfo.nickName}}</text>
+</view>
+
+
+<view class="b_b"></view>
+
+<view class="beCounselor">
+   <image class="HeaderIcon" src="../../image/icon/consultant.png"></image>
+  <view class="headtext">
+ <view class="headtext1"> <text class="headtext11">我要成为保险顾问</text> </view>
+ </view>
+ <view class="beCounselorIcon" bindtap='gotoinsurance'>发送请求</view>
+  </view>
+
+<view class="b_b"></view>
+
+
+
+<!-- 功能列表 -->
+<view class="w_h two" bindtap='gotonews'>
+    <image class="my_icon" src="../../image/icon/xx.png">
+  </image><text class="my_check">消息</text>
+  <image class="go_icon" src="../../image/icon/enter.png">
+  </image>
+  <view wx:if="{{con}}">
+    <view class="red">
+      <text class="number">{{what}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{e}}">
+  <view class="w_h two" bindtap="tohistory_question">
+    <image class="my_icon" src="../../image/icon/w_q.png">
+    </image><text class="my_check">历史提问</text>
+    <image class="go_icon two" src="../../image/icon/enter.png">
+  </image>
+  </view>
+</view>
+<view wx:else> 
+  <view class="w_h two" bindtap="tohistory_answer">
+    <image class="my_icon" src="../../image/icon/w_q.png">
+    </image><text class="my_check">历史回答</text>
+    <image class="go_icon two" src="../../image/icon/enter.png">
+  </image>
+  </view>
+</view>
+
+<view class="w_h two three" bindtap="gotofeedback">
+    <image class="my_icon" src="../../image/icon/advice.png">
+  </image><text class="my_check">意见反馈</text>
+  <image class="go_icon two" src="../../image/icon/enter.png">
+  </image>
+</view>
+
+<!-- 
+<view class="b_b"></view>
+<view class="w_h two" bindtap='gotoinsurance'>
+    <image class="my_icon" src="../../image/icon/insurance.png">
+  </image><text class="my_check">我要成为保险顾问</text>
+</view> -->

@@ -1,0 +1,65 @@
+/* pages/discuss_again/discuss_again.wxss */
+page{
+  background-color: #f7f8f8;
+}
+.all
+{
+  display: flex;
+  margin:20rpx;
+  flex-direction: column;
+  border: 1px solid #e6e6e6;
+}
+
+.head
+{
+  height:8%;
+  background-color:#e6e6e6;
+  padding:10rpx;
+
+}
+.headtext
+{
+  margin-left:20rpx;
+  font-size:33rpx;
+}
+.background
+{
+  display: flex;
+  height:100%;
+  background-color: #fff;
+  flex-direction:column;
+  justify-content: flex-start;
+  padding:20rpx;
+  margin-top: 20rpx;
+}
+.secondtext
+{
+  color: #8a8a8a;
+  font-size: 37rpx;
+  margin-left:75%;
+  margin-top:3%;
+}
+
+.border_all
+{
+  display: flex;
+}
+.two_question
+{
+  display: -webkit-box;
+  height:100%;
+  color:#000000;
+  line-height:60rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.two_question.answer
+{  
+  color:#515151;
+  font-size:36rpx;
+  -webkit-line-clamp:3;
+}

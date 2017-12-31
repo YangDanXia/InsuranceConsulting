@@ -1,0 +1,16 @@
+/* pages/my/news/all_new/all_new.wxss */
+page
+{
+  background-color:#f7f8f8;
+}
+.f
+{
+  margin: 4% 4% 0% 4%;
+  background-color: #fff;
+  padding:3%;
+
+}
+.f_text
+{
+  color: #515151;
+}

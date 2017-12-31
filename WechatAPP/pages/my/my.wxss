@@ -1,0 +1,145 @@
+/**my.wxss**/
+
+.go_icon
+{
+  display: flex;
+  margin-top:30rpx;
+  margin-left:62.5%;
+  width:40rpx;
+  height:40rpx;
+}
+.go_icon.two
+{
+  margin-left:54%;
+}
+.w_h
+{
+  display:flex;
+  background-color:#fff;
+  border-bottom:1px solid #f5f5f5;
+}
+.w_h.one
+{
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  background-color:#fff;
+  border-bottom:none;
+}
+.userinfo-avatar {
+  display: flex;
+  width: 148rpx;
+  height: 148rpx;
+  margin-top: 70rpx;
+  margin-bottom:25px;
+  border-radius: 50%;
+}
+.userinfo-hi
+{
+  font-size: 70rpx;
+  color:#efb336;
+  margin-bottom:35rpx;
+}
+.userinfo-nickname {
+  display: flex;
+  font-size:70rpx;
+  color: #aaa;
+}
+.b_b
+{
+  margin-top:25rpx;
+}
+.w_h.two
+{
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.w_h.two.three
+{
+  border-bottom: none;
+}
+.my_icon {
+  display: flex;
+  width: 45rpx;
+  height: 45rpx;
+  margin:20rpx 30rpx 20rpx 40rpx;
+  border-radius: 25%;
+  background-color:#fff;
+}
+.my_dot
+{
+  width: 45rpx;
+  height: 45rpx;
+  margin:20rpx 30rpx 20rpx 40rpx;
+}
+.red
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+  background-color: red;
+  width:45rpx;
+  height:30rpx;
+  border-radius: 25px;
+  margin:37rpx 0rpx 20rpx 20rpx;
+  text-align: center;
+
+}
+.number
+{
+  font-size: 28rpx;
+  color: white;
+}
+.my_check
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size:32rpx;
+  background-color:#fff;
+  
+}
+
+.beCounselor{
+   display: flex;
+    width: 100%;
+   height:120rpx;
+   background: white;
+}
+.HeaderIcon{
+  display:flex;
+  width:80rpx;
+  height:80rpx;
+  border: 1px none;
+  border-radius:50px;
+  margin-left:20rpx;
+  margin-top:20rpx ;
+}
+.headtext1{
+margin-top:35rpx;
+margin-left:20rpx;
+font-size:32rpx;
+
+}
+
+
+.headtext2{
+margin-left:10rpx;
+}
+.beCounselorIcon{
+  display: inline-block;
+  width: 200rpx;
+  height:60rpx;
+  margin-left:120rpx;
+  margin-top:22rpx; 
+  line-height:60rpx;   
+  border: 9rpx solid #55affc ;
+  border-radius:45%;
+   font-weight:500;
+  font-size:90%;
+  text-align:center;
+  color: white;
+  background:#55affc;
+
+}

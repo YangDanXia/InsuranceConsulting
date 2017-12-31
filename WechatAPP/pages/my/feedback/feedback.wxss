@@ -1,0 +1,37 @@
+.kong
+{
+  margin-top:20rpx;
+}
+.b_g
+{
+  display: flex;
+  height:55rpx;
+  padding:20rpx 0rpx 1rpx 20rpx;
+  background-color:#efeeee;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+.b_text
+{
+  font-size: 33rpx;
+  color: #999;
+}
+.textare
+{
+  height: 350rpx;
+  padding:20rpx 0rpx 20rpx 40rpx;
+  background-color: #fff;
+}
+.way
+{
+  height:55rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding:20rpx 0rpx 20rpx 40rpx;
+  background-color: #fff;
+}
+.sure
+{
+  margin:200rpx 40rpx 0rpx 40rpx;
+  color: #fff;
+  background-color: #73b4ef;
+}

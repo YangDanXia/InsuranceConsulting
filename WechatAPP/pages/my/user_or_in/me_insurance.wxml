@@ -1,0 +1,21 @@
+<!--pages/my/user_or_in/me_insurance/me_insurance.wxml-->
+<!--pages/my/history_answer/history_answer.wxml-->
+<view class="first">
+  <text class="text_one">您总共回答了</text><text class="text_two"></text>
+    <text class="text_one text_two">{{n}}</text><text class="text_two"></text>
+      <text class="text_one text_three">个问题</text><text class="text_two"></text>
+
+</view>
+
+<view class="takepart" wx:for="{{group}}">
+  <view class="border_all two">
+    <text class="text">问题：{{item.questionTitle}}</text>
+  </view>
+  <view class="border_all two">
+    <text class="text">相关描述：{{item.questionDetail}}</text>
+  </view>
+</view>
+
+ 
+
+

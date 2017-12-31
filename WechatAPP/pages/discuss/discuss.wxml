@@ -1,136 +1,50 @@
 <!--index.wxml-->
+<!-- loading -->
+<loading hidden="{{loadhidden}}">
+    加载中...
+</loading>
+
+<view class='body'>
+
+<image class="jia" src="../../image/icon/j.png" bindtap="toast"></image>
+
+<view class="title">
 <view class="headline">
-  <text class="head-text" >保险百事通</text>
+
+  <view class="head-text" >{{title}}</view>
+  <view class="data1">
+ <image class="my_icon" src="../../image/icon/riqi.png">
+  </image><text class="my_check">{{date}}</text>
+  </view>
+ <text class="body-text" >{{bodytext}}</text>
+<image class="headimage" src="../../image/show/head.jpg" bindtap="toast" ></image>
 </view>
-<view style="width:92%;margin-top:60rpx;margin-bottom:30rpx;margin-left:30rpx; border:1rpx solid 	#F5F5F5;"></view>
-
-<image class="jia" src="../../image/icon/ask.png" bindtap="toast"></image>
-
-<view class="totalsort">
-  <view class="sort_one one">
-  理财保险</view>
-  <view class="sort_one two">
-  人寿保险</view>
-  <view class="sort_one three">
-  医疗保险</view>
-  <view class="sort_one one">
-  少儿保险</view>
-
-  <view class="sort_one two">
-  意外保险</view>
-  <view class="sort_one three">
-  养老保险</view>
-
-  <view class="sort_one one">
-  社保</view>
-  <view class="sort_one two">
-  保险流程</view>
-    <view class="sort_one three more">
-  全部分类</view>
 </view>
 
-<view class="bodyhead">
-  <text class="bodyhead-text" >推荐</text>
-</view>
-<view style="width:92%;margin-bottom:30rpx;margin-left:30rpx; border:1rpx solid 	#F5F5F5;"></view>
 
-<view class="background">
+
+<view class="recbackground">
+
+ <view class="bodyhead">
+ <image class="recommendicon" src="../../image/icon/tuijian.png"></image>
+  <text class="bodyhead-text" >讨论</text>
+  <text class="bodyhead-textb" >默认排序</text>
+  <image class="recommendiconb" src="../../image/icon/paixv.png"></image>
+</view>
+
+
+<view wx:for="{{answ}}" class='recommend-list'>
   <view class="recommend">
-    <image class="tou" src="../../image/show/one.jpg"></image>
-    <text class="small">热门话题，来自：医疗保险</text>
+    <image class="tou" src="../../image/icon/touxiang.png"></image>
+    <view>
+    <view  class='data2'><text class="small">{{item.commentId}}</text></view>
+     <view class='data2'><text class='small2'>{{item.gmt_create}}</text></view>
+    </view>
   </view>
   <view class="border_all recommend">   
-    <text class="two_question" bindtap="totake_part">我买了分红保险3年，还有俩年没交，请问可以全额退款吗</text>
-  </view>
-  <view class="border_all recommend" bindtap="todiscuss_all">
-    <text class=" two_question answer">犹豫期内退保没有损失，其余时间退保是非常不合适的，只能退现金价值，建议不要退保。</text>
+    <text class="two_question" bindtap="totake_part">{{item.commentContent}}</text>
   </view>
 </view>
 
-<view style="width:92%;margin-top:30rpx;margin-bottom:30rpx;margin-left:30rpx; border:1rpx solid 	#F5F5F5;"></view>
-
-<view class="background">
-  <view class="recommend">
-    <image class="tou" src="../../image/show/one.jpg"></image>
-    <text class="small">热门话题，来自：保险流程</text>
-  </view>
-  <view class="border_all recommend">   
-    <text class="two_question " bindtap="totake_part">保险公司保险业务流程是怎么样的</text>
-  </view>
-  <view class="border_all recommend" bindtap="todiscuss_all">
-    <text class=" two_question answer">保险公司的业务大概六个阶段:
-　　一、接单初审 业务员到受理点交单，接单人员根据交单条件进行接单初审，接单初审环节作为新单进公司的第一关，主要是将不合格的投保件剔除掉.这一环节须严格把关，以减少各种因投保单填写等方面不合格而导致该单不能正常进行的情况的发生。
-　　二、新单登记
-　　在初审后，一步重要的工作是新单登记。所谓新单登记，其实是对某些重要信息的第一次录入。这次录入的项目目的一是为了尽快产生一些必要的信息以便和财务进行勾结，二是为了打出营销速报，三是为了确保这些信息的正确性（和正式录入时有校验过程）。
-　　三、录入复核
-　　新单登记后开始正式录入工作（即第二次录入），录入完成后进行复核。在录入、复核环节流程贯穿了记差错这么一个思想。即后一个环节记前一个环节的差错（录入记接单人员、复核记录入），这种作法为对内勤、外勤进行考核提供了一些基础数据。
-　　四、复核完成后进入核保
-核保按照惯例分成了事务核保和医务核保。事务核保和医务核保有机结合，对投保件作出风险评估，同时作出各种核保处理。
-　　五、登录制单
-　　核保通过的投保件，电脑将自动向财务发出对帐的请求。只要财务的实收暂收费大于或等于业务应收费（标准保费和加费之和），该投保件即可在电脑上实现登录。登录是一个确认该投保件符合出单条件的过程，是出单的必要条件。对于核保通过，但财务暂收费小于业务应收费的，电脑将自动产生一条应收记录，并打印催缴通知书，敦促客户缴费。 保单登录后，即可打印，经过配页，再次复核，装订这些过程，即完成了制单部分的工作。
-　　六、保单发送
-　　制单后对保单进行清分，并通过各种方式送达客户，在客户签收后，对回执进行录入，开始计算冷静期。同时即可进行投保资料的建档工作。 在实际中，会遇到一些特殊情况，流程提出了解决办法，其思想同正常新单业务的处理是一致的。</text>
-  </view>
 </view>
-
-<view style="width:92%;margin-top:30rpx;margin-bottom:30rpx;margin-left:30rpx; border:1rpx solid 	#F5F5F5;"></view>
-
-<view class="background">
-  <view class="recommend">
-    <image class="tou" src="../../image/show/one.jpg"></image>
-    <text class="small">热门话题，来自：养老保险</text>
-  </view>
-  <view class="border_all recommend">   
-    <text class="two_question " bindtap="totake_part">50岁以上如何购买养老保险？</text>
-  </view>
-  <view class="border_all recommend" bindtap="todiscuss_all">
-    <text class=" two_question answer">如果是女性，已超过法定退休年龄，不能再办养老保险了，如果是男性（城镇户籍），可凭本人身份证、户口簿到户籍地所在的社保经办部门办理参加养老保险手续。</text>
-  </view>
 </view>
-
-
-<view style="width:92%;margin-top:30rpx;margin-bottom:30rpx;margin-left:30rpx; border:1rpx solid 	#F5F5F5;"></view>
-
- <view class="background">
-  <view class="recommend">
-    <image class="tou" src="../../image/show/one.jpg"></image>
-    <text class="small">热门话题，来自：社保</text>
-  </view>
-  <view class="border_all recommend">   
-    <text class="two_question " bindtap="totake_part">社保指的是什么?</text>
-  </view>
-  <view class="border_all recommend" bindtap="todiscuss_all">
-    <text class=" two_question answer">我们常说“三险一金”“五险一金”，这指的是具体的社保和住房公积金种类。
-五险一金：养老保险、失业保险、工伤保险、医疗保险、生育保险+住房公积金。其中，医疗保险分为基本医疗保险和大额互助保险。
-“三险一金”是比较早的说法，因为工伤保险是04年实行的，生育保险是06年实行的，这两险是后来的，再早的时候当然只有“三险”了：）还有一种“三险”的说法，是因为工伤保险、生育保险个人不缴费，全部单位缴费，个人缴费的实际上就 养老保险、失业保险和医疗保险。
-这些都是社会保险，国家强制参加的。只要存在劳动关系，就应该签合同上保险。商业保险是个人自愿投保，但社会保险是国家强制性投保。国家认为：个人消费不理性，年轻时有钱就先花光了，到退休了就麻烦了，如果大家都没钱养老，实际上还是增加了国家的不稳定因素和社会保障负担，所以要强制给大家上养老保险；同理，工伤事故这种小概率事件一旦发生，对个人、企业的风险都会很大，无论从员工个人利益还是社会稳定的角度来说，都得强制缴纳工伤保险……
-社会保险除养老保险外是缴费当期符合条件后享受待遇，譬如生育保险是发生了分娩或计划生育手术，可以报销费用并享受生育津贴；工伤保险是发生了工伤事故可以报销符合条件的全部医疗费用并享受工伤补助金；失业保险是在失业的状况下可以领取失业补助金等等……
-养老保险是缴费达到一定年限，达到退休年龄时候可以办理退休，那时不用缴费，但是每月可以从社保领取养老金，直至去世。
-所以，社会保险是非常有必要的，而且对个人有好处。如果现在意识不到重要性，不缴纳社保。到老了之后没有养老保险、医疗保险等，将是一件很麻烦的事情。
-缴费多少，每个人基数不一样，计算出来也不一样。你可以用自己的基数参考成都市社会保险缴费比例自己计算一下。
-一、各项社会保险费的缴费比例 单位缴纳比例 个人缴纳比例
-基本养老保险 20%（有雇工的城镇个体工商户：12%） 8%
-失业保险 2% 1%（农民合同工个人不缴纳）
-基本医疗保险 7.5% 2%
-生育保险 0.6% 个人不缴纳
-工伤保险 根据行业确定基准费率
-一类行业0.6%、二类行业1.2%、三类行业2% 个人不缴纳</text>
-  </view>
-</view>
-
-
-<!-- <view class="container">
-  <view class="button-all one" bindtap="toanli">
-  <text class="button-text">精品案例</text>
-  </view>
-  <view class="button-all two" bindtap="todiscuss_again">
-  <text class="button-text two">问题讨论</text>
-  </view>
-</view>
-<view class="container">
-  <view class="button-all three" bindtap="tosort">
-  <text class="button-text three">问题分类</text>
-  </view>
-  <view class="button-all four" bindtap="tozhuce">
-  <text class="button-text">我要成为保险顾问</text>
-  </view>

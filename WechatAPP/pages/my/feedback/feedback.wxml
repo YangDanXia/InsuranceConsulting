@@ -1,0 +1,14 @@
+<!--pages/my/feedback/feedback.wxml-->
+<view class="b_g">
+  <text class="b_text">问题和意见</text>
+</view>
+<view class="textare">
+  <textarea type="text" value="{{feedBack}}" placeholder='简要描述您要反馈的问题和意见' auto-height="true" maxlength="500" bindinput='get_feedback'></textarea>
+</view>
+<view class="b_g">
+  <text class="b_text">联系方式</text>
+</view>
+<view class="way">
+  <input class="inputone" type="text" value="{{qq}}" placeholder='微信/QQ/邮箱' bindinput='get_input'></input>
+</view>
+  <button formType="submit" class="sure" bindtap="getbutton">提交</button>

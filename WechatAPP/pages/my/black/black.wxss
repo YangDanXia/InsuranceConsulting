@@ -1,0 +1,26 @@
+/* pages/my/black/black.wxss */
+page
+{
+  background-color:#fff;
+}
+.a
+{
+  display: flex;
+  height: 1000rpx;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img
+{
+  display: flex;
+  width:350rpx;
+  height:350rpx;
+}
+.text
+{
+  margin-top:70rpx;
+  display: flex;
+  font-size: 40rpx;
+  color: #1296db;
+}

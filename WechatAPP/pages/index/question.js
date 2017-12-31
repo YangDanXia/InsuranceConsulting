@@ -100,7 +100,7 @@ Page({
             name: 'photo',
             success: function (res) {
               console.log(res)
-              imagePath[i] = "http://120.78.89.170/Public/Image/"+res.data.data.pictureUrl
+              imagePath[i] = "http://120.78.89.170/Public/Image/"+res.data
               ++sum;
               if (sum == image.length - 1) {
                 wx.request({

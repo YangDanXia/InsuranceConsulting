@@ -1,0 +1,7 @@
+<!--pages/my/black/black.wxml-->
+<view class="a">
+  <image class="img" src="/pages/image/none.png"></image>
+  <view>
+    <text class="text">您还没有提问过...</text>
+  </view>
+</view>

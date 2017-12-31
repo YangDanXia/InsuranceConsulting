@@ -1,0 +1,54 @@
+/* pages/my/user_or_in/me_insurance/me_insurance.wxss */
+/* pages/my/history_question/history_question.wxss */
+page{
+  background-color: #fff;
+}
+.first{
+  display: flex;
+  height:350rpx;
+  margin-bottom:30rpx;
+  background-color: #83c6c2;
+}
+.text_one
+{
+  display: flex;
+  margin-left:5%;
+  margin-top:12%;
+  color: #fff;
+  font-size: 45rpx;
+}
+.text_one.text_two
+{
+  margin-top:20%;
+  color: #fff;
+  margin-left:15%;
+  font-size: 70rpx;
+}
+.text_one.text_three
+{
+  margin-top:22%;
+  color: #fff;
+  margin-left:15rpx;
+  font-size: 45rpx;
+}
+
+.takepart
+{
+  display:block;
+  margin:25rpx;
+}
+.border_all
+{
+  display: flex;
+  flex-direction: row;
+  background-color: #d4edec;
+  padding:20rpx;
+}
+.border_all.two
+{
+  height:100%;
+}
+.text
+{
+  font-size:40rpx;
+}

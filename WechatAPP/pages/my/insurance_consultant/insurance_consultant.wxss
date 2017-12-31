@@ -1,0 +1,97 @@
+/* pages/my/insurance_consultant/insurance_consultant.wxss */
+page{
+  background-color: #fff;
+}
+.first
+{
+  padding:5rpx;
+}
+.shunxu
+{
+  display: flex;
+  flex-direction: row;
+}
+.one
+{
+  display: flex;
+  flex-direction: column;
+  margin-left:25rpx;
+}
+.text
+{
+  font-size: 38rpx;
+  margin-top: 50rpx;
+  width:150rpx;
+}
+.a
+{
+  display: flex;
+  margin-top:35rpx;
+}
+.a.b
+{
+  width:230rpx;
+  height:270rpx;
+  border: 1px #8a8a8a solid;
+  margin-left:70rpx;
+}
+.i_p
+{
+  width:250rpx;
+  height:60rpx;
+  margin-top:48rpx;
+  border-bottom:1px solid #e6e6e6;
+}
+.photo
+{
+  display: flex;
+  width:230rpx;
+  height:270rpx;
+}
+.t{
+  margin-top: 40rpx;
+  margin-left:28rpx;
+}
+.shangchuan
+{
+  margin-left:75rpx;
+  color:#7cb7f2;
+}
+.shangchuantwo
+{
+  margin-left:340rpx;
+  color:#7cb7f2;
+}
+.question_border
+{
+  display:flex;
+  flex-direction:row;
+  border:2px solid #e6e6e6;
+  border-radius: 25rpx;
+  padding:25rpx;
+}
+.question_border.two
+{
+  margin:25rpx;
+  height:400rpx;
+}
+.sure
+{
+  margin:20rpx;
+  color: #fff;
+  background-color: #7cb7f2;
+}
+.question_two
+{
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+  border: 1px #fff solid;
+}
+.q_img
+{
+  width:120rpx;
+  height:120rpx;
+  margin: 20rpx;
+}
