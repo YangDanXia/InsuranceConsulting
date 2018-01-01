@@ -2,10 +2,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" >
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
@@ -23,11 +23,11 @@ $(function(){
         	<div class="box_t">
             	<span class="name">问题列表</span>
                 <div class="position">
-                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">审核管理</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">问题审核</a>
                 </div>
           </div>
@@ -36,7 +36,7 @@ $(function(){
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table" style="width:750px">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                   <th data-field="questionId" scope="col">问题编号</th>
+                   <th data-field="questionId" scope="col" data-sortable="true">问题编号</th>
                    <th data-field="userNickName" class="zt" scope="col">提问者</th>
                    <th data-formatter="costFormatter" data-field="questionCost" scope="col">费用类型</th>
                    <th data-field="questionType" scope="col">问题类型</th>
@@ -48,14 +48,13 @@ $(function(){
         </div>
     </div>
 </div>
-<script type="text/javascript" src="JS/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
     var data={
         key:"haiqian"
       };
       $.post('http://120.78.89.170/question/application/list',data, function(res) {
-         console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -72,6 +71,6 @@ $(function(){
   });
 
 </script>
-<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript" src="../../JS/common.js"></script>
 </body>
 </html>

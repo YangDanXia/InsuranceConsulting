@@ -2,7 +2,7 @@
 * @Author: YDX
 * @Date:   2017-12-11 10:59:30
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-22 20:47:06
+* @Last Modified time: 2018-01-01 16:27:45
 */
 
 
@@ -16,7 +16,7 @@ $(document).ready(function(){
        'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
            var userId = row.userId;
-           window.location = "issueInfo.html?id="+userId+"&type=Q";
+           window.location = "../issue/issueInfo.html?id="+userId+"&type=Q";
         }
     };
 
@@ -26,9 +26,21 @@ $(document).ready(function(){
        'click .detailBtn': function (e, value, row, index) {
          //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
            var userId = row.userId;
-           window.location = "issueInfo.html?id="+userId+"&type=A";
+           window.location = "../issue/issueInfo.html?id="+userId+"&type=A";
         }
     };
+
+
+
+  // 查看官方顾问的历史解答记录
+    window.historicalOfficalEvents = {
+       'click .detailBtn': function (e, value, row, index) {
+         //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
+           var userId = row.adminAccount;
+           window.location = "../issue/issueInfo.html?id="+userId+"&type=A";
+        }
+    };
+
 
    // 选择栏
     window.chooseEvents = {
@@ -44,7 +56,6 @@ $(document).ready(function(){
           if(flag){
            chooseUserId.push(_id);
           }
-           console.log('You click like icon, row: ' + chooseUserId);
         } 
     };
    
@@ -75,7 +86,6 @@ $(document).ready(function(){
             questionId:row.questionId
            }
            $.post('http://120.78.89.170/question/pass',data, function(res) {
-                console.log(res);
                 if(JSON.parse(res).code == "200"){
                    alert("操作成功！");
                    location.reload();
@@ -94,7 +104,6 @@ $(document).ready(function(){
                  questionResult:failReason
               }
               $.post('http://120.78.89.170/question/notpass',data, function(res) {
-                 console.log(res);
                  if(JSON.parse(res).code == "200"){
                     alert("操作成功！");
                     location.reload();
@@ -123,7 +132,6 @@ $(document).ready(function(){
             userId:row.id
            }
            $.post('http://120.78.89.170/consultant/pass',data, function(res) {
-                console.log(res);
                 if(JSON.parse(res).code == "200"){
                    alert("操作成功！");
                    location.reload();
@@ -140,9 +148,7 @@ $(document).ready(function(){
               }
               var failReason=prompt("请输入驳回原因");
               if (failReason!=null && failReason!=""){ 
-                 console.log(failReason);
                  $.post('http://120.78.89.170/consultant/notpass',data, function(res) {
-                   console.log(res);
                    if(JSON.parse(res).code == "200"){
                       alert("操作成功！");
                       location.reload();
@@ -164,9 +170,8 @@ $(document).ready(function(){
             questionId:id
            }
            $.post('http://120.78.89.170/question/list',data, function(res) {
-                console.log(res);
                 if(JSON.parse(res).code == "200"){
-                   window.location = "issueInfoDetail.html?id="+id;
+                   window.location = "passIssueDetail.html?id="+id;
                 }else if(JSON.parse(res).code == "404"){
                    alert("系统出错，请稍后重试");
                 }
@@ -185,9 +190,8 @@ $(document).ready(function(){
             questionId:id
            }
            $.post('http://120.78.89.170/boutique/list',data, function(res) {
-                console.log(JSON.parse(res));
                 if(JSON.parse(res).code == "200"){
-                   window.location = "issueInfoDetail.html?id="+id;
+                   window.location = "../issue/passIssueDetail.html?id="+id;
                 }else if(JSON.parse(res).code == "404"){
                    alert("系统出错，请稍后重试");
                 }
@@ -205,7 +209,6 @@ $(document).ready(function(){
             questionId:id
            }
            $.post('http://120.78.89.170/question/boutique',data, function(res) {
-                console.log(JSON.parse(res));
                 if(JSON.parse(res).code == "200"){
                   alert("设置成功！");
                   location.reload();
@@ -237,8 +240,8 @@ $(document).ready(function(){
   // 问题审核
    function checkOpinionFormatter(value,row,index){
      return [
-      '<img class="agreeBtn" src="Image/pass.png" height="25" width="25" style="padding:2px 10px 0 10px;cursor:pointer" />',
-      '<img class="failBtn" src="Image/fail.png" height="20" width="20" style="padding:2px 0 0 10px;cursor:pointer"/>'
+      '<img class="agreeBtn" src="../../Image/pass.png" height="25" width="25" style="padding:2px 10px 0 10px;cursor:pointer" />',
+      '<img class="failBtn" src="../../Image/fail.png" height="20" width="20" style="padding:2px 0 0 10px;cursor:pointer"/>'
       ]
       .join('');
    }
@@ -247,9 +250,9 @@ $(document).ready(function(){
    function beCaseFormatter(value, row, index) {
         var isClassic= row.isClassic;
         if(isClassic == "1"){
-         return ['<img src="Image/classic.png" height="35" width="35" style="padding-left: 20px;"/>'].join('');
+         return ['<img src="../../Image/classic.png" height="35" width="35" style="padding-left: 20px;"/>'].join('');
         }else{
-         return ['<img class="classBtn" src="Image/notClassic.png" height="35" width="35" style="padding-left: 20px;cursor:pointer"/>'].join('');
+         return ['<img class="classBtn" src="../../Image/notClassic.png" height="35" width="35" style="padding-left: 20px;cursor:pointer"/>'].join('');
         }
 
     }

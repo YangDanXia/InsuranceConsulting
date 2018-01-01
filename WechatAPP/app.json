@@ -7,7 +7,7 @@
     "pages/my/my",
 
     "pages/discuss/discuss",
-
+   "pages/my/user_or_in/all/user_new",
     "pages/index/classicCase",
     "pages/index/detail",
     "pages/my/user_or_in/me_user",

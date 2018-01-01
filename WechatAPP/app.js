@@ -94,10 +94,13 @@ App({
       key: key
     });
   },
-
+  
   //缓存内容
   cache: {},
   globalData: {
-    userInfo: null
+    userInfo: null,
+    id: '',
+    question: '',
+    content: ''
   }
 })

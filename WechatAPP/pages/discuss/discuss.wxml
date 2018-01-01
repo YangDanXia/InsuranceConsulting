@@ -6,7 +6,15 @@
 
 <view class='body'>
 
-<image class="jia" src="../../image/icon/j.png" bindtap="toast"></image>
+ <view class="search-bar">
+    <view class="search-wrap">
+        <input type="text" placeholder="说说你的看法..." class="search-input"  bindtap='commentInput' />
+    </view>
+ <view class="bodyhead2" bindtap="sendcomment">
+ <image class="sendcom" src="../../image/icon/send.png"></image>
+  <text class="bodyhead-text" >发布</text>
+</view>
+  </view>
 
 <view class="title">
 <view class="headline">
@@ -37,8 +45,8 @@
   <view class="recommend">
     <image class="tou" src="../../image/icon/touxiang.png"></image>
     <view>
-    <view  class='data2'><text class="small">{{item.commentId}}</text></view>
-     <view class='data2'><text class='small2'>{{item.gmt_create}}</text></view>
+    <view  class='data2'><text class="small">{{item.userNickName}}</text></view>
+     <view class='data2'><text class='small2'>{{item.commentCreateTime}}</text></view>
     </view>
   </view>
   <view class="border_all recommend">   

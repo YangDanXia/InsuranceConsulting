@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"> 
+     <link rel="stylesheet" type="text/css" href="../CSS/list.css" />
+    <title>保险百事通管理员系统</title> 
+    <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+ <script type="text/javascript" src="../JS/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    //自适应屏幕宽度
+    window.onresize=function(){ location=location }; 
+    
+    var main_h = $(window).height();
+    $('#selectnav').css('height',main_h+'px');
+});
+</script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="panel-group" id="selectnav" style="margin-bottom:0px">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a class="navhead" data-parent="#selectnav" data-toggle="collapse" data-target="#userManage">用户管理</a>
+                    </h4>
+                </div>
+                <div id="userManage" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="consultant/userInfo.html" class="option" target="main">查看用户</a></li>
+                            <li><a href="consultant/advisorInfo.html" class="option" target="main">查看保险顾问</a></li>
+                            <li><a href="consultant/officalConsultantInfo.html" class="option" target="main">查看官方顾问</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a class="navhead" data-parent="#selectnav" data-toggle="collapse" data-target="#checkManage" >审核管理</a>
+                    </h4>
+                </div>
+                <div id="checkManage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="issue/issueCheck.html" class="option" target="main">问题审核</a></li>
+                            <li><a href="consultant/advisorCheck.html" class="option" target="main">顾问资格审核</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a class="navhead" data-parent="#selectnav" data-toggle="collapse" data-target="#issueManage">问题管理</a>
+                    </h4>
+                </div>
+                <div id="issueManage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="issue/payIssueInfo.html" class="option" target="main">付费问题</a></li>
+                            <li><a href="issue/freeIssueInfo.html" class="option" target="main">免费问题</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a class="navhead" data-parent="#selectnav" data-toggle="collapse" data-target="#caseManage">精品案例</a>
+                    </h4>
+                </div>
+                <div id="caseManage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="topic/caseManage.html" class="option" target="main">查看案例</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>
+                        <a class="navhead" data-parent="#selectnav" data-toggle="collapse" data-target="#topicManage">话题讨论</a>
+                    </h4>
+                </div>
+                <div id="topicManage" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul>
+                            <li>
+                              <a href="topic/addTopic.html" class="option" target="main">发布话题</a>
+                            </li>
+                            <li>
+                              <a href="topic/topicInfo.html" class="option" target="main">查看话题</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../JS/list.js"></script>
+</body>
+</html>

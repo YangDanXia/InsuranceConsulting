@@ -32,8 +32,8 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
+          console.log(res)
           app.globalData.userInfo = res.userInfo
-          var info = res.userInfo
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -42,8 +42,8 @@ Page({
             url: "http://120.78.89.170/user/add",
             method: "POST",
             data: {
-              userNickName: info.nickName,
-              userPicture: info.avatarUrl,
+              userNickName: that.data.userInfo.nickName,
+              userPicture: that.data.userInfo.avatarUrl,
               userWechatId: app.globalData.openid,
               key:"haiqian"
             },
@@ -51,17 +51,31 @@ Page({
               'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
             },
             success: function (res) {
+              console.log("return:")
+              console.log(res)
+              // app.globalData.userId = res.data.data.userId
               that.setData({
                 userid: res.data.data.userId,
                 adminType:res.data.data.adminType
               })
-              var userInfo = {
-                userId: res.data.data.userId,
-                nickName: info.nickName,
-                avatarUrl: info.avatarUrl,
-                userType: "generalUser"
-              }
-              app.saveCache("userInfo", userInfo)
+              console.log("本地")
+              console.log(that.data.userid)
+              wx.setStorage({
+                key: 'adduserId',
+                data: that.data.userid,
+                success: function (res) {
+                  console.log("你好")
+                  console.log(that.data.userid)
+                },
+              })
+              // if (它是保险顾问==0)
+              // {
+              //   e:false
+              // }
+              // else if (有消息==0)
+              // {
+              //   con:true
+              // }
             },
             fail: function (d) {
               console.log("fail")

@@ -2,7 +2,7 @@
 <view class="case-list">
 <scroll-view class="scolly" scroll-y  style="height:{{screenHeight}}px" >
   <view class="hot-box-main">
-      <view wx:for="{{List}}" wx:key="questionId">
+      <view class='result' wx:for="{{List}}" wx:key="questionId">
        <view>
         <navigator url='detail?id={{item.questionId}}'>
           <view class="list-box">

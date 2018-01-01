@@ -2,10 +2,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" >
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
   //自适应屏幕宽度
@@ -27,15 +27,15 @@ $(function(){
           <div class="box_t">
               <span class="name">问题列表</span>
                 <div class="position">
-                  <a href=""><img src="Image/icon5.png" alt=""/></a>
+                  <a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">问题管理</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">付费问题</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">免费问题</a>
                 </div>
             </div>
-            <div class="space_hx">&nbsp;</div> 
+            <div class="space_hx">&nbsp;</div>
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table" style="width:750px">
               <thead>
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
@@ -45,21 +45,20 @@ $(function(){
                    <th data-field="questionTitle" scope="col" class="limit-length">问题标题</th>
                    <th data-formatter="statusFormatter" data-field="isResolve" scope="col">解决情况</th>
                    <th class="col" data-formatter="detailFormatter" data-events="issueDetailEvents">&nbsp;&nbsp;查看详情</th>
-                   <th class="col" data-formatter="beCaseFormatter" data-events="beCaseEvents" data-field="isClassic">&nbsp;&nbsp;设为精品</th>
+                   <th class="col" data-formatter="beCaseFormatter" data-events="beCaseEvents">&nbsp;&nbsp;设为精品</th>
               </thead>   
-            </table> 
+
+            </table>
         </div>
     </div>
 </div> 
-<script type="text/javascript" src="JS/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../JS/bootstrap-table.js"></script>
 <script type="text/javascript">
-
   $(document).ready(function() {
       var data = {
         key:"haiqian"
       }
-      $.post('http://120.78.89.170/question/charge',data, function(res) {
-        console.log(res);
+      $.post('http://120.78.89.170/question/free',data, function(res) {
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -76,6 +75,6 @@ $(function(){
   });
 
 </script>
-<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript" src="../../JS/common.js"></script>
 </body>
 </html>

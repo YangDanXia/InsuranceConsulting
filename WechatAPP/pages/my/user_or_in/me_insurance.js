@@ -13,7 +13,7 @@ Page({
   onShow: function () {
     var that = this
     wx.getStorage({
-      key: 'adduserId',
+      key: 'userInfo',
       success: function (res) {
         console.log("提问问题者编号")
         console.log(res.data)

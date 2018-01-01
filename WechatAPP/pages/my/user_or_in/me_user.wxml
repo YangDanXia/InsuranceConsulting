@@ -1,20 +1,19 @@
-<!--pages/my/user_or_in/me_user/me_user.wxml-->
 <view class="first">
-  <text class="text_one">您总共提问了</text><text class="text_two"></text>
-    <text class="text_one text_two">{{n}}</text><text class="text_two"></text>
-      <text class="text_one text_three">个问题</text><text class="text_two"></text>
+<text class="text_one">您总共提问了</text><text class="text_two"></text>
+<text class="text_one text_two">{{n}}</text><text class="text_two"></text>
+<text class="text_one text_three">个问题</text><text class="text_two"></text>
+</view>
+
+<view class="takepart" wx:for="{{group}}" wx:key="unique" wx:for-index='key' wx:for-item='item'  bindtap='gotoall' id="{{key}}">
+
+    <view class="border_all two">
+    <text class="text" style='font-size:33rpx;font-weight:700'>问题：{{item.questionTitle}}   </text>
+    </view>
+    <view class="border_all two" bindlongpress="handleTap1" bindtap='handleTap2'>
+      <text class="text two" style='font-size:30rpx'>相关描述：{{item.questionDetail}}</text>
+      <view wx:if="{{control}}">
+        <image class="delete_icon" src="../../../../image/icon/delete.png"></image>
+      </view>
+    </view>
 
 </view>
-<view class="takepart" wx:for="{{group}}">
-  
-  <view class="border_all two">
-    <text class="text">问题：{{item.questionTitle}}</text>
-    <image class="delete_icon" src='../../../image/icon/delete.png'></image>
-  </view>
-
-   <view class="border_all two">
-    <text class="text">相关描述：{{item.questionDetail}}</text>
-  </view>
-</view>
- 
-

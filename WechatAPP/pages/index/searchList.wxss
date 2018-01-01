@@ -1,14 +1,18 @@
 /* pages/index/searchList.wxss */
+page{
+background-color:#f6f6f6; 
+
+}
  .list-description {
    font-size:30rpx;
  }
 
 
-.hot-box-main{ display: block; overflow: hidden; margin-bottom: 20px; background: #FFF; }
-
+.hot-box-main{position: relative; display: block; overflow: hidden; margin-bottom: 20px; background:#f6f6f6; }
+.result{ margin-bottom:10rpx;background-color:white  }
 
 .list-box{ 
-  padding: 20px 20px 15px 20px; 
+  padding: 15px 20px 10px 20px; 
   display: block; 
   position: relative;
   width:71%;
@@ -25,7 +29,7 @@
   }
 
 .list-box-title{ 
-   font-weight: 400; 
+   font-weight: 700; 
    line-height: 42rpx;
    font-size:31rpx;
     }
@@ -48,7 +52,7 @@
 .btn-enter {
   width:50rpx;
   height:50rpx;
-  padding-top:9%;
+  padding-top:7%;
 }
 
 .hot-box-main navigator{

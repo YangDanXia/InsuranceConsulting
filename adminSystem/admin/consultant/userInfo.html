@@ -2,10 +2,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" > 
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
@@ -26,11 +26,11 @@ $(function(){
         	<div class="box_t">
             	<span class="name">用户列表</span>
               <div class="position">
-                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
                   <a href="">首页</a>
-                  <span><img src="Image/icon3.png" alt=""/></span>
+                  <span><img src="../../Image/icon3.png" alt=""/></span>
                   <a href="">用户管理</a>
-                  <span><img src="Image/icon3.png" alt=""/></span>
+                  <span><img src="../../Image/icon3.png" alt=""/></span>
                   <a href="">查看用户</a>
               </div>
           </div>
@@ -50,14 +50,13 @@ $(function(){
     </div>
 </div>
 
-<script type="text/javascript" src="JS/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
       var data={
         key:"haiqian"
       };
       $.post('http://120.78.89.170/user/list',data,function(res) { 
-         console.log(res);
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -74,6 +73,6 @@ $(function(){
   });
 
 </script>
-<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript" src="../../JS/common.js"></script>
 </body>
 </html>

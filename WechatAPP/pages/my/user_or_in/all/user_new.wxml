@@ -1,0 +1,13 @@
+<view class="f">
+  <view class="one">
+    <text class="f_text">问题：{{user_question}}</text>
+  </view>
+  <view class="two">
+    <text>问题描述：</text>
+  </view>
+    <view>
+      <text class="f_text">{{user_content}}</text>
+    </view>
+
+</view>
+

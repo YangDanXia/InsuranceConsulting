@@ -2,11 +2,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" >
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<link rel="stylesheet" type="text/css" href="CSS/layer.css" />
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<link rel="stylesheet" type="text/css" href="../../CSS/layer.css" />
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
@@ -29,13 +29,13 @@ $(function(){
         	<div class="box_t">
             	<span class="name">查看详情</span>
                 <div class="position">
-                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">审核管理</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">顾问资格审核</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">资料详情</a>
                 </div>
             </div>
@@ -76,7 +76,7 @@ $(function(){
     </div>
 </div>
 
-<script type="text/javascript" src="JS/vue.min.js"></script>
+<script type="text/javascript" src="../../JS/vue.min.js"></script>
 <script type="text/javascript">
 
 
@@ -94,7 +94,6 @@ $(function(){
     methods:{
        getInfo:function(){
           $.post('http://120.78.89.170/consultant/list',data, function(res) {
-               console.log(JSON.parse(res).data);
                info.infos = JSON.parse(res).data[0]; 
            });
        }

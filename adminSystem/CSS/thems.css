@@ -109,7 +109,7 @@
 	font-size:12px;
 	border-left:1px solid #DEDEDE;
 	border-top:1px solid #DEDEDE;
-	width:650px;
+	width:680px;
 	margin-left:40px;
 }
 .list_hy th , .list_hy td{
@@ -252,7 +252,7 @@
 /*新建会议*/
 .xjhy , .sjbf{
 	background:#FFF;
-	margin:0px auto;
+	margin:0px 40px;
 	margin-top:10px;
 	border:1px solid #DEDEDE;
 }
@@ -331,7 +331,7 @@
 	vertical-align:top;
 }
 .hypz li .li_r{
-	display:inline-block;
+	display:inline-flex;
 	*display:inline;
 	zoom:1;
 	width:400px;
@@ -352,6 +352,21 @@
 	vertical-align:middle;
 	width:190px;
 }
+
+.hypz li .li_r textarea{
+	border:1px solid #DEDEDE;
+	height:240px;
+	line-height:24px;
+	padding-left:5px;
+	padding-right:5px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	vertical-align:middle;
+	width:390px;
+}
+
+
 .ping li .li_r input{
 	width:195px;
 }
@@ -481,7 +496,7 @@
 	line-height:36px;
 	color:#fff;
 	vertical-align:top;
-	margin-top:16px;
+	margin-top:230px;
 	margin-right:5px;
 	background:url(../Image/btn2.png) no-repeat;
 }
@@ -707,6 +722,7 @@
 .xjhy{
 	width:100%;
 	padding-top:30px;
+	height: 400px;
 }
 .xjhy p{
 	text-align:left;

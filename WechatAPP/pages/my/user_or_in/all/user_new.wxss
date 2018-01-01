@@ -1,0 +1,24 @@
+page
+{
+  background-color:#f7f8f8;
+}
+.f
+{
+  margin: 4% 4% 0% 4%;
+  background-color: #fff;
+  padding:3%;
+}
+.one
+{
+  margin-bottom:7%;
+}
+.two
+{
+  display: flex;
+  margin-bottom:30rpx;
+}
+.f_text
+{
+  color: #515151;
+  margin-bottom:20rpx;
+}

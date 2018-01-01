@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" > 
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    //自适应屏幕宽度
+    window.onresize=function(){ location=location }; 
+    
+    var main_h = $(window).height();
+    $('.hy_list').css('height',main_h-45+'px');
+    
+    var main_w = $(window).width();
+    $('.xjhy').css('width',main_w-200+'px');
+    
+    
+});
+</script>
+</head>
+
+<body>
+<div id="right_ctn">
+    <div class="right_m">
+        <div class="hy_list">
+            <div class="box_t">
+                <span class="name">添加话题</span>
+                <div class="position">
+                    <a href=""><img src="../../Image/icon5.png" alt=""/></a>
+                    <a href="">首页</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">话题讨论</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">添加话题</a>
+                </div>
+            </div>
+            <div class="space_hx">&nbsp;</div> 
+            <form>
+            <div class="xjhy"> 
+                <ul class="hypz">
+                    <li class="clearfix">
+                        <span class="title">标题：</span>
+                        <div class="li_r">
+                            <input  name="" type="text">
+                            <i>*</i>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <span class="title">内容：</span>
+                        <div class="li_r">
+                            <textarea rows="10" cols="30">
+                             
+                            </textarea>
+                            <i>*</i>
+                        </div>
+                    </li>
+                    <li class="tj_btn">
+                        <a href="">保存</a>
+                        <a href="" class="back">返回</a>
+                        
+                    </li>
+                </ul> 
+            </div>
+            </form> 
+        </div> 
+    </div>
+</div>
+</body>
+</html>

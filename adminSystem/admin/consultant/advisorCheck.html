@@ -2,18 +2,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" > 
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
 	window.onresize=function(){ location=location }; 
-	
+
 	var search_w = $(window).width()-40;
 	$('.search').css('width',search_w+'px');
-	//$('.list_hy').css('width',search_w+'px');
 });
 </script>
 </head>
@@ -23,14 +22,14 @@ $(function(){
 	<div class="right_m">
         <div class="hy_list">
         	<div class="box_t">
-            	<span class="name">顾问列表</span>
+            	<span class="name">注册列表</span>
                 <div class="position">
-                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">用户管理</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">查看保险顾问</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">审核管理</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">顾问资格审核</a>
                 </div>
             </div>
             <div class="space_hx">&nbsp;</div>
@@ -39,29 +38,26 @@ $(function(){
                    <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
                    <th data-field="userId" scope="col">用户编号</th>
                    <th data-field="consultantName" class="zt" scope="col">姓名</th>
-                   <th data-field="consultantPhone"scope="col">手机号</th>
-                   <th data-field="consultantExp" scope="col" class="limit-length">工作经历</th>
-                   <th class="col" data-formatter="detailFormatter" data-events="historicalAEvents">&nbsp;&nbsp;历史解答</th>
-                   <th class="col" data-formatter="detailFormatter" data-events="detailInfoEvents">&nbsp;&nbsp;详细资料</th>
+                   <th data-field="consultantPhone" scope="col">手机号</th>
+                   <th data-formatter="checkOpinionFormatter" data-events="advisorOpinionEvents" class="detailBtn">审核意见</th>
+                   <th scope="col" class="detailBtn" data-formatter="detailFormatter" data-events="advisorCheckEvents">&nbsp;&nbsp;信息详情</th>
               </thead> 
             </table>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="JS/bootstrap-table.js"></script>
+<script type="text/javascript" src="../../JS/bootstrap-table.js"></script>
 <script type="text/javascript">
   $(document).ready(function() {
-
-      var data={
+      var data = {
         key:"haiqian"
-      };
-      $.post('http://120.78.89.170/consultant/list', data,function(res) {
-         console.log(res);
+      }
+      $.post('http://120.78.89.170/consultant/application/list',data,function(res) {
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
-            search:true,
+            search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
             data:JSON.parse(res).data,
@@ -71,7 +67,8 @@ $(function(){
          });
     }); 
   });
+
 </script>
-<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript" src="../../JS/common.js"></script>
 </body>
 </html>

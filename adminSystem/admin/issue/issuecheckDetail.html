@@ -2,10 +2,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=8" >
-<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/common.css"/>
-<link rel="stylesheet" type="text/css" href="CSS/thems.css">
-<script type="text/javascript" src="JS/jquery-1.11.2.min.js"></script>
+<title>查看详情</title>
+<link rel="stylesheet" type="text/css" href="../../CSS/reset.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/common.css"/>
+<link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
+<script type="text/javascript" src="../../JS/vue.min.js"></script>
+<script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	//自适应屏幕宽度
@@ -28,63 +30,85 @@ $(function(){
         	<div class="box_t">
             	<span class="name">查看详情</span>
                 <div class="position">
-                	<a href=""><img src="Image/icon5.png" alt=""/></a>
+                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">审核管理</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">顾问资格审核</a>
-                    <span><img src="Image/icon3.png" alt=""/></span>
-                    <a href="">资料详情</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">问题审核</a>
+                    <span><img src="../../Image/icon3.png" alt=""/></span>
+                    <a href="">问题详情</a>
                 </div>
             </div>
             <div class="space_hx">&nbsp;</div>
-            <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy" id="detailTable">
               <tr>
                 <th scope="col" width="215">类型</th>
                 <th scope="col">内容</th>
               </tr>
               <tr>
-                <td>姓名</td>
-                <td><div class="mkkz">{{infos.consultantName}}</div></td>
-              </tr>
-              <tr>
-                <td>照片</td>
-                <td><div class="mkkz"><img v-bind:src="infos.consultantPhoto" height="100" width="100" alt="" /><div>
+                <td>问题标题</td>
+                <td>
+                	<div class="mkkz">{{infos.questionTitle}} </div>
                 </td>
               </tr>
               <tr>
-                <td>手机号</td>
-                <td><div class="mkkz">{{infos.consultantPhone}}</div></td>
+                <td>详细内容</td>
+                <td>
+                	<div class="mkkz">{{infos.questionDetail}} </div>
+                </td>
               </tr>
               <tr>
-                <td>专业资格证</td>
-                <td><div class="mkkz"><img v-bind:src="infos.consultantProof" alt="" /></div></td>
+                <td>照片资料</td>
+                <td>
+                	<div class="mkkz" v-if="infos.questionPhoto=='0'">
+                      <ul>无</ul>
+                  </div>
+                  <div class="mkkz" v-else>
+                     <img v-bind:src="infos.questionPhoto" alt="" /> 
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td>工作经历</td>
-                <td><div class="mkkz"><ul class="clearfix">{{infos.consultantExp}}</ul></div></td>
+                <td>问题类型</td>
+                <td>
+                    <div class="mkkz">
+                        <ul class="clearfix">{{infos.questionType}}</ul>
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                <td>费用类型</td>
+                <td>
+                   <div class="mkkz">
+                        <ul class="clearfix" v-if="infos.questionCost==1">
+                          免费问题
+                        </ul>
+                        <ul class="clearfix" v-else>
+                          付费问题
+                        </ul>
+
+                    </div>
+                </td>
               </tr>
             </table>
-            </form>
             <ul class="hypz">
               <li class="tj_btn">
-                <a class="publish">通过</a>
-                <a class="back">驳回</a>
+                <a class="publish" style="margin-top: 20px;">发布</a>
+                <a class="back" style="margin-top: 20px;">驳回</a>
               </li>
             </ul>
         </div>
     </div>
 </div>
-<script type="text/javascript" src="JS/vue.min.js"></script>
+
 <script type="text/javascript">
 
 
-  var Id = GetQueryString("id"); 
+  var Id = GetQueryString("id");  
   var data = {
             key:"haiqian",
-            userId:Id
+            questionId:Id
            };
   var info = new Vue({
     el:"#detailTable",
@@ -93,8 +117,8 @@ $(function(){
     },
     methods:{
        getInfo:function(){
-          $.post('http://120.78.89.170/consultant/list',data, function(res) {
-               console.log(JSON.parse(res).data);
+          $.post('http://120.78.89.170/question/application/list',data, function(res) {
+              console.log(JSON.parse(res).data[0]) 
                info.infos = JSON.parse(res).data[0]; 
            });
        }
@@ -102,15 +126,13 @@ $(function(){
   });
 
   info.getInfo();
- 
-   $(".publish").click(function(event) {
-     console.log(Id);
+
+  $(".publish").click(function(event) {
      var data = {
             key:"haiqian",
-            userId:Id
+            questionId:Id
            }
-           $.post('http://120.78.89.170/consultant/pass',data, function(res) {
-                console.log(res);
+           $.post('http://120.78.89.170/question/pass',data, function(res) {
                 if(JSON.parse(res).code == "200"){
                    alert("操作成功！");
                    location.reload();
@@ -121,16 +143,15 @@ $(function(){
   });
 
   $(".back").click(function(event) {
-    console.log(Id);
      var failReason=prompt("请输入驳回原因");
      if (failReason!=null && failReason!=""){ 
             var data = {
             key:"haiqian",
-            userId:Id,
-            consultantResult:failReason
+            questionId:Id,
+            questionResult:failReason
            }
-           $.post('http://120.78.89.170/consultant/notpass',data, function(res) {
-                console.log(res);
+           $.post('http://120.78.89.170/question/notpass',data, function(res) {
+
                 if(JSON.parse(res).code == "200"){
                    alert("操作成功！");
                    location.reload();
