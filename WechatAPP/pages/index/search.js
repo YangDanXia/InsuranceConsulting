@@ -53,8 +53,7 @@ Page({
     }
     // 添加搜索内容到历史记录的数组中
     var obj = this.data.historySearch;
-    var cont = {input:input}
-    this.data.historySearch.push(cont);
+    this.data.historySearch.push(input);
     // 本地缓存搜索记录
     app.saveCache("historySearch",obj);
     // 显示搜索结果

@@ -71,7 +71,8 @@ Page({
               key: 'haiqian',
               userWechatId:app.cache.openid,
               userNickName: info.nickName,
-              userPicture: info.avatarUrl
+              userPicture: info.avatarUrl,
+
             },
             header: {
               'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
@@ -83,6 +84,7 @@ Page({
                 userId:res.data.data.userId,
                 nickName: info.nickName,
                 avatarUrl: info.avatarUrl,
+                phoneNumber:'',
                 userType: "generalUser"
               }
               app.saveCache("userInfo", userInfo)

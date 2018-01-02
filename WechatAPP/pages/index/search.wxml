@@ -25,8 +25,8 @@
 <view clas="wrap">
 
 <block wx:if="{{historySearch!=[]}}"  wx:for="{{historySearch}}" wx:key="{{item}}">
-<navigator url="searchList?tag={{item.input}}" class="content" hover-class="none">
- <text class="record">{{item.input}}</text>
+<navigator url="searchList?tag={{item}}" class="content" hover-class="none">
+ <text class="record">{{item}}</text>
 </navigator>
 </block>
 </view>
