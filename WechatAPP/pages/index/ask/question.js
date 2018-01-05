@@ -10,14 +10,29 @@ Page({
   data: {
     feeType: ["付费回答", "免费回答"],
     index_fee: 0,
-    img: ["../../image/icon/addPhoto.png"],
+    img: ["../../../image/icon/addPhoto.png"],
     questionArray: ["人寿保险","健康保险","少儿保险","养老保险","意外保险","财产保险"],
     index_q: 0,
     isPublic: ["不同意", "同意"],
     index_public: 1
   },
 
+  onLoad:function(){
+    // var phone = app.cache.userInfo.phoneNumber
+    // if(phone == ''){
+    //   wx.navigateTo({
+    //     url: 'addPhone'
+    //   })
+    // }
+  },
+
   onShow:function(){    
+    var phone = app.cache.userInfo.phoneNumber
+    if (phone == '') {
+      wx.navigateTo({
+        url: 'addPhone'
+      })
+    }
   },
 
   /**
@@ -66,7 +81,7 @@ Page({
         image = that.data.img
         image[index] = res.tempFilePaths[0]
         if(index == image.length-1){
-          image.push("../../image/icon/addPhoto.png")
+          image.push("../../../image/icon/addPhoto.png")
         }
         that.setData({
           img: image
@@ -88,7 +103,7 @@ Page({
     if(title =='' || content ==''){
       wx.showToast({
         title: "标题和内容必填",
-        image: "../../image/icon/warn.png"
+        image: "../../../image/icon/warn.png"
       })
     }else if(image.length > 0){
         var sum =0;

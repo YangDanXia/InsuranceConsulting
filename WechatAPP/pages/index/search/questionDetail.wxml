@@ -1,0 +1,89 @@
+<!-- loading -->
+ <loading hidden="{{loadhidden}}">
+    加载中...
+</loading> 
+
+<scroll-view scroll-y="true" class="contain_detail_cnt" style="height:{{winHeight - 40}}px;">
+    
+	<!-- 标题 -->
+<view class='box'>
+	<view class="box-title">
+   <image wx:if="{{isResolve}}" class="box-img" src='../../../image/icon/finish.png'></image>
+   <image wx:else class="box-img" src='../../../image/icon/waiting.png'></image>
+   <view class="box-title-up">
+		<view class="title">{{introduction.questionTitle}}</view>
+    <view class='q_detail'>{{introduction.questionDetail}}</view>
+   </view>
+	</view>
+
+  <!-- 提问者 -->
+  <view class="box-bottom">
+    <view class='bottom-info'>
+      <view>发布人:GODOG</view>
+      <view>2017-02-31 17:50:50</view>
+    </view>
+    <view class='reply-btn' wx:if="{{!isResolve && userType =='consultant'}}" bindtap='showShare'>我来解答</view>
+  </view>
+</view>
+
+	<!-- 内容 -->
+	<view class="content" wx:if="{{isResolve}}">
+    <image wx:if="{{!questionCost}}" class="content-img" src='../../../image/icon/best.png'></image>
+    <image  wx:else class="content-officalImg" src='../../../image/icon/officalAnswer.png'></image>
+		<view class="contView">{{introduction.questionReply}}</view>
+
+      <!-- 点赞 -->
+    <view class="submit-btn"  bindtap="submit">
+      <view bindtap="agree">
+        <image src="../../../image/icon/zan.png" class="zan-img" />
+        <text>11</text>
+      </view>
+      <view bindtap="disagree">
+	 	    <image src="../../../image/icon/notzan.png" class="zan-img"/>
+        <text>11</text>
+      </view>
+    </view>
+	</view>
+
+
+
+
+	<!-- 评论 -->
+	<view class="content-comments" wx:else>
+		<text class="comments-title">最新回复</text>
+		<view class="comments-box" wx:if="{{comments.length > 0}}">
+			<view class="comments-list" wx:for="{{comments}}" wx:for-item="item" wx:for-index="i">
+				<view class="comments-main">
+					<view class="comments-content">
+						<text>{{item.content}}</text>
+					</view>
+          <view style='display:flex;'>
+				  	<view class="comments-author">{{item.author}}</view>
+				  	<view class="comments-data">{{item.times}}</view>
+          </view>
+				</view>
+			</view>
+		</view>
+		<!-- 没有评论 -->
+		<view class="not-comments" wx:else> 暂时还没有评论喔! </view>
+	</view>
+
+
+</scroll-view>
+
+<!-- 分享层 -->
+<view class="extra-share-box" style="display:{{shareShow}}">
+
+	<view class="share-box-show" animation="{{shareBottom}}">
+		<view class="share-box-img-box">
+     <view class="input-group">
+       <view class="input-label">回复内容</view>
+       <textarea></textarea>
+     </view>
+     <view class='summit-btn'>提交</view>
+		</view>
+		 <view class="share-box-close" bindtap="shareClose">关闭</view> 
+	</view>
+	
+	<view class="share-box-opacity" animation="{{shareOpacity}}" bindtap="shareClose"></view>
+</view>

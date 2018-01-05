@@ -94,6 +94,18 @@ App({
       key: key
     });
   },
+
+
+  /**
+ * 获取随机数
+ */
+  getRandom: function () {
+    var num = "";
+    for (var i = 0; i < 4; i++) {
+      num += Math.floor(Math.random() * 10)
+    } 
+    return num;
+  },
   
   //缓存内容
   cache: {},

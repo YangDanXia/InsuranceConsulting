@@ -25,7 +25,7 @@
             <view class="list-box-title">{{item.questionTitle}}</view>
             <view class="list-box-sub">{{item.questionDetail}}</view>
           </view>
-          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+          <image class="btn-enter" src="../../../image/icon/enter.png"></image>
         </navigator>
        </view>
 
@@ -35,7 +35,7 @@
             <view class="list-box-title">{{item.questionTitle}}</view>
             <view class="list-box-sub">{{item.questionDetail}}</view>
           </view>
-          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+          <image class="btn-enter" src="../../../image/icon/enter.png"></image>
         </navigator>
        </view>
 

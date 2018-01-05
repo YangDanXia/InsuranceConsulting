@@ -1,9 +1,14 @@
+<!-- loading -->
+ <loading hidden="{{loadhidden}}">
+    加载中...
+</loading> 
+
 <scroll-view scroll-y="true" class="contain_detail_cnt" style="height:{{winHeight - 40}}px;">
     
 	<!-- 标题 -->
 	<view class="box-title">
    <view class="box-title-up">
-    <image class="box-img" src='../../image/icon/what.png'></image>
+    <image class="box-img" src='../../../image/icon/what.png'></image>
 		<text class="title">{{comments.questionTitle}}</text>
    </view>
     <text style='color:#515151;'>{{comments.questionDetail}}</text>
@@ -11,18 +16,18 @@
 
 	<!-- 内容 -->
 	<view class="content" scroll-y="true">
-    <image class="content-img" src='../../image/icon/best.png'></image>
+    <image class="content-img" src='../../../image/icon/best.png'></image>
 		<view class="contView">{{comments.questionReply}}</view>
 	</view>
 
   <!-- 点赞 -->
   <view class="submit-btn"  bindtap="submit">
    <view bindtap="agree">
-     <image src="../../image/icon/zan.png" class="extra-share-img" />
+     <image src="../../../image/icon/zan.png" class="extra-share-img" />
      <text>11</text>
    </view>
    <view bindtap="disagree">
-	 	 <image src="../../image/icon/notzan.png" class="extra-share-img"/>
+	 	 <image src="../../../image/icon/notzan.png" class="extra-share-img"/>
      <text>11</text>
    </view>
   </view>

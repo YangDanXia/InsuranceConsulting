@@ -1,8 +1,10 @@
 const app = getApp()
 Page( {
     data: {
-        comments : [],  //问题内容
-        winHeight: app.globalData.winHeight,
+      // loading
+      loadhidden: false,
+      comments : [],  //问题内容
+      winHeight: app.globalData.winHeight,
 
     },
     onLoad: function( options ) {
@@ -31,9 +33,14 @@ Page( {
  
  
  
-
-    onReady: function() {
-      
+    onReady: function () {
+      var that = this;
+      // 数据加载完成后 延迟隐藏loading
+      setTimeout(function () {
+        that.setData({
+          loadhidden: true
+        })
+      }, 500);
     },
     onShow: function() {
         // 页面显示

@@ -42,13 +42,11 @@
 
 
 <view wx:for="{{answ}}" class='recommend-list'>
-  <view class="recommend">
-    <image class="tou" src="../../image/icon/touxiang.png"></image>
-    <view>
+    <view class="recommend"><image class="tou" src="{{item.userPicture}}"></image><view>
     <view  class='data2'><text class="small">{{item.userNickName}}</text></view>
-     <view class='data2'><text class='small2'>{{item.commentCreateTime}}</text></view>
-    </view>
-  </view>
+    <view class='data2'><text class='small2'>{{item.commentCreateTime}}</text></view>
+</view>
+</view>
   <view class="border_all recommend">   
     <text class="two_question" bindtap="totake_part">{{item.commentContent}}</text>
   </view>

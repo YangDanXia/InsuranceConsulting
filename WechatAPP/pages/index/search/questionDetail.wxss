@@ -1,0 +1,222 @@
+page{ background: #FFF; font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif; }
+.contain_detail_cnt { height: 100%; width: 100%; overflow: hidden; }
+
+.box{
+ background: #f9f9f9;
+}
+
+.box-title{ 
+ padding:10px 10px 7px;
+ display:flex;
+  }
+
+.box-title-up{
+   width:90%;
+   padding-bottom:10rpx;
+}
+
+.title{ 
+   line-height: 25px; 
+   color: #000; 
+   font-weight: 900; 
+   padding-left:13rpx;
+   padding-top:3%;
+   font-size:48rpx;
+}
+
+.q_detail{
+  color:#515151;
+font-size:32rpx;
+padding-top:3%;
+margin-left:-30px;
+
+}
+ 
+
+
+.submit-btn text{
+  color:#9c9b9b;
+  padding-right:15px;
+
+}
+
+.zan-img{ 
+  width: 30px; 
+  height: 30px; 
+  padding: 0px 10px; 
+  margin-top:10px;
+}
+
+.content{ 
+  line-height: 1.8em; 
+  margin:-10px 0;
+  font-size: 15px; 
+  color: #666; 
+  }
+ 
+.contView{ 
+  padding: 0 20px 10px; 
+  }
+
+.contView_two{
+  padding:0px 10px 0px;
+  border-bottom:1px solid #f5f5f5;
+ }
+
+ .replyArea{
+   padding:20px 10px 0px;
+font-size:20px;
+font-weight:700;
+
+ }
+
+.box-img{
+  width:90rpx;
+height:90rpx;
+}
+
+.content-img{
+  width:200rpx;
+  height:220rpx;
+  margin-bottom:-15%;
+}
+
+.content-officalImg{
+  width:200rpx;
+  height:55rpx;
+  display:inline-block;
+  overflow:hidden;
+  margin-top:7%;
+  padding-left:10px;
+}
+
+ .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13pt;
+}
+
+.reply-btn {
+ font-size:35rpx;
+ line-height:70rpx;
+ height:70rpx;
+ background:#7AC143;
+ color:#fff;
+ text-align:center;
+ border-radius:5px;
+ margin:-10rpx 0px 7px 37%;
+ width:200rpx;
+}
+.reply-btn:active {
+  opacity: .8;
+}
+
+.summit-btn {
+ font-size:36rpx;
+ line-height:75rpx;
+ height:75rpx;
+ background:#1296db;
+ color:#fff;
+ text-align:center;
+ border-radius:5px;
+ margin:0 auto;
+ width:260rpx;
+}
+.summit-btn:active {
+  opacity: .8;
+}
+
+.box-bottom{
+  display:flex;
+
+}
+
+.bottom-info{
+  color:#8a8a8a;
+padding-left:10px;
+font-size:25rpx;
+}
+
+
+/* 评论 */
+.content-comments{ margin-bottom: 20px; }
+.comments-title{ 
+  font-size: 18px; 
+  font-weight: bold; 
+  display: block;
+  padding: 10px; 
+}
+
+.comments-list{ 
+  margin-top: 10px; 
+  position: relative; 
+  min-height: 40px;
+  padding:4px 10px;
+
+  }
+.comments-avatar{ position: absolute; top: 10px; left: 10px; width: 40px; height: 40px; }
+.comments-avatar-img{ width: 40px; height: 40px; border-radius: 50%; border: 1px solid #F2F2F2; }
+.comments-main{
+  font-size: 13px; 
+  border-bottom:1px solid #e6e6e6;
+  padding-bottom:2px;
+}
+.comments-content{
+   margin-bottom: 6px; 
+   height: 20px; 
+   line-height: 20px;
+   font-size:15px; 
+   }
+.comments-zan{ float: right; padding-left: 18px; position: relative; font-weight: normal; line-height: 20px; }
+.comments-zan::before{ content: ''; height: 14px; width: 14px; background: url("../../static/zan.png")  #FFF no-repeat 50% 50%; background-size: cover; position: absolute; top: 2px; left: 0; }
+.comments-author{ color: #999; line-height: 20px; }
+.comments-data{ height: 18px; line-height: 18px; font-size: 12px; color: #999; padding-left:20px;
+}
+
+.not-comments{ text-align: center; padding: 30px 20px; font-size: 14px; color: #999; }
+
+/* 分享box */
+.extra-share-box{ display: none; width: 100%; position: fixed; bottom: 0; left: 0; right: 0; top: 0; height: 100%; }
+.share-box-show{ position: absolute; left: 0; right: 0; bottom: -210px; z-index: 2; height: 250px; background: #FFF; }
+.share-box-img-box{ 
+ display: block; 
+ overflow: hidden; 
+ }
+.share-box-img{ width: 40px; height: 40px; padding: 10px; margin: 5px 10px; float: left; }
+.share-box-opacity{ background: #000; opacity: 0; position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
+.share-box-close{
+   width: 100%; 
+   background: #F5F5F5; 
+   text-align: center; 
+   line-height: 35px; 
+   font-size: 14px; 
+    position:fixed;
+   bottom:0; 
+
+
+}
+
+.input-group {
+  padding:25rpx;
+  border-radius: 5px;
+  transition: all .25s ease-in-out;
+}
+ 
+.input-label {
+  color: #888;
+  font-size: 13pt;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding:0px 25rpx 10px;
+
+}
+.input-group textarea {
+  line-height:52rpx;
+  padding:10px 25rpx;
+  border:1px solid #e6e6e6;
+  border-radius:5px;
+  width:auto;
+  height:100px;
+
+}

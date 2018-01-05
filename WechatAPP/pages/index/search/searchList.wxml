@@ -4,12 +4,12 @@
   <view class="hot-box-main">
       <view class='result' wx:for="{{List}}" wx:key="questionId">
        <view>
-        <navigator url='detail?id={{item.questionId}}'>
+        <navigator url='questionDetail?id={{item.questionId}}'>
           <view class="list-box">
             <view class="list-box-title">{{item.questionTitle}}</view>
             <view class="list-box-sub">{{item.questionDetail}}</view>
           </view>
-          <image class="btn-enter" src="../../image/icon/enter.png"></image>
+          <image class="btn-enter" src="../../../image/icon/enter.png"></image>
         </navigator>
        </view>
       </view>

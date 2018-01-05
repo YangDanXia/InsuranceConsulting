@@ -64,7 +64,7 @@
     <view class="list fun-list"  wx:if="{{errHidden}}">
      <block wx:for="{{commendItems}}"  wx:key="item"> 
        <view class="wrap-item">  
-         <navigator url="detail?id={{item.questionId}}"  hover-class="none" class="{{index==3?'':'navs'}}">
+         <navigator url="case/detail?id={{item.questionId}}"  hover-class="none" class="{{index==3?'':'navs'}}">
                 <view class="themes-list-name themes-top">
                   <image class='case-btn' src='../../image/icon/q.png'></image>
                   <text>{{item.questionTitle}}</text>

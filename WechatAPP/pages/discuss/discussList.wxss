@@ -2,7 +2,6 @@
 .background
 {
   display: flex;
-  width:100%;
   background-color: #fff;
   flex-direction:column;
   justify-content: flex-start;
@@ -50,6 +49,7 @@
   overflow: hidden;
   text-overflow:ellipsis;
   font-weight:900;
+  margin-top:-10px;
 
 }
 

@@ -1,0 +1,32 @@
+<!--pages/me/account/findPassword.wxml-->
+ 
+<view class="bd">
+  <form class="login-form">
+    <view class="input-group">
+      <text class="input-label">手机号</text>
+      <input id="userPhone" maxlength="11" bindinput="userPhoneInput"/>
+    </view>
+    <view class="code">
+      <view class="input-code">
+        <text class="input-label">验证码</text>
+        <input cursor-spacing="30"  id="code" bindinput="codeInput" />
+      </view>
+    <view class="sendCode" bindtap="sendCode" wx:if="{{toSend}}">
+        <text>发送验证码</text>
+    </view> 
+    <view class="wait" wx:else> 
+       <text>等待{{second}}秒</text>
+    </view>
+    </view>
+  </form>
+  <view class="list"> 
+    <view class="confirm-btn" bindtap="login">
+      <text>确定</text>
+    </view>
+    <view class="confirm-btn" bindtap="confirm" style='background:#8a8a8a;'>
+      <text>取消</text>
+    </view>
+  </view>
+</view>
+ 
+

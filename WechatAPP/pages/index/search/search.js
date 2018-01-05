@@ -47,7 +47,7 @@ Page({
     if (input == '') {
       wx.showToast({
         title: '请输入关键字',
-        image: '../../../img/icon/warn.png'
+        image: '../../../image/icon/warn.png'
       })
       return false;
     }

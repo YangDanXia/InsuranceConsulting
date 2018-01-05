@@ -1,0 +1,130 @@
+/* pages/me/account/findPassword.wxss */
+/*  
+page{
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244,244,244,0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
+} */
+ 
+ 
+.bd {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@keyframes bd-rise{
+  from {opacity: 0; transform: translate3d(0,60rpx,0); }
+  to {opacity: 1; transform: translate3d(0,0,0); }
+}
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width:750rpx;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 10rpx;
+  margin: 40rpx 3%;
+  background: #fff;
+  border-radius: 5px;
+  transition: all .25s ease-in-out;
+}
+ 
+.input-label {
+  color: #888;
+  font-size: 13pt;
+  height: 25rpx;
+  line-height: 25rpx;
+  padding: 0 25rpx;
+  border-right: 1px solid #d8d8d8; 
+}
+.input-group input {
+  flex: 1;
+  font-size: 13pt;
+  min-height: 52rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 25rpx;
+}
+ 
+.input-code {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 0;
+  margin: 0 3%;
+  background: #fff;
+  border-radius: 5px;
+  transition: all .25s ease-in-out;
+  width:50%;
+
+}
+ 
+ 
+.input-code input {
+  flex: 1;
+  font-size: 13pt;
+  min-height: 52rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  margin-left:20rpx;
+
+}
+ 
+.code{
+  display:flex;
+
+}
+
+.sendCode {
+  font-size: 35rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  background: #73b4ef;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width:250rpx;
+ 
+}
+.sendCode:active {
+  opacity: .8;
+}
+
+
+.wait {
+  font-size: 35rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  background:#A0A0A0;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  width:250rpx;
+}
+
+.confirm-btn {
+  font-size: 35rpx;
+  line-height: 90rpx;
+  height: 90rpx;
+  background: #73b4ef;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  margin: 0rpx 8%;
+  width:260rpx;
+  margin-top: 220rpx;
+}
+.confirm-btn:active {
+  opacity: .8;
+}
+ 
+ .list{
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  margin-top: -80rpx;
+}

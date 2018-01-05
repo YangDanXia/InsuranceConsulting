@@ -7,7 +7,7 @@
          <picker bindchange="changeFee" value="{{index_fee}}" range="{{feeType}}"  class="picker">
           <text>{{feeType[index_fee]}}</text> 
          </picker>
-         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+         <image class="btn-enter" src="../../../image/icon/enter.png"></image>
     </view>
 
    <view class="middle"></view>
@@ -17,7 +17,7 @@
           <picker bindchange="changeQuestion"  value="{{index_q}}" range="{{questionArray}}"  class="picker">
           <text>{{questionArray[index_q]}}</text> 
          </picker>
-         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+         <image class="btn-enter" src="../../../image/icon/enter.png"></image>
     </view>
     <view class="middle"></view>
     <view class="content">
@@ -25,7 +25,7 @@
           <picker bindchange="changePublic"  value="{{index_public}}" range="{{isPublic}}"  class="picker" style='width:41%;'>
           <text>{{isPublic[index_public]}}</text> 
          </picker>
-         <image class="btn-enter" src="../../image/icon/enter.png"></image>
+         <image class="btn-enter" src="../../../image/icon/enter.png"></image>
     </view>
 
 

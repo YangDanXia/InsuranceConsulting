@@ -21,12 +21,12 @@ Page({
     duration: 1000,
     TypeUp:[
       {
-        url:'classicCase',
+        url:'case/classicCase',
         img:"../../image/icon/exp.png",
         text:"精品案例"
       },
       {
-        url: 'question',
+        url: 'ask/question',
         img: "../../image/icon/discuss.png",
         text: "发起提问"
       },
@@ -134,7 +134,7 @@ Page({
      */
   search:function(){
     wx.navigateTo({
-      url: 'search'
+      url: 'search/search'
     })
   },
 
@@ -143,7 +143,7 @@ Page({
    */
   question:function(){
     wx.navigateTo({
-      url: 'question'
+      url: 'ask/question'
     })
   }
 })
