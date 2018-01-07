@@ -1,3 +1,4 @@
+// my.js
 const app = getApp()
 var that=this;
 Page({
