@@ -46,6 +46,7 @@ data          |          |
 
 
 <h4 id="2" > 2.提问问题</h4>
+
 URL|http://120.78.89.170/user/ask
 ---|---
 请求方式|POST
@@ -76,6 +77,7 @@ msg|提问失败！
 data|
 
 <h4 id="3" > 3.历史记录</h4>
+
 URL|http://120.78.89.170/question/list
 ---|---
 请求方式|POST
@@ -103,6 +105,7 @@ data|
 
 
 <h4 id="4" > 4.精品问题列表</h4>
+
 URL|http://120.78.89.170/question/list
 ---|---
 请求方式|POST
@@ -128,6 +131,7 @@ msg|查询失败！
 data|
 
 <h4 id="5" > 5.回复问题</h4>
+
 URL|http://120.78.89.170/question/reply
 ---|---
 请求方式|POST
@@ -155,6 +159,7 @@ msg|回复失败！
 data|
 
 <h4 id="6" > 6.保险顾问申请</h4>
+
 URL|http://120.78.89.170/consultant/add
 ---|---
 请求方式|POST
@@ -185,6 +190,7 @@ msg|申请失败！
 data|
 
 <h4 id="7" > 7.评价问题</h4>
+
 URL|http://120.78.89.170/evaluate
 ---|---
 请求方式|POST
@@ -212,6 +218,7 @@ msg|评价失败！
 data|
 
 <h4 id="8" > 8.添加用户</h4>
+
 URL|http://120.78.89.170/code
 ---|---
 请求方式|POST
@@ -238,6 +245,7 @@ msg|验证码发送失败！
 data|
 
 <h4 id="9" > 9.登记号码</h4>
+
 URL|http://120.78.89.170/Phone
 ---|---
 请求方式|POST
@@ -264,6 +272,7 @@ msg|登记失败！
 data|
 
 <h4 id="10" > 10.图片上传</h4>
+
 URL|http://120.78.89.170/upload
 ---|---
 请求方式|POST
@@ -289,6 +298,7 @@ data|
 
 
 <h4 id="11" > 11.当前话题</h4>
+
 URL|http://120.78.89.170/topic/now
 ---|---
 请求方式|POST
@@ -316,6 +326,7 @@ commentCreateTime|评论时间
 
 
 <h4 id="12" > 12.话题列表</h4>
+
 URL|http://120.78.89.170/topic/list
 ---|---
 请求方式|POST
@@ -340,6 +351,7 @@ gmt_modified|修改时间
 
 
 <h4 id="13" > 13.发表评论</h4>
+
 URL|http://120.78.89.170/comment/add
 ---|---
 请求方式|POST
@@ -360,6 +372,7 @@ topicId|string|√||话题编号
 
 
 <h4 id="14" > 14.问题列表查看</h4>
+
 URL|http://120.78.89.170/question/list
 ---|---
 请求方式|POST
