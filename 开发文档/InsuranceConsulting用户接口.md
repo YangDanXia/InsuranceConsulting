@@ -309,7 +309,8 @@ URL|http://120.78.89.170/topic/now
 key|string|√||密钥(haiqian)
 
 ##### success：
-||
+
+字段|说明|
 ---|---|
 topicId|话题编号
 topicTitle|话题标题
@@ -337,7 +338,8 @@ URL|http://120.78.89.170/topic/list
 key|string|√||密钥(haiqian)
 
 ##### success：
-||
+
+字段|说明|
 ---|---|
 topicId|话题编号
 topicTitle|话题标题
