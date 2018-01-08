@@ -23,7 +23,7 @@ URL       |http://120.78.89.170/user/add
 请求方式  |POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名      |类型  |必填|默认|说明
 ------------|------|----|-----|------
@@ -32,14 +32,14 @@ userWechatId|string|√   |     |微信Id
 userNickName|string|√   |     |用户昵称
 userPicture |string|√   |     |用户头像
 
-#### success：
+### success：
 --- |内容      |说明
 --- |----------|--- 
 code|200       |
 msg |添加成功！|
 data|userId    |
 
-#### failed:
+### failed:
 --------------|内容      |说明|
 --------------|----------|----|
 code          |404       |
@@ -54,7 +54,7 @@ URL|http://120.78.89.170/user/ask
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -66,14 +66,14 @@ questionDetail|string|√||问题详情
 questionPhoto|string|×||问题照片
 questionCost|string|√||费用类型
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|提问成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -87,7 +87,7 @@ URL|http://120.78.89.170/question/list
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -95,14 +95,14 @@ key|string|√||密钥(haiqian)
 userId|string|×||若传值则查询该用户历史提问
 consultantId|string|×||若传值则查询该顾问历史回复
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|查询成功！
 data|userId<br> userNickName<br> questionId<br> questionTitle<br> questionDetail<br> questionPhoto<br> questionType<br> questionCost<br> isClass<br> consultantId<br> consultantName<br> questionReply<br> questionSatis<br> isResolve<br>
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -117,21 +117,21 @@ URL|http://120.78.89.170/question/list
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
 key|string|√||密钥(haiqian)
 questionId|string|×||若传值则查询该问题详情
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|查询成功！
 data|questionId<br> questionTitle<br> questionDetail<br> questionPhoto<br> questionType<br> questionCost<br>questionTime<br>questionReply<br>
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -145,7 +145,7 @@ URL|http://120.78.89.170/question/reply
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -154,14 +154,14 @@ userId|string|√||顾问编号
 questionId|string|√||问题编号
 questionReply|string|√||问题回复
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|回复成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -175,7 +175,7 @@ URL|http://120.78.89.170/consultant/add
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -187,14 +187,14 @@ consultantPhoto|string|×||保险顾问头像
 consultantProof|string|√||专业资格证
 consultnatExp|string|√||工作经历
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|申请成功，正在等待审核！
 data|userId
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -208,7 +208,7 @@ URL|http://120.78.89.170/evaluate
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -217,14 +217,14 @@ questionId|string|√||问题编号
 questionSatis|string|√||1满意 2不满意
 isResolve|string|√||是否解决
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|评价成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -238,7 +238,7 @@ URL|http://120.78.89.170/code
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -246,14 +246,14 @@ key|string|√||密钥(haiqian)
 mobile|string|√||手机号码
 content|string|√||验证码
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|验证码发送成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -267,7 +267,7 @@ URL|http://120.78.89.170/Phone
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -275,14 +275,14 @@ key|string|√||密钥(haiqian)
 userId|string|√||用户编号
 userPhone|string|√||电话号码
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|登记成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -296,19 +296,19 @@ URL|http://120.78.89.170/upload
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
 msg|上传成功！
 data|
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
@@ -324,13 +324,13 @@ URL|http://120.78.89.170/topic/now
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
 key|string|√||密钥(haiqian)
 
-#### success：
+### success：
 
 字段|说明|
 ---|---|
@@ -343,7 +343,7 @@ userId|用户编号
 commentContent|评论内容
 commentCreateTime|评论时间
 
-#### failed: 
+### failed: 
     查询失败！
 
 
@@ -355,13 +355,13 @@ URL|http://120.78.89.170/topic/list
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
 key|string|√||密钥(haiqian)
 
-#### success：
+### success：
 
 字段|说明|
 ---|---|
@@ -372,7 +372,7 @@ topicPicture|话题图片
 topicCreateTime|话题发布时间
 gmt_modified|修改时间
 
-#### failed:
+### failed:
     查询失败！
 
 
@@ -383,7 +383,7 @@ URL|http://120.78.89.170/comment/add
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
@@ -392,10 +392,10 @@ commentContent|string|√||评论内容
 userId|string|√||用户编号
 topicId|string|√||话题编号
 
-#### success：
+### success：
     评论成功！
 
-#### failed:
+### failed:
     评论失败！
 
 
@@ -406,13 +406,13 @@ URL|http://120.78.89.170/question/list
 请求方式|POST
 返回值格式|JSON
 
-#### 请求参数
+### 请求参数
 
 参数名|类型|必填|默认|说明
 ---|---|---|---|---
 key|string|√||密钥(haiqian)
 
-#### success：
+### success：
 ---|内容|说明|
 ---|---|---|
 code|200
@@ -420,7 +420,7 @@ msg|查询成功！
 data|userId<br> userNickName<br> questionId<br> questionTitle<br> questionDetail<br> questionPhoto<br> questionType<br> questionCost<br> isClass<br> consultantId<br> consultantName<br> questionReply<br> questionSatis<br> isResolve<br>
 
 
-#### failed:
+### failed:
 ---|内容|说明|
 ---|---|---|
 code|404
