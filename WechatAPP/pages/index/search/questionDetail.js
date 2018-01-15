@@ -29,8 +29,13 @@ Page({
         shareShow: 'none',
         shareOpacity: {},
         shareBottom: {},
+<<<<<<< HEAD
         userType:app.cache.userInfo.userType
         
+=======
+        userType: app.cache.userInfo.userType || ''
+
+>>>>>>> 5ea47b9972c6e62bf7563632e06d3462c6b416e7
     },
     onLoad: function( options ) {
       var questionId = options.id

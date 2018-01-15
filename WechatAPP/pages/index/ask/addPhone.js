@@ -77,7 +77,7 @@ Page({
       method: 'POST',
       success: function (res) {
         console.log(res.data);
-        // if (res.data.code !== "200") {
+        // if (res.data.code != "200") {
         //   wx.showToast({
         //     title: res.data.msg,
         //     image: "../../../image/icon/warn.png"
@@ -96,7 +96,7 @@ Page({
   },
 
   /**
-   * 点击修改密码
+   * 点击添加手机号码
    */
   login: function () {
     var info = app.cache.userInfo || {}
@@ -110,13 +110,13 @@ Page({
         return false;
       }
     }
-    // if (code != codeNumber) {
-    //   wx.showToast({
-    //     title: "验证码错误！",
-    //     image: '../../../image/icon/warn.png'
-    //   })
-    //   return false;
-    // }
+    if (code != codeNumber) {
+      wx.showToast({
+        title: "验证码错误！",
+        image: '../../../image/icon/warn.png'
+      })
+      return false;
+    }
     /**
      * 连接数据库
      */
@@ -135,6 +135,7 @@ Page({
         console.log(res)
         var info = app.cache.userInfo
         info.phoneNumber = userPhone
+        console.log(info)
         app.saveCache("userInfo",info)
         wx.navigateBack({
           url: 'question'
