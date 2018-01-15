@@ -17,6 +17,7 @@ Page({
     duration: 1000,
     showView: true,
     topicId:1,
+    answ:''
     // comment:''
   }, 
 
@@ -78,7 +79,6 @@ Page({
         },
         method: 'POST',
         success: function (res) {
-          console.log('12324'),
           console.log(res)
         }
       })

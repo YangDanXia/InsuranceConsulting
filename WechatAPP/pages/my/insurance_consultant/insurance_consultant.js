@@ -267,10 +267,20 @@ Page({
           'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
         },
         success: function (res) {
+          wx.showToast({
+            title: '提交成功！',
+            icon:'success',
+            duration:2000
+          })
           console.log("return:")
           console.log(res)
         },
         fail: function (d) {
+          wx.showToast({
+            title: '提交失败',
+            image: '../../../image/icon/fail.png',
+            duration: 2000
+          })
           console.log("fail")
         },
 
