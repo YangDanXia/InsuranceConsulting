@@ -29,7 +29,7 @@ Page( {
         shareShow: 'none',
         shareOpacity: {},
         shareBottom: {},
-        userType:app.cache.userInfo.userType
+        userType: app.cache.userInfo.userType || ''
 
     },
     onLoad: function( options ) {

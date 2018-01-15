@@ -53,7 +53,7 @@
 
 
     <view class="submit-btn"  bindtap="submit">
-      <text>提交反馈</text>
+      <text>提交</text>
     </view>
 </view>
  

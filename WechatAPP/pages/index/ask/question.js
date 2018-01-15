@@ -135,6 +135,15 @@ Page({
                   method:'POST',
                   success:function(res){
                      console.log(res)
+                     wx.showToast({
+                       title: '提交成功',
+                       icon: 'success',
+                       success: function () {
+                         wx.switchTab({
+                           url: '../index'
+                         })
+                       }
+                     })
                   }
                 })
               }
@@ -159,6 +168,15 @@ Page({
           method: 'POST',
           success: function (res) {
              console.log(res)
+             wx.showToast({
+                 title: '提交成功',
+                 icon: 'success',
+                 success:function(){
+                   wx.switchTab({
+                     url: '../index'
+                   })
+                 }
+              })
           }
         })
     }
