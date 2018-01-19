@@ -19,7 +19,7 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx2b32ac8600d1cef0&secret=acee0956f77f65e0f6b30744aa3e7a86&js_code='+res.code+'&grant_type=authorization_code',
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx144ac6748a028520&secret=988cdef945e5fdb98df88d422257b5e6&js_code='+res.code+'&grant_type=authorization_code',
           success:function(res){
             that.saveCache("openid",res.data.openid)
           }
@@ -60,6 +60,7 @@ App({
             that.cache[key] = value;
           }
         });
+      
       }
     } catch (e) {
       console.warn('获取缓存失败');
@@ -94,8 +95,6 @@ App({
       key: key
     });
   },
-
-
   /**
  * 获取随机数
  */
@@ -113,6 +112,10 @@ App({
     userInfo: null,
     id: '',
     question: '',
-    content: ''
+    content: '',
+    topic_userNickName:'',
+    topic_userPicture: '',
+    topic_commentContent: '',
+    topic_commentCreateTime: '',
   }
 })

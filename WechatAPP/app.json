@@ -1,20 +1,17 @@
 {
   "pages":[
-        "pages/index/index",
-          "pages/index/search/questionDetail",
-        "pages/discuss/discuss",
-
-
-
+    "pages/index/index",
+    "pages/index/search/questionDetail",
+    "pages/discuss/discuss",
     "pages/index/ask/addPhone",
     "pages/index/search/searchList",
     "pages/discuss/discussList",
-   
+    "pages/discuss/discussAll/discuss_all",
     "pages/my/my",
-
-
-   "pages/my/user_or_in/all/user_new",
+    "pages/my/user_or_in/all/user_new",
     "pages/index/case/classicCase",
+    "pages/index/solve/solve_problem",
+    "pages/index/solve/answer/answer_question",
     "pages/index/case/detail",
     "pages/my/user_or_in/me_user",
     "pages/my/user_or_in/me_insurance",
@@ -25,10 +22,7 @@
     "pages/my/news/news",
     "pages/my/news/all_new",
     "pages/index/ask/question",
-
     "pages/index/search/search"
-
-    
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -15,6 +15,8 @@ Page({
       "../../image/show/two.jpg",
       "../../image/show/three.jpg"
     ],
+    usertype1:'',
+    usertype2:'',
     circular:true,
     autoplay: true,
     interval: 3000,
@@ -34,6 +36,23 @@ Page({
         url: '../my/insurance_consultant/insurance_consultant',
         img: "../../image/icon/quiz.png",
         text: "成为顾问"
+      }
+    ],
+    typeup: [
+      {
+        url: 'case/classicCase',
+        img: "../../image/icon/exp.png",
+        text: "精品案例"
+      },
+      {
+        url: 'ask/question',
+        img: "../../image/icon/discuss.png",
+        text: "发起提问"
+      },
+      {
+        url: '../index/solve/solve_problem',
+        img: "../../image/icon/quiz.png",
+        text: "回答问题"
       }
     ],
     errHidden:true,
@@ -72,7 +91,6 @@ Page({
               userWechatId:app.cache.openid,
               userNickName: info.nickName,
               userPicture: info.avatarUrl,
-
             },
             header: {
               'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
@@ -85,7 +103,7 @@ Page({
                 nickName: info.nickName,
                 avatarUrl: info.avatarUrl,
                 phoneNumber:'',
-                userType: "generalUser"
+                userType: "consultant"
               }
               app.saveCache("userInfo", userInfo)
             }
@@ -113,7 +131,29 @@ Page({
         })
       }
     })
-   
+    //获取缓存中的用户类型
+    wx.getStorage({
+      key: 'userInfo',
+      success: function(res) {
+          var Type=res.data.userType
+        if(Type=="generalUser")
+        {
+          that.setData({
+            usertype1:true,
+            usertype2:false
+          })
+        }
+        else
+        {
+          that.setData({
+            usertype1: false,
+            usertype2: true
+          })
+        }
+      },
+    
+    })
+
     },
 
   /**

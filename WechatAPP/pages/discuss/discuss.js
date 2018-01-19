@@ -1,3 +1,4 @@
+
 //index.js
 //获取应用实例
 const app = getApp()
@@ -17,8 +18,26 @@ Page({
     duration: 1000,
     showView: true,
     topicId:1,
-    // comment:''
+    answ:'',
+    id:''
   }, 
+  godiscuss_all:function(event){
+    var that=this
+    var Id=event.currentTarget.id
+    that.setData({
+      id:Id
+    })
+    console.log("id")
+    console.log(Id)
+    console.log(this.data.id)
+    app.globalData.topic_userNickName=that.data.answ[that.data.id].userNickName
+    app.globalData.topic_userPicture = that.data.answ[that.data.id].userPicture
+    app.globalData.topic_commentContent = that.data.answ[that.data.id].commentContent
+    app.globalData.topic_commentCreateTime = that.data.answ[that.data.id].commentCreateTime
+    wx.navigateTo({
+      url: 'discussAll/discuss_all',
+    })
+  },
 
   onLoad: function (options) {
     var id = options.id
@@ -34,6 +53,7 @@ Page({
       },
       success: function (res) {
         console.log(res)
+        console.log()
         that.setData({
           title: res.data[0].topicTitle,
           topicId: res.data[0].topicId,
@@ -78,7 +98,10 @@ Page({
         },
         method: 'POST',
         success: function (res) {
-          console.log('12324'),
+          wx.showToast({
+            icon:'success',
+            title: '提交成功！',
+          })
           console.log(res)
         }
       })
@@ -105,6 +128,10 @@ Page({
         loadhidden: true
       })
     }, 500);
+    wx.setStorage({
+      key: 'topic',
+      data: that.data.answ,
+    })
   }
 
 })

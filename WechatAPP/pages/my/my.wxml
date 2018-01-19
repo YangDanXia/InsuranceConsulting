@@ -1,24 +1,27 @@
-﻿<!--index.wxml-->
-
 <!--index.wxml-->
+<!-- 头像和名称获取 -->
 <view class="w_h one">
-  <image wx:if="{{!hasUserInfo && canIUse}}" class="userinfo-avatar" src="../../image/icon/ti.png"  background-size="cover"></image>
-  <image wx:else="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"  bindgetuserinfo="getUserInfo"></image>
+  <image wx:if="{{userInfo==NULL}}" class="userinfo-avatar" src="../../image/icon/ti.png"  background-size="cover"></image>
+  <image wx:else="{{userInfo!==NULL}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
   <text class="userinfo-hi">Hi,{{userInfo.nickName}}</text>
 </view>
 
-
+<!-- 我要成为保险顾问，可隐藏 -->
 <view class="b_b"></view>
 
-<view class="beCounselor">
-   <image class="HeaderIcon" src="../../image/icon/consultant.png"></image>
-  <view class="headtext">
- <view class="headtext1"> <text class="headtext11">我要成为保险顾问</text> </view>
- </view>
- <view class="beCounselorIcon" bindtap='gotoinsurance'>发送请求</view>
+<view wx:if="{{Type}}">
+  <view class="beCounselor">
+     <image class="HeaderIcon" src="../../image/icon/consultant.png"></image>
+    <view class="headtext">
+    <view class="headtext1">
+      <text class="headtext11">我要成为保险顾问</text> 
+    </view>
+  </view>
+    <view class="beCounselorIcon" bindtap='gotoinsurance'>发送请求     </view>
   </view>
 
-<view class="b_b"></view>
+  <view class="b_b"></view>
+</view>
 
 
 
@@ -34,7 +37,7 @@
     </view>
   </view>
 </view>
-<view wx:if="{{e}}">
+<view wx:if="{{history_problem}}">
   <view class="w_h two" bindtap="tohistory_question">
     <image class="my_icon" src="../../image/icon/w_q.png">
     </image><text class="my_check">历史提问</text>
@@ -42,7 +45,7 @@
   </image>
   </view>
 </view>
-<view wx:else> 
+<view wx:else="{{history_answer}}"> 
   <view class="w_h two" bindtap="tohistory_answer">
     <image class="my_icon" src="../../image/icon/w_q.png">
     </image><text class="my_check">历史回答</text>
@@ -58,9 +61,3 @@
   </image>
 </view>
 
-<!-- 
-<view class="b_b"></view>
-<view class="w_h two" bindtap='gotoinsurance'>
-    <image class="my_icon" src="../../image/icon/insurance.png">
-  </image><text class="my_check">我要成为保险顾问</text>
-</view> -->

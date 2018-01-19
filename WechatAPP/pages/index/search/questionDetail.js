@@ -1,5 +1,5 @@
 const app = getApp()
-Page( {
+Page({
     data: {
        // loading
         loadhidden: false,
@@ -30,7 +30,6 @@ Page( {
         shareOpacity: {},
         shareBottom: {},
         userType: app.cache.userInfo.userType || ''
-
     },
     onLoad: function( options ) {
       var questionId = options.id

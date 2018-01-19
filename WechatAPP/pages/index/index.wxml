@@ -1,8 +1,9 @@
 
+
 <!--index.wxml-->
 
 <!-- loading -->
- <loading hidden="{{loadhidden}}">
+<loading hidden="{{loadhidden}}">
     加载中...
 </loading> 
 
@@ -27,6 +28,8 @@
 </view>
 
 <!--导航-->
+<!-- 普通用户 -->
+<view wx:if="{{usertype1}}"> 
   <view class="list nav-list">
    <block wx:for="{{TypeUp}}"  wx:key="item"> 
       <navigator url="{{item.url}}" hover-class="none" class="items">
@@ -35,6 +38,20 @@
       </navigator>
    </block>
   </view>
+</view>
+<!-- 保险顾问 -->
+<view wx:else="{{usertype2}}">
+   <view class="list nav-list">
+   <block wx:for="{{typeup}}"  wx:key="item"> 
+      <navigator url="{{item.url}}" hover-class="none" class="items">
+        <image src="{{item.img}}"></image>
+        <text>{{item.text}}</text>
+      </navigator>
+   </block>
+  </view> 
+</view>
+
+
 
 <!-- 快速提问 -->
   <view class="list">
