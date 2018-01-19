@@ -40,7 +40,7 @@
   </view>
 </view>
 <!-- 保险顾问 -->
-<view wx:else="{{usertype2}}">
+<view wx:elif="{{usertype2}}">
    <view class="list nav-list">
    <block wx:for="{{typeup}}"  wx:key="item"> 
       <navigator url="{{item.url}}" hover-class="none" class="items">

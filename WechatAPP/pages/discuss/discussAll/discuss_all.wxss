@@ -10,7 +10,7 @@
   display: flex;
   width:95rpx;
   height:80rpx;
-  border-radius: 25%;
+  border-radius:50%;
 }
 .nicheng
 {

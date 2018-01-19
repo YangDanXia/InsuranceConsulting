@@ -27,9 +27,6 @@ Page({
     that.setData({
       id:Id
     })
-    console.log("id")
-    console.log(Id)
-    console.log(this.data.id)
     app.globalData.topic_userNickName=that.data.answ[that.data.id].userNickName
     app.globalData.topic_userPicture = that.data.answ[that.data.id].userPicture
     app.globalData.topic_commentContent = that.data.answ[that.data.id].commentContent
