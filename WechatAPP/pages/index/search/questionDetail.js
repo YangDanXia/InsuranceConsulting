@@ -28,8 +28,8 @@ Page({
         */
         shareShow: 'none',
         shareOpacity: {},
-        shareBottom: {},
-        userType: app.cache.userInfo.userType || ''
+        shareBottom: {}
+        
     },
     onLoad: function( options ) {
       var questionId = options.id
@@ -47,7 +47,8 @@ Page({
         success: function (res) {
           console.log(res.data.data[0])
           that.setData({
-            introduction: res.data.data[0]
+            introduction: res.data.data[0],
+            userType: app.cache.userInfo.userType
           })
         }
       })
@@ -56,7 +57,7 @@ Page({
     },
  
     /**
-    * 显示分享
+    * 显示回复
     */
     showShare: function (e) {
 
@@ -86,7 +87,7 @@ Page({
     },
 
     /**
-     * 关闭分享
+     * 关闭回复
      */
     shareClose: function () {
       // 创建动画

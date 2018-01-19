@@ -80,7 +80,7 @@ Page({
     {
       wx.showToast({
         title: '意见不能为空~',
-        icon: 'loading',
+        image:"../../../image/icon/warn.png",
         duration: 2000
       })
     }

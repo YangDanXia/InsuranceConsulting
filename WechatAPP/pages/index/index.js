@@ -103,7 +103,7 @@ Page({
                 nickName: info.nickName,
                 avatarUrl: info.avatarUrl,
                 phoneNumber:'',
-                userType: "consultant"
+                userType: "generalUser"
               }
               app.saveCache("userInfo", userInfo)
             }
