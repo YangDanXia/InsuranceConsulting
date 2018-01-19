@@ -1,0 +1,19 @@
+<view class="all">
+  <view class="left">
+    <view wx:for="{{sort}}" wx:key="unique" id="{{item.id}}" class="left_items {{ID==item.id?'hover':''}}" bindtap="leftTab">
+      {{item.name}}
+    </view>
+    
+  </view>
+  <view class="right_all">
+    <view class="right" bindtap='answer_qusetion'>
+      <view class="q">
+        <text class="t">提问：<text class="t_two">小程序中bindtap绑定函数，函数参数event对数据ghtyhfhtghhjkbkhuhkjbi</text></text> 
+      </view>
+      <view class="q">
+        <text class="t_two t_three">在组件上使用 wx:for 控制属性绑定一个数组，即可使用数组中各项的数据重复渲染该组件。默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item</text>
+      </view>
+      <view class="ge"></view>
+    </view>
+  </view>
+</view>

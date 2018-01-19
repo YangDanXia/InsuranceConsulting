@@ -50,7 +50,7 @@ Page({
         text: "发起提问"
       },
       {
-        url: '../my/insurance_consultant/insurance_consultant',
+        url: '../index/solve/solve_problem',
         img: "../../image/icon/quiz.png",
         text: "回答问题"
       }

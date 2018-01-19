@@ -27,9 +27,7 @@
       <image class="recommendiconb" src="../../image/icon/paixv.png">
       </image>
     </view>
-   
-
-    <view wx:for="{{answ}}" class='recommend-list'>
+    <view wx:for="{{answ}}" wx:key="unique" id="{{index}}" class='recommend-list' bindtap="godiscuss_all">
       <view class="recommend">
         <image class="tou" src="{{item.userPicture}}">
         </image>
@@ -49,19 +47,16 @@
       </view>
     </view>
   </view>
+</view>
 
-  
   <view class="search-bar">
     <view class="search-wrap">
-        <textarea type="text" placeholder="说说你的看法..." class="search-input" maxlength='500' auto-height="true" bindtap='commentInput'> 
+        <textarea type="text" maxlength='500' placeholder='说说你的看法......' fixed="true" auto-height="true" bindtap='commentInput'> 
         </textarea>
     </view>
     <view  bindtap="sendcomment">
-      <!-- <text class="bodyhead-text" >发布</text> -->
       <image class="bodyhead-text" src="../../image/icon/fabu.png"></image>
     </view> 
-  </view>
-  
+  </view> 
 
-</view>
 

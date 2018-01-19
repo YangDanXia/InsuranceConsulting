@@ -1,6 +1,6 @@
 page{
   background-color: #fff;
-    font-family:"微软雅黑","黑体","宋体";
+  font-family:"微软雅黑","黑体","宋体";
 }
 .body{ width: 100%;overflow-x:hidden;}
 
@@ -21,16 +21,11 @@ page{
   border: 1px none;
 }
 .bodyhead2{
-  /* position:absolute;     */
  display: flex; 
-  /* font-size:42rpx; 
-  right:40rpx;  
-  height:60rpx ;   
-  padding:5px 0px;  */
  width: 100%;
  height:100%;
-  margin:20rpx;
-  border: 1px skyblue solid;
+ margin:20rpx;
+ border: 1px skyblue solid;
 }
 .bodyhead-text{
   display: flex;
@@ -39,7 +34,7 @@ page{
   margin-left:15rpx; 
 }
 .search-bar{
-  position:relative;
+  position:fixed;
   bottom:0;
   z-index:1; 
   display: flex;
@@ -47,21 +42,21 @@ page{
   align-items: center;
   justify-content:flex-start;
   background:white;
-  margin: 25rpx;
+  margin: 25rpx 0rpx 5rpx 0rpx;
 }
 .search-wrap{
   display: flex;
-  align-items: center;
   height: 100%;
-  width:78%; 
-  /* margin-left:20rpx; */
+  width:74%; 
+  border: 1px skyblue solid; 
+  padding:20rpx; 
+  margin-left:3%;
 }
 .search-input{
- display:flex; 
- height:100%;
+ display:flex;
+ position:absolute; 
  padding:20rpx; 
  border: 1px skyblue solid; 
- margin-left:20rpx;
 }
 
 .search-cancel{
@@ -131,7 +126,7 @@ height: 1000rpx;
 
 .recbackground{
 margin-top:15rpx;
-margin-bottom:15rpx; 
+margin-bottom:42px; 
 background: white;
 }
 .recommendicon{
@@ -147,9 +142,9 @@ background: white;
  color:#65b5fa;
 }
 .bodyhead-textb{
-  margin-left:450rpx; 
-    font-size: 28rpx;
-   color:#dedede;
+  margin-left:54%; 
+  font-size: 28rpx;
+  color:#dedede;
 }
 .recommendiconb{
   margin-top:10rpx; 

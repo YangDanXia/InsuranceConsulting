@@ -1,0 +1,32 @@
+<!--pages/index/solve/answer/answer_question.wxml-->
+<view class="question a">
+  <image class="tou" src-="../../../../image/icon/ti.png"></image>
+  <text class="nicheng">樱桃小丸子</text>
+</view>
+<view class="question shijian">
+  <text class="time">提问时间：2016-05-12 12:00:00</text>
+</view>
+<view class="big-one">
+  <view class="question">
+    <text class="question-text">我买了分红保险3年，还有俩年没有交，请问可以全额退款吗</text>
+  </view>
+  <view class="question">
+    <text class="content-text">在11年买的保险，现在不想交了，请问退款给全额还是多少呢？我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗我买了分红保险3年，还有俩年没有交，请问可以全额退款吗</text>
+  </view>
+</view>
+<view class="big-two" bindtap="toadd_answer">
+  <view class="answer">
+    <text class="t">我来回答</text>
+  </view>
+</view>
+<view class="hide{{showView?'show':''}}">
+  <view class="Textarea">
+      <view class="kuai">
+        <textarea class="Content" maxlength='500' placeholder='请输入您的回答……' ></textarea>
+      </view>
+    <view>
+     <button class="anniu">提交</button>
+    </view> 
+  </view>
+ 
+</view>

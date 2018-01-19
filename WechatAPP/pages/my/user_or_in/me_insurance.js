@@ -17,12 +17,13 @@ Page({
       success: function (res) {
         console.log("提问问题者编号")
         console.log(res.data)
+        console.log(res.data.userId)
         wx.request({
           url: "http://120.78.89.170/question/list",
           method: "POST",
           data: {
             key: "haiqian",
-            userId: res.data
+            userId: res.data.userId
           },
           header: {
             'content-type': 'application/x-www-form-urlencoded; charset=utf-8'

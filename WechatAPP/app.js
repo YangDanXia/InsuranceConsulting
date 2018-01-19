@@ -112,6 +112,10 @@ App({
     userInfo: null,
     id: '',
     question: '',
-    content: ''
+    content: '',
+    topic_userNickName:'',
+    topic_userPicture: '',
+    topic_commentContent: '',
+    topic_commentCreateTime: '',
   }
 })
