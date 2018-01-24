@@ -9,79 +9,82 @@
 
 <!--标题栏-->
 <view>
-<view class="search-box">
-  <view class="search search-btn"  bindtap="search">
-     <icon class="searchButton" type="search"  size="18"/>
-   </view>
-   <view bindtap="search"  class="search search-input"><text class="search-text"> 搜索...</text></view>
-   <view class="search search-right"  bindtap="search"> </view>
-</view>
+  <view class="search-box">
+    <view class="search search-btn"  bindtap="search">
+       <icon class="searchButton" type="search"  size="18"/>
+    </view>
+    <view bindtap="search"  class="search search-input"><text class="search-text"> 搜索... </text>
+    </view>
+    <view class="search search-right"  bindtap="search">        </view>
+  </view>
  
- <view >
-<swiper circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+
+  <swiper circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
   <block wx:for="{{imgUrls}}" wx:key="item">
     <swiper-item class="swiper-x">
       <image src="{{item}}" class="slide-image" width="355" height="150"/>
     </swiper-item>
   </block>
-</swiper>
+  </swiper>
 </view>
 
 <!--导航-->
 <!-- 普通用户 -->
 <view wx:if="{{usertype1}}"> 
   <view class="list nav-list">
-   <block wx:for="{{TypeUp}}"  wx:key="item"> 
+    <block wx:for="{{TypeUp}}"  wx:key="item"> 
       <navigator url="{{item.url}}" hover-class="none" class="items">
         <image src="{{item.img}}"></image>
         <text>{{item.text}}</text>
       </navigator>
-   </block>
+    </block>
   </view>
 </view>
 <!-- 保险顾问 -->
+
 <view wx:elif="{{usertype2}}">
-   <view class="list nav-list">
-   <block wx:for="{{typeup}}"  wx:key="item"> 
+  <view class="list nav-list">
+    <block wx:for="{{typeup}}"  wx:key="item"> 
       <navigator url="{{item.url}}" hover-class="none" class="items">
         <image src="{{item.img}}"></image>
         <text>{{item.text}}</text>
       </navigator>
-   </block>
+    </block>
   </view> 
 </view>
-
 
 
 <!-- 快速提问 -->
   <view class="list">
       <image src='../../image/icon/consultant.png' class='ask-btn'></image>
-       <view class="items">
+      <view class="items">
         <text class="ask-title">快速咨询顾问</text>
-       </view>
+      </view>
       <view class="ask-box">
-       <view class=" ask ask-left"  bindtap="question">
-       </view>
-       <view bindtap="question"  class="ask ask-center">
+        <view class=" ask ask-left"  bindtap="question">
+        </view>
+        <view bindtap="question"  class="ask ask-center">
           <text class="ask-text"> 快速提问</text>
-       </view>
-       <view class="ask ask-right"  bindtap="question"> </view>
-</view>
+        </view>
+        <view class="ask ask-right"  bindtap="question"></view>
+      </view>
   </view>
 
-  <!-- 案例 -->
-   <view class="workbench" style="width:{{winWidth}}px">
-   <view>
-    <view class="title">
-      <image class="title-btn" src="../../image/icon/h.png"/>
+<!-- 案例 -->
+<view>
+  <view class="workbench" style="width:{{winWidth}}px">
+    <view>
+      <view class="title">
+        <image class="title-btn" src="../../image/icon/h.png"/>
         精品案例
-      <image class="title-btn" src="../../image/icon/h.png"/></view>
+        <image class="title-btn" src="../../image/icon/h.png"/>
+      </view>
     </view>
 
     <view class="list fun-list"  wx:if="{{errHidden}}">
-     <block wx:for="{{commendItems}}"  wx:key="item"> 
-       <view class="wrap-item">  
-         <navigator url="case/detail?id={{item.questionId}}"  hover-class="none" class="{{index==3?'':'navs'}}">
+      <block wx:for="{{commendItems}}"  wx:key="item"> 
+        <view class="wrap-item">  
+          <navigator url="case/detail?id={{item.questionId}}"  hover-class="none" class="{{index==3?'':'navs'}}">
                 <view class="themes-list-name themes-top">
                   <image class='case-btn' src='../../image/icon/q.png'></image>
                   <text>{{item.questionTitle}}</text>
@@ -90,24 +93,24 @@
                   <image class='case-btn' src='../../image/icon/a.png'></image>
                   <text>{{item.questionReply}}</text>
                 </view>
-         </navigator>
-         <view class="themes-list-inline"></view>
-       </view>
+          </navigator>
+          <view class="themes-list-inline"></view>
+        </view>
       </block>
     </view>
-    
-     <view class="list fun-list" wx:else>
-       <view class="err-item">  
-          <view class="navs">
-            <image class="err" src="../../img/show/loading1.gif"></image>
+
+    <view class="list fun-list" wx:else>
+      <view class="err-item">  
+        <view class="navs">
+          <image class="err" src="../../img/show/loading1.gif"></image>
           <view>
-          <view class="err-list-name">网络连接异常，请求失败...</view>
-       </view>
+            <view class="err-list-name">网络连接异常，请求失败...</view>
+          </view>
+        </view>
       </view>
-     </view>
     </view>
   </view>
 
-    <view class="themes-list-description" style="text-align:center">已经到底了</view> 
+  <view class="themes-list-description" style="text-align:center">已经到底了</view> 
 
-</view>
+</view> 

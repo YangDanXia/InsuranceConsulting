@@ -115,8 +115,6 @@ Page({
                     that.setData({
                       usertype1: true,
                     })
-                    console.log("that.data.usertype1")
-                    console.log(that.data.usertype1)
                   }
                   else {
                     that.setData({

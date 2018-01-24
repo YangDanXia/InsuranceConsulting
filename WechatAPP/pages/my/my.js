@@ -1,5 +1,6 @@
 // my.js
 const app = getApp()
+
 var that=this;
 Page({
   data: {
@@ -16,10 +17,13 @@ Page({
   },
   //事件处理函数
   onLoad: function () {
+    var UserId=''
     var that = this;
     wx.getStorage({
       key: 'userInfo',
       success: function(res) {
+        console.log("获取缓存" + res.data)
+        // UserId=res.data.userId
         // 获取头像和昵称
         that.setData({
           userInfo:res.data
@@ -40,7 +44,25 @@ Page({
             history_answer: true
           })
         }
+      }
+    })
+    wx.request({
+      url: 'http://120.78.89.170/newNum',
+      data: {
+        key: 'haiqian',
+        userId:1
       },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          con:true,
+          what:res.data.count
+        })
+      }
     })
   },
 

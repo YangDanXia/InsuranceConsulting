@@ -1,7 +1,6 @@
 // pages/discuss/discuss.js
 var app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,6 +11,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      url: 'http://120.78.89.170/newList',
+      data: {
+        key: 'haiqian',
+        userId: 1
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
+      },
+      method: 'POST',
+      success: function (res) {
+        console.log(res)
+
+      }
+    })
   },
 
   /**

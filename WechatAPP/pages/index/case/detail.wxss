@@ -1,10 +1,16 @@
-page{ background: #FFF; font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif; }
-.contain_detail_cnt { height: 100%; width: 100%; overflow: hidden; }
+ page{
+     background: #FFF; font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;  
+    } 
+.contain_detail_cnt {
+  height: 100%; 
+  width: 100%;
+  overflow: hidden;
+}
 
-.box-title{ 
+ .box-title{ 
   padding:15px;
  background: #f9f9f9;
-  }
+  } 
 
 .box-title-up{
    display:flex;
@@ -21,8 +27,6 @@ page{ background: #FFF; font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif
 
 }
  
-
-
 .submit-btn text{
   color:#9c9b9b;
   padding-right:15px;
@@ -47,7 +51,7 @@ page{ background: #FFF; font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif
 
 .box-img{
   width:60rpx;
-height:60rpx;
+  height:60rpx;
 }
 
 .content-img{

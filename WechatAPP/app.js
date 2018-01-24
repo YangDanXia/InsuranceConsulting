@@ -1,4 +1,5 @@
 //app.js
+var timer;
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -13,7 +14,6 @@ App({
         that.globalData.scrHeight = res.screenHeight
       }
     });
-
     // 登录
     wx.login({
       success: res => {
@@ -49,8 +49,8 @@ App({
     })
 
     /**
- * 读取缓存
-*/
+   * 读取缓存
+   */
     try {
       var data = wx.getStorageInfoSync();
       if (data && data.keys.length) {
@@ -66,8 +66,6 @@ App({
       console.warn('获取缓存失败');
     }
   },
-
-
 
   /**
    * 保存缓存
