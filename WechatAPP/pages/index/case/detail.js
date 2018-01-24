@@ -1,3 +1,4 @@
+
 const app = getApp()
 Page({
     data: {
@@ -5,9 +6,11 @@ Page({
       comments : [],  //问题内容
       winHeight: app.globalData.winHeight,
       agree_num:'',
-      disagree_num:6,
+      disagree_num:'',
       currentId:'',//点击的问题ID
-      collection:''
+      collection:'',
+      COLLECTION:''
+
     },
     onLoad: function( option ) {
       var that=this
@@ -19,17 +22,24 @@ Page({
       //读取同意的数目
        var agree_number=wx.getStorageSync('yes', dianzan)
        var agree_Number=agree_number[getId]
-      // 读取所有的文章列表点赞缓存状态
-      var cache = wx.getStorageSync('cache_key');
+      //读取不同意的数目
+       var disagree_number = wx.getStorageSync('no', fandui)
+       var disagree_Number = disagree_number[getId]
+      // 读取所有的话题讨论列表点赞缓存状态
+       var cache = wx.getStorageSync('cache_key');
+       var noway = wx.getStorageSync('Noway');//新***
       if (cache) {
         var currentCache = cache[getId];
+        var CurrentCache = noway[getId];//新***
         this.setData({
-          collection: currentCache
+          collection: currentCache,
+          COLLECTION: CurrentCache//新***
         })
         //当前同意的数目
         if (agree_Number) {
           this.setData({
-            agree_num: agree_Number
+            agree_num: agree_Number,
+            disagree_num: disagree_Number//新***
           })
         }
         //如果没有则创建
@@ -41,6 +51,24 @@ Page({
           this.setData({
             // collection 默认的是 false
             agree_num: b
+          })
+        }
+        //当前不同意的数目
+        if(disagree_Number)
+        {
+          this.setData({
+            disagree_num: disagree_Number//新***
+          })
+        }
+        else
+        {
+          //新***
+          var z = wx.getStorageSync('no');
+          var x = 0
+          z[this.data.currentId] = x
+          wx.setStorageSync('no', z);
+          this.setData({
+            disagree_num: x
           })
         }
       }
@@ -57,6 +85,16 @@ Page({
         this.setData({
           agree_num: dianzan[getId]
         })
+        //反对缓存个数
+        var dis = {};
+        dis[getId] = false;
+        wx.setStorageSync('Noway',dis);
+        var fandui = {};
+        fandui[getId] = 0
+        wx.setStorageSync('no', fandui)
+        this.setData({
+          disagree_num: fandui[getId]
+        })
         
       }
         
@@ -72,9 +110,6 @@ Page({
         },
         method: 'POST',
         success: function (res) {
-          // console.log("发送id后数据库返回")
-          // console.log(res)
-          // console.log(res.data.data[0])
           that.setData({
             comments: res.data.data[0]
           })
@@ -82,7 +117,6 @@ Page({
       })
       
     },
- 
     onReady: function () {
       var that = this;
       // 数据加载完成后 延迟隐藏loading
@@ -94,19 +128,18 @@ Page({
     },
     onShow: function() {
     },
-    
     // 点赞
   agree:function(event){
     var that=this
     var before = wx.getStorageSync('before')//点赞之前的缓存
     var before_dianji = before[1]//当前序号点击的状态
-
     var cache = wx.getStorageSync('cache_key');
     var currentCache = cache[this.data.currentId];
-
     var a = wx.getStorageSync('yes');
     var b=a[this.data.currentId]
-
+    //反对的状态
+    var noway = wx.getStorageSync('Noway');
+    var CurrentCache = noway[this.data.currentId];
     if (before_dianji == !currentCache)
     {
       console.log("不能点赞了")
@@ -118,12 +151,16 @@ Page({
     else 
     {
       currentCache = !currentCache;
+      CurrentCache = !CurrentCache;
       cache[this.data.currentId] = currentCache;
+      noway[this.data.currentId] = CurrentCache;
       // 重新设置缓存
       wx.setStorageSync('cache_key', cache);
-      // 更新数据绑定,从而切换图片
+      wx.setStorageSync('Noway', noway);
+      // 更新数据绑定
       this.setData({
-        collection: currentCache
+        collection: currentCache,
+        COLLECTION: CurrentCache
       })
       //关于点赞同意的个数
       var c=this.data.agree_num+1
@@ -138,8 +175,39 @@ Page({
 
     // 不满意案例
     disagree:function(){
-      
+      var that = this
+      var before = wx.getStorageSync('before')//点赞之前的缓存
+      var before_dianji = before[1]
+      var noway = wx.getStorageSync('Noway');//当前序号点击的状态
+      var CurrentCache = noway[this.data.currentId];
+      var m = wx.getStorageSync('no');//反对个数
+      var n = m[this.data.currentId]
+      var cache = wx.getStorageSync('cache_key');
+      var currentCache = cache[this.data.currentId];
+      if (before_dianji == !CurrentCache) {
+        wx.showToast({
+          image: '../../../image/icon/sad.png',
+          title: '不能点击了~',
+        })
+      }
+      else {
+        currentCache = !currentCache;
+        CurrentCache = !CurrentCache;
+        cache[this.data.currentId] = currentCache;
+        noway[this.data.currentId] = CurrentCache;
+        // 重新设置缓存
+        wx.setStorageSync('cache_key', cache);
+        wx.setStorageSync('Noway', noway);
+        this.setData({
+          collection: currentCache,
+          COLLECTION: CurrentCache
+        })
+        var f = this.data.disagree_num + 1
+        m[this.data.currentId] = f
+        wx.setStorageSync('no', m);
+        this.setData({
+          disagree_num: f
+        })
+      }
     }
-
-
 })
