@@ -18,17 +18,17 @@ Page({
         currentId: getId
       });
       //读取同意的数目
-       var agree_number=wx.getStorageSync('yes', dianzan)
+       var agree_number=wx.getStorageSync('agreement_Num', dianzan)
        var agree_Number=agree_number[getId]
       //读取不同意的数目
-       var disagree_number = wx.getStorageSync('no', fandui)
+       var disagree_number = wx.getStorageSync('disagreement_Num', fandui)
        var disagree_Number = disagree_number[getId]
       // 读取所有的话题讨论列表点赞缓存状态
-       var cache = wx.getStorageSync('cache_key');
-       var noway = wx.getStorageSync('Noway');//新***
+       var cache = wx.getStorageSync('agreement_State');
+       var disagreement_State = wx.getStorageSync('disagreement_State');
       if (cache) {
         var currentCache = cache[getId];
-        var CurrentCache = noway[getId];//新***
+        var CurrentCache = disagreement_State[getId];//新***
         this.setData({
           collection: currentCache,
           COLLECTION: CurrentCache//新***
@@ -42,10 +42,10 @@ Page({
         }
         //如果没有则创建
         else {
-          var a = wx.getStorageSync('yes');
+          var a = wx.getStorageSync('agreement_Num');
           var b = 0
           a[this.data.currentId] = b
-          wx.setStorageSync('yes', a);
+          wx.setStorageSync('agreement_Num', a);
           this.setData({
             // collection 默认的是 false
             agree_num: b
@@ -61,10 +61,10 @@ Page({
         else
         {
           //新***
-          var z = wx.getStorageSync('no');
+          var z = wx.getStorageSync('disagreement_Num');
           var x = 0
           z[this.data.currentId] = x
-          wx.setStorageSync('no', z);
+          wx.setStorageSync('disagreement_Num', z);
           this.setData({
             disagree_num: x
           })
@@ -74,22 +74,22 @@ Page({
         //创建缓存
         var cache = {};
         cache[getId] = false;
-        wx.setStorageSync('cache_key', cache);
-        wx.setStorageSync('before', cache);
+        wx.setStorageSync('agreement_State', cache);
+        wx.setStorageSync('onlyOneStorage', cache);
         //点赞缓存个数
         var dianzan={};
         dianzan[getId]=0
-        wx.setStorageSync('yes',dianzan)
+        wx.setStorageSync('agreement_Num',dianzan)
         this.setData({
           agree_num: dianzan[getId]
         })
         //反对缓存个数
         var dis = {};
         dis[getId] = false;
-        wx.setStorageSync('Noway',dis);
+        wx.setStorageSync('disagreement_State',dis);
         var fandui = {};
         fandui[getId] = 0
-        wx.setStorageSync('no', fandui)
+        wx.setStorageSync('disagreement_Num', fandui)
         this.setData({
           disagree_num: fandui[getId]
         })
@@ -129,16 +129,16 @@ Page({
     // 点赞
   agree:function(event){
     var that=this
-    var before = wx.getStorageSync('before')//点赞之前的缓存
-    var before_dianji = before[1]//当前序号点击的状态
-    var cache = wx.getStorageSync('cache_key');
+    var onlyOneStorage = wx.getStorageSync('onlyOneStorage')//点赞之前的缓存
+    var onlyOneStorage_dianji = onlyOneStorage[1]//当前序号点击的状态
+    var cache = wx.getStorageSync('agreement_State');
     var currentCache = cache[this.data.currentId];
-    var a = wx.getStorageSync('yes');
+    var a = wx.getStorageSync('agreement_Num');
     var b=a[this.data.currentId]
     //反对的状态
-    var noway = wx.getStorageSync('Noway');
-    var CurrentCache = noway[this.data.currentId];
-    if (before_dianji == !currentCache)
+    var disagreement_State = wx.getStorageSync('disagreement_State');
+    var CurrentCache = disagreement_State[this.data.currentId];
+    if (onlyOneStorage_dianji == !currentCache)
     {
       console.log("不能点赞了")
       wx.showToast({
@@ -151,10 +151,10 @@ Page({
       currentCache = !currentCache;
       CurrentCache = !CurrentCache;
       cache[this.data.currentId] = currentCache;
-      noway[this.data.currentId] = CurrentCache;
+      disagreement_State[this.data.currentId] = CurrentCache;
       // 重新设置缓存
-      wx.setStorageSync('cache_key', cache);
-      wx.setStorageSync('Noway', noway);
+      wx.setStorageSync('agreement_State', cache);
+      wx.setStorageSync('disagreement_State', disagreement_State);
       // 更新数据绑定
       this.setData({
         collection: currentCache,
@@ -163,7 +163,7 @@ Page({
       //关于点赞同意的个数
       var c=this.data.agree_num+1
       a[this.data.currentId]=c
-      wx.setStorageSync('yes', a);
+      wx.setStorageSync('agreement_Num', a);
       this.setData({
         agree_num: c
       })
@@ -174,15 +174,15 @@ Page({
     // 不满意案例
     disagree:function(){
       var that = this
-      var before = wx.getStorageSync('before')//点赞之前的缓存
-      var before_dianji = before[1]
-      var noway = wx.getStorageSync('Noway');//当前序号点击的状态
-      var CurrentCache = noway[this.data.currentId];
-      var m = wx.getStorageSync('no');//反对个数
+      var onlyOneStorage = wx.getStorageSync('onlyOneStorage')//点赞之前的缓存
+      var onlyOneStorage_dianji = onlyOneStorage[1]
+      var disagreement_State = wx.getStorageSync('disagreement_State');//当前序号点击的状态
+      var CurrentCache = disagreement_State[this.data.currentId];
+      var m = wx.getStorageSync('disagreement_Num');//反对个数
       var n = m[this.data.currentId]
-      var cache = wx.getStorageSync('cache_key');
+      var cache = wx.getStorageSync('agreement_State');
       var currentCache = cache[this.data.currentId];
-      if (before_dianji == !CurrentCache) {
+      if (onlyOneStorage_dianji == !CurrentCache) {
         wx.showToast({
           image: '../../../image/icon/sad.png',
           title: '不能点击了~',
@@ -192,17 +192,17 @@ Page({
         currentCache = !currentCache;
         CurrentCache = !CurrentCache;
         cache[this.data.currentId] = currentCache;
-        noway[this.data.currentId] = CurrentCache;
+        disagreement_State[this.data.currentId] = CurrentCache;
         // 重新设置缓存
-        wx.setStorageSync('cache_key', cache);
-        wx.setStorageSync('Noway', noway);
+        wx.setStorageSync('agreement_State', cache);
+        wx.setStorageSync('disagreement_State', disagreement_State);
         this.setData({
           collection: currentCache,
           COLLECTION: CurrentCache
         })
         var f = this.data.disagree_num + 1
         m[this.data.currentId] = f
-        wx.setStorageSync('no', m);
+        wx.setStorageSync('disagreement_Num', m);
         this.setData({
           disagree_num: f
         })

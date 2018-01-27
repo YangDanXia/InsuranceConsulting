@@ -130,7 +130,7 @@ Page({
                     questionCost:questionCost
                   },
                   header:{
-                    'content-type':'application/x-www-form-urlencoded;charset=utf-8'
+              'content-type':'application/x-www-form-urlencoded;charset=utf-8'
                   },
                   method:'POST',
                   success:function(res){
@@ -159,7 +159,7 @@ Page({
           url: 'http://120.78.89.170/user/ask',
           data: {
             key: "haiqian",
-            userId: app.cache.userId,
+            userId: app.cache.userInfo.userId,
             questionType: questionType,
             questionTitle: title,
             questionDetail: content,
@@ -174,19 +174,20 @@ Page({
              wx.showToast({
                  title: '提交成功',
                  icon: 'success',
-                 duration: 3000,
-                 success:function(){
+                 duration: 2000,
+                 complete:function(){
                    setTimeout(function () 
                    {
                      wx.switchTab({
                        url: '../index',
-                     }),3000})
+                     }),7000})
                  }
               })
+
           }
         })
     }
 
 
   }
-});
+})

@@ -21,6 +21,7 @@ Page({
     answ:'',
     id:'',
     P:'',
+    comment:'',//说说你的看法输入的内容
     xianshi:true
   }, 
   godiscuss_all:function(event){
@@ -29,7 +30,6 @@ Page({
     that.setData({
       id:Id
     })
-    
     app.globalData.topic_userNickName=that.data.answ[that.data.id].userNickName
     app.globalData.topic_userPicture = that.data.answ[that.data.id].userPicture
     app.globalData.topic_commentContent = that.data.answ[that.data.id].commentContent
@@ -66,47 +66,30 @@ Page({
           bodytext: res.data[0].topicContent,
           answ:res.data[1]
         })
-        // if (res.data[0].topicPicture == null) {
-        //   that.setData({
-        //     xianshi: true
-        //   })
-        //   console.log(that.data.xianshi)
-        // }
-     
       }
-
-
-
-
-
-
-      
     })
- 
-    
-
   },
   commentInput: function (e) {
-    // this.setData({
-    //   comment:
-    // })
-    comment=e.detail.value
+    this.setData({
+      comment: e.detail.value,
+    })
   },
   sendcomment: function (e) {
     var that = this
-    if (comment == '') {
+    if (that.data.comment == '') {
       wx.showToast({
         title: "请输入内容",
         image: "../../image/icon/warn.png"
       })
     } 
     else {
+      console.log(app.cache.userInfo.userId)
       wx.request({
         url: 'http://120.78.89.170/comment/add',
         data: {
           key: "haiqian",
-          userId: app.cache.userId,
-          commentContent: comment,
+          userId: app.cache.userInfo.userId,
+          commentContent: that.data.comment,
           topicId: topicId
         },
         header: {
@@ -117,8 +100,9 @@ Page({
           wx.showToast({
             icon:'success',
             title: '提交成功！',
+            duration:2000
           })
-          console.log(res)
+       
         }
       })
     }

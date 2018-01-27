@@ -57,6 +57,7 @@ Page({
       key: 'userInfo',
       success: function (res) {
         console.log("提问问题者编号")
+        console.log(res.data.userId) 
         wx.request({
           url: "http://120.78.89.170/question/list",
           method: "POST",

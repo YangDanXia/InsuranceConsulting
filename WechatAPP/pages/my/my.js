@@ -5,7 +5,7 @@ var that=this;
 Page({
   data: {
     con:false,//有消息
-    what: '',//消息的个数
+    msgNumber: '',//消息的个数
     userInfo: {},
     hasUserInfo: false,
     userid:'',
@@ -70,7 +70,7 @@ Page({
         else{
           that.setData({
             con: true,
-            what: geshu
+            msgNumber: geshu
           })
         }
       }
