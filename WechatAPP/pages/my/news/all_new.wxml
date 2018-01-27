@@ -1,5 +1,54 @@
 <!--pages/my/news/all_new/all_new.wxml-->
 <view class="f">
-  <text class="f_text">开发小程序的第一步，你需要拥有一个小程序帐号，通过这个帐号你就可以管理你的小程序。跟随这个教程，开始你的小程序之旅吧！</text>
+  <view class="question_tishi">
+    <image class="icon" src="../../../../image/icon/question.png"></image>
+    <text class="question_tishi_text">您提问过的问题</text>
+  </view>
+  <view class="question_content">
+    <!-- 所属类型 -->
+    <view class="question_text">
+      <text class="leixing">所属类型：{{TYPE}}</text>
+    </view>
+    <!-- 问题的题目 -->
+    <view class="question_text">
+      <text class="question_content_text">{{title}}</text>
+    </view>
+    <!-- 问题的具体内容 -->
+    <view class='question_content'>
+      <text class="question_content_text two">{{concreteness}}</text>
+    </view>
+    <!-- 相关资料 -->
+    <view>
+      <text class="xiangguan">相关资料：</text><text class="wu">无</text>
+    </view>
+    <!-- 提问时间 -->
+    <view class="shijian">
+      <text class="leixing TWO">提问时间：{{TIME}}</text>
+    </view>
+  </view>
+  <!-- 保险师为您回答 -->
+  <view class="question_tishi">
+    <image class="icon" src="../../../../image/icon/answer.png"></image>
+    <text class="question_tishi_text">{{who}}保险师为您回答</text>
+  </view>
+  <view class="question_content">
+    <text class="question_content_text two">{{response}}</text>
+  </view>
+  <!-- 评价 -->
+  <view class="evaluate">
+    <view>
+      <image class="appraise" src="../../../image/icon/evaluate.png"></image>
+    </view>
+    <view>
+      <text class="evaluate_text">看了就评价一下吧</text>
+    </view>
+  </view>
+  <view class="choose">
+    <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}">
+    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+  </radio-group>
+  
+  </view>
 </view>
-

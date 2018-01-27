@@ -138,9 +138,12 @@ Page({
                      wx.showToast({
                        title: '提交成功',
                        icon: 'success',
+                       duration: 3000,
                        success: function () {
-                         wx.switchTab({
-                           url: '../index'
+                         setTimeout(function () {
+                           wx.switchTab({
+                             url: '../index',
+                           }), 3000
                          })
                        }
                      })
@@ -171,10 +174,13 @@ Page({
              wx.showToast({
                  title: '提交成功',
                  icon: 'success',
+                 duration: 3000,
                  success:function(){
-                   wx.switchTab({
-                     url: '../index'
-                   })
+                   setTimeout(function () 
+                   {
+                     wx.switchTab({
+                       url: '../index',
+                     }),3000})
                  }
               })
           }

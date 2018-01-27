@@ -1,4 +1,5 @@
 //app.js
+var timer;
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -13,7 +14,6 @@ App({
         that.globalData.scrHeight = res.screenHeight
       }
     });
-
     // 登录
     wx.login({
       success: res => {
@@ -49,8 +49,8 @@ App({
     })
 
     /**
- * 读取缓存
-*/
+   * 读取缓存
+   */
     try {
       var data = wx.getStorageInfoSync();
       if (data && data.keys.length) {
@@ -66,8 +66,6 @@ App({
       console.warn('获取缓存失败');
     }
   },
-
-
 
   /**
    * 保存缓存
@@ -113,9 +111,9 @@ App({
     id: '',
     question: '',
     content: '',
-    topic_userNickName:'',
-    topic_userPicture: '',
-    topic_commentContent: '',
-    topic_commentCreateTime: '',
+    topic_userNickName:'',//话题讨论，下面评价的用户昵称
+    topic_userPicture: '',//话题讨论，下面评价的用户头像
+    topic_commentContent: '',//话题讨论，下面评价的用户内容
+    topic_commentCreateTime: '',//话题讨论，下面评价的用户时间
   }
 })

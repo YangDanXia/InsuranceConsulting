@@ -46,7 +46,7 @@ page{
 }
 .search-wrap{
   display: flex;
-  height: 100%;
+  /* height: 100%; */
   width:74%; 
   border: 1px skyblue solid; 
   padding:20rpx; 
@@ -97,6 +97,9 @@ page{
 margin-top:30rpx;
 width:100% ; 
 height: 1000rpx;
+ }
+ .headImage{
+ display: none;
  }
 
 .data1{

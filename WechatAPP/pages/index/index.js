@@ -106,6 +106,24 @@ Page({
                 userType: "generalUser"
               }
               app.saveCache("userInfo", userInfo)
+                //获取缓存中的用户类型
+              wx.getStorage({
+                key: 'userInfo',
+                success: function (res) {
+                  var Type = res.data.userType
+                  if (Type == "generalUser") {
+                    that.setData({
+                      usertype1: true,
+                    })
+                  }
+                  else {
+                    that.setData({
+                      usertype2: true,
+                    })
+                  }
+                },
+
+              })
             }
           })
         }
@@ -131,29 +149,7 @@ Page({
         })
       }
     })
-    //获取缓存中的用户类型
-    wx.getStorage({
-      key: 'userInfo',
-      success: function(res) {
-          var Type=res.data.userType
-        if(Type=="generalUser")
-        {
-          that.setData({
-            usertype1:true,
-            usertype2:false
-          })
-        }
-        else
-        {
-          that.setData({
-            usertype1: false,
-            usertype2: true
-          })
-        }
-      },
-    
-    })
-
+  
     },
 
   /**

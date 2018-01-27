@@ -14,8 +14,9 @@ page
 .img
 {
   display: flex;
-  width:350rpx;
-  height:350rpx;
+  width:300rpx;
+  height:300rpx;
+  margin-left:5%;
 }
 .text
 {
