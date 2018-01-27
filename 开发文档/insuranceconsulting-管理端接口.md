@@ -1,4 +1,4 @@
-## 1.管理员
+## 1.管理员<span id="30">
 FUNCTION| URL
 -----|-----
 |[登录](#1)| http://120.78.89.170/admin/login|
@@ -10,6 +10,7 @@ FUNCTION| URL
 |[问题申请表查看](#7)|http://120.78.89.170/question/application/list|
 |[精品问题查看](#8)|http://120.78.89.170/boutique/list|
 |[修改密码](#9)|http://120.78.89.170/changepwd|
+|[删除官方顾问](#20)|http://120.78.89.170/revoke|
 |[添加官方顾问](#10)|http://120.78.89.170/official/add|
 |[问题设置为精品](#11)|	http://120.78.89.170/question/boutique|
 |[保险顾问审核通过](#12)|	http://120.78.89.170/consultant/pass|
@@ -17,6 +18,8 @@ FUNCTION| URL
 |[问题审核通过](#14)|	http://120.78.89.170/question/pass|
 |[问题审核不通过](#15)|	http://120.78.89.170/question/notpass|
 |[发布话题](#16)|http://120.78.89.170/topic/add|
+|[话题列表](#21)|http://120.78.89.170/topic/list|
+|[话题选择](#22)|http://120.78.89.170/topic/select|
 
 
 ## 2.官方顾问
@@ -797,6 +800,84 @@ consultantExp	</td>
 
 <table>
  <tr>
+ <td>功能</td><td colspan="5"><span id="20"></a><h1>删除官方顾问</td></tr>
+ <tr>
+ <td>URL</td><td colspan="5">http://120.78.89.170/revoke</td>
+ </tr>
+<tr>
+    <td rowspan="3">参数(post)<br/>
+        </td>
+    <td>参数名</td>
+    <td> 类型 </td>
+    <td>必填</td>
+    <td>默认</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>key</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>秘钥(haiqian)</td>
+</tr>
+<tr>
+   <td>adminCount</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>官方顾问编号</td>
+
+
+
+<tr>
+    <td rowspan="8">返回值(json)</td>
+    <td rowspan="4">Success</td>
+    <td>   </td>
+    <td colspan="2">内容</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>code</td>
+    <td colspan="2"> 200 </td>
+    <td></td>
+</tr>
+<tr>
+   <td>msg</td>
+    <td colspan="2"> 删除官方顾问成功</td>
+    <td></td>
+</tr>
+<tr>
+   <td>data</td>
+    <td colspan="2">	</td>
+    <td></td>
+</tr>
+<tr>
+    <td rowspan="4">Failed</td>
+    <td>   </td>
+    <td colspan="2">内容</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>	code</td>
+    <td colspan="2"> 404 </td>
+    <td></td>
+</tr>
+<tr>
+   <td>msg</td>
+    <td colspan="2">删除官方顾问失败!</td>
+    <td></td>
+</tr>
+<tr>
+   <td>	data</td>
+    <td colspan="2">  </td>
+    <td></td>
+</tr>
+
+</table>
+
+
+<table>
+ <tr>
  <td>功能</td><td colspan="5"><span id="10"></a><h1>添加官方顾问</td></tr>
  <tr>
  <td>URL</td><td colspan="5">http://120.78.89.170/official/add</td>
@@ -852,8 +933,10 @@ consultantExp	</td>
 </tr>
 <tr>
    <td>data</td>
-    <td colspan="2">	</td>
-    <td></td>
+    <td colspan="2">name 
+    pwd
+</td>
+    <td>返回生成的账户与密码</td>
 </tr>
 <tr>
     <td rowspan="4">Failed</td>
@@ -878,6 +961,7 @@ consultantExp	</td>
 </tr>
 
 </table>
+
 
 
 <table>
@@ -958,7 +1042,7 @@ consultantExp	</td>
 
 </table>
 
-
+[回到顶部](#30)
 <table>
  <tr>
  <td>功能</td><td colspan="5"><h1><span id="13"></a>保险顾问审核不通过</td></tr>
@@ -1375,7 +1459,7 @@ isResolve	</td>
 
 </table>
 
-
+[回到顶部](#30)
 
 <table>
  <tr>
@@ -1467,7 +1551,7 @@ isResolve	</td>
 </table>
 
 
-
+[回到顶部](#30)
 
 <table>
  <tr>
@@ -1758,6 +1842,7 @@ questionResult</td>
 
 </table>
 
+[回到顶部](#30)
 
 
 <table>
@@ -1852,4 +1937,123 @@ questionResult</td>
 </table>
 
 
+
+<table>
+ <tr>
+ <td>功能</td><td colspan="5"><span id="21"></a><h1>话题列表</td></tr>
+ <tr>
+ <td>URL</td><td colspan="5">http://120.78.89.170/topic/list</td>
+ </tr>
+<tr>
+    <td rowspan="2">参数(post)<br/>
+        </td>
+    <td>参数名</td>
+    <td> 类型 </td>
+    <td>必填</td>
+    <td>默认</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>key</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>秘钥(haiqian)</td>
+</tr>
+<tr>
+    <td rowspan="8">返回值(json)</td>
+    <td rowspan="6">success</td>
+    <td colspan="2">内容</td>
+    <td colspan="2">说明</td>
+    
+</tr>
+<tr>
+   <td colspan="2">topicId</td>
+    <td colspan="1">话题编号</td>
+    <td></td>
+</tr>
+<tr>
+   <td colspan="2">topicTitle</td>
+    <td colspan="1">话题标题</td>
+    <td></td>
+</tr>
+<tr>
+   <td colspan="2">topicPicture</td>
+    <td colspan="1">话题图片</td>
+    <td></td>
+</tr>
+<tr>
+   <td colspan="2">topicContent</td>
+    <td colspan="1">话题内容</td>
+    <td></td>
+</tr>
+<tr>
+   <td colspan="2">gmt_modified</td>
+    <td colspan="1">修改时间</td>
+    <td></td>
+</tr>
+<tr>
+    <td rowspan="4">Failed</td>
+   
+</tr>
+
+<tr>
+    <td colspan="3">查询失败！</td>
+    <td></td>
+</tr>
+
+
+</table> 
+
+
+<table>
+ <tr>
+ <td>功能</td><td colspan="5"><span id="22"></a><h1>话题选择</td></tr>
+ <tr>
+ <td>URL</td><td colspan="5">http://120.78.89.170/topic/select</td>
+ </tr>
+<tr>
+    <td rowspan="3">参数(post)<br/>
+        </td>
+    <td>参数名</td>
+    <td> 类型 </td>
+    <td>必填</td>
+    <td>默认</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>key</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>秘钥(haiqian)</td>
+</tr>
+<tr>
+   <td>topicId</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>话题编号</td>
+</tr>
+<tr>
+    <td rowspan="2">返回值(json)</td>
+    <td rowspan="1">success</td>
+    <td colspan="4">
+        topicTitle<br>
+        topicContent<br>
+        topicPicture<br>
+        topicCreateTime<br>
+        userId<br>
+        commentContent<br>
+        commentCreateTime<br>
+    </td>
+</tr>
+<tr>
+    <td rowspan="1">Failed</td>
+    <td colspan="4">查询失败！</td>
+</tr>
+
+</table>
+
+[回到顶部](#30)
 

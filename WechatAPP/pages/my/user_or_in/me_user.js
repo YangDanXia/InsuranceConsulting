@@ -7,18 +7,21 @@ Page({
     n: '',
     control: false
   },
+  
   //图标的显示
   handleTap1: function () {
     this.setData({
       control: true
     })
   },
+
 //图标的隐藏
   handleTap2: function () {
     this.setData({
       control: false
     })
   },
+
   //获取下标及当前下标和内容
   gotoall:function(event){
     var id = event.currentTarget.id

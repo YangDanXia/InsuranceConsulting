@@ -35,7 +35,7 @@ Page({
       var questionId = options.id
       var that = this
       wx.request({
-        url:'http://120.78.89.170/boutique/list' ,
+        url:'http://120.78.89.170/question/list' ,
         data: {
           key: 'haiqian',
           questionId: questionId
@@ -45,6 +45,7 @@ Page({
         },
         method: 'POST',
         success: function (res) {
+          console.log(res)
           console.log(res.data.data[0])
           that.setData({
             introduction: res.data.data[0],
