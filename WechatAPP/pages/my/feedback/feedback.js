@@ -5,18 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    f_content:'',
-    f_way:''
+    feedback_Content:'',
+    feedback_Way:''
   
   },
   get_feedback:function(e){
     this.setData({
-      f_content: e.detail.value
+      feedback_Content: e.detail.value
     })
   },
   get_input: function (e) {
     this.setData({
-      f_way: e.detail.value
+      feedback_Way: e.detail.value
     })
   },
   /**
@@ -76,7 +76,7 @@ Page({
   },
   getbutton:function(e){
     var that=this;
-    if(this.data.f_content.length==0)
+    if(this.data.feedback_Content.length==0)
     {
       wx.showToast({
         title: '意见不能为空~',
@@ -84,7 +84,7 @@ Page({
         duration: 2000
       })
     }
-    else if (this.data.f_way.length == 0)
+    else if (this.data.feedback_Way.length == 0)
     {
       wx.showToast({
         title: '要填写联系方式哦',

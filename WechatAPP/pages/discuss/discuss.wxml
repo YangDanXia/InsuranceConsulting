@@ -51,10 +51,11 @@
 
   <view class="search-bar">
     <view class="search-wrap">
-        <textarea type="text" maxlength='500' placeholder='说说你的看法......' fixed="true" auto-height="true" bindtap='commentInput'> 
+        <textarea type="text" value="{{comment}}"
+        bindinput="commentInput" maxlength='500' placeholder='说说你的看法......' fixed="true" auto-height="true"> 
         </textarea>
     </view>
-    <view  bindtap="sendcomment">
+    <view bindtap="sendcomment">
       <image class="bodyhead-text" src="../../image/icon/fabu.png"></image>
     </view> 
   </view> 

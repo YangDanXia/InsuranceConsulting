@@ -21,8 +21,7 @@ Page({
     wx.getStorage({
       key: 'adduserId',
       success: function (res) {
-        console.log("sfdefd")
-        console.log(res.data)
+ 
         that.setData({
           UserId: res.data
         })
@@ -270,7 +269,15 @@ Page({
           wx.showToast({
             title: '提交成功！',
             icon:'success',
-            duration:2000
+            duration:2000,
+            success: function () {
+              setTimeout(function () {
+                //要延时执行的代码
+                wx.switchTab({
+                  url: '../index/index'
+                })
+              }, 3000)
+            }
           })
           console.log("return:")
           console.log(res)
