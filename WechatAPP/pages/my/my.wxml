@@ -3,7 +3,7 @@
 <view class="w_h one">
   <image wx:if="{{userInfo==NULL}}" class="userinfo-avatar" src="../../image/icon/ti.png"  background-size="cover"></image>
   <image wx:else="{{userInfo!==NULL}}" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-  <text class="userinfo-hi">Hi,{{userInfo.nickName}}</text>
+  <text class="userinfo-hi">Hi,<text class="Name">{{userInfo.nickName}}</text></text>
 </view>
 
 <!-- 我要成为保险顾问，可隐藏 -->
@@ -29,13 +29,14 @@
 <view class="w_h two" bindtap='gotonews'>
     <image class="my_icon" src="../../image/icon/xx.png">
   </image><text class="my_check">消息</text>
-  <image class="go_icon" src="../../image/icon/enter.png">
-  </image>
-  <view wx:if="{{con}}">
+    <view wx:if="{{con}}">
     <view class="red">
       <text class="number">{{what}}</text>
     </view>
   </view>
+  <image class="go_icon" src="../../image/icon/enter.png">
+  </image>
+
 </view>
 <view wx:if="{{history_problem}}">
   <view class="w_h two" bindtap="tohistory_question">

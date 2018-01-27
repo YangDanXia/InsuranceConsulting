@@ -1,0 +1,10 @@
+<!--pages/my/news/all_new2.wxml-->
+<!--pages/my/news/all_new/all_new.wxml-->
+<view class="f">
+  <view class="question_tishi">
+    <image class="icon" src="../../../../image/icon/question.png"></image>
+    <text class="question_tishi_text">审核</text>
+  </view>
+
+</view>
+

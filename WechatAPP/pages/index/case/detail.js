@@ -1,4 +1,3 @@
-
 const app = getApp()
 Page({
     data: {
@@ -10,7 +9,6 @@ Page({
       currentId:'',//点击的问题ID
       collection:'',
       COLLECTION:''
-
     },
     onLoad: function( option ) {
       var that=this

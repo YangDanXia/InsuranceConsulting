@@ -14,7 +14,7 @@
           <text class="my_check">{{date}}</text>
         </view>
       <text class="body-text" >{{bodytext}}</text>
-       <image wx:if="{{xianshi}}" class="headImage"></image>
+       <image class="headImage" ></image>
     </view>
   </view>
 

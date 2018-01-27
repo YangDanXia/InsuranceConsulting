@@ -10,7 +10,6 @@ Page({
     hasUserInfo: false,
     userid:'',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    // condition:true,
     history_problem:'',//历史提问
     history_answer:'',//历史回答
     Type:true//判断是否成为保险顾问
@@ -22,9 +21,8 @@ Page({
     wx.getStorage({
       key: 'userInfo',
       success: function(res) {
-        console.log("获取缓存" + res.data)
-        // UserId=res.data.userId
-        // 获取头像和昵称
+        console.log("获取个人信息缓存")
+        console.log(res.data)
         that.setData({
           userInfo:res.data
         })
@@ -46,22 +44,35 @@ Page({
         }
       }
     })
+
+  },
+  onShow:function(){
+    var that=this
     wx.request({
       url: 'http://120.78.89.170/newNum',
       data: {
         key: 'haiqian',
-        userId:1
+        userId: 1
       },
       header: {
         'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
       },
       method: 'POST',
       success: function (res) {
-        console.log(res)
-        that.setData({
-          con:true,
-          what:res.data.count
-        })
+        var geshu=res.data.count
+        console.log(geshu)
+        if (geshu==0)
+        {
+          that.setData({
+            con: false,
+          })
+        }
+        else{
+          that.setData({
+            con: true,
+            what: geshu
+          })
+        }
       }
     })
   },
@@ -71,31 +82,32 @@ Page({
       url: 'user_or_in/me_user'
     })
   },
-
-  
   gotofeedback:function(){
     wx.navigateTo({
       url: 'feedback/feedback',
     })
   },
-
-
+  //消息
   gotonews:function(){
-    // if(接收的消息代表==0)
-    // {
-    //   wx.navigateTo({
-    //     url: '../my/black_xx/black_xx',
-    //   })
-    // }
-    // else
-    // {
+    if(this.data.con==false)
+    {
+      // wx.navigateTo({
+      //   url: 'black/black_xx',
+      // })
       wx.navigateTo({
-      url: 'news/news',
-    })
-    // }
+        url: 'news/news',
+      })
+    }
+    else
+    {
+      wx.navigateTo({
+        url: 'news/news',
+      })
+      this.setData({
+        con:false
+      })
+    }
   },
-
-
   tohistory_answer:function() {
     wx.navigateTo({
       url: 'user_or_in/me_insurance'

@@ -21,7 +21,7 @@ Page({
     answ:'',
     id:'',
     P:'',
-    xianshi:false
+    xianshi:true
   }, 
   godiscuss_all:function(event){
     var that=this
