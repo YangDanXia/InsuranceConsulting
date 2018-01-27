@@ -6,9 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    discuss:'',
-    discuss_id:''
-    
+    discuss_userNickName: '',
+    discuss_userPicture: '',
+    discuss_commentContent: '',
+    discuss_commentCreateTime:'',
   },
 
   /**
@@ -16,25 +17,11 @@ Page({
    */
   onLoad: function (options) {
     var that= this
-    wx.getStorage({
-      key: 'topic',
-      success: function(res) {
-        console.log("topic content")
-        console.log(res)
-        that.setData({
-          discuss:res
-        })
-      },
-    })
-    wx.getStorage({
-      key: 'topic_id',
-      success: function (res) {
-        console.log("topic id")
-        console.log(res.data)
-        that.setData({
-          discuss_id: res.data
-        })
-      },
+    that.setData({
+      discuss_userNickName:app.globalData.topic_userNickName,
+      discuss_userPicture: app.globalData.topic_userPicture,
+      discuss_commentContent: app.globalData.topic_commentContent,
+      discuss_commentCreateTime: app.globalData.topic_commentCreateTime
     })
   
   },

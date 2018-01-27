@@ -19,7 +19,9 @@ Page({
     showView: true,
     topicId:1,
     answ:'',
-    id:''
+    id:'',
+    P:'',
+    xianshi:true
   }, 
   godiscuss_all:function(event){
     var that=this
@@ -27,9 +29,7 @@ Page({
     that.setData({
       id:Id
     })
-    console.log("id")
-    console.log(Id)
-    console.log(this.data.id)
+    
     app.globalData.topic_userNickName=that.data.answ[that.data.id].userNickName
     app.globalData.topic_userPicture = that.data.answ[that.data.id].userPicture
     app.globalData.topic_commentContent = that.data.answ[that.data.id].commentContent
@@ -38,45 +38,60 @@ Page({
       url: 'discussAll/discuss_all',
     })
   },
-
   onLoad: function (options) {
+    
     var id = options.id
+    console.log("onload")
+    console.log(id)
     var that=this
     wx.request({
-      url: 'http://120.78.89.170/topic/now',
+      url: 'http://120.78.89.170/topic/select',
       data: {
-        key: 'haiqian'
+        key: 'haiqian',
+        topicId:id
       },
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded; charset=utf-8'
       },
-      success: function (res) {
+      success: function (res){
+        console.log("返回")
         console.log(res)
         console.log()
         that.setData({
+          P: res.data[0].topicPicture,
           title: res.data[0].topicTitle,
           topicId: res.data[0].topicId,
           date: res.data[0].gmt_modified,
           bodytext: res.data[0].topicContent,
           answ:res.data[1]
         })
+        // if (res.data[0].topicPicture == null) {
+        //   that.setData({
+        //     xianshi: true
+        //   })
+        //   console.log(that.data.xianshi)
+        // }
+     
       }
-      })
 
+
+
+
+
+
+      
+    })
+ 
+    
 
   },
-
-
   commentInput: function (e) {
     // this.setData({
     //   comment:
     // })
     comment=e.detail.value
   },
-  
-
-
   sendcomment: function (e) {
     var that = this
     if (comment == '') {
@@ -84,7 +99,8 @@ Page({
         title: "请输入内容",
         image: "../../image/icon/warn.png"
       })
-    } else {
+    } 
+    else {
       wx.request({
         url: 'http://120.78.89.170/comment/add',
         data: {
@@ -107,16 +123,6 @@ Page({
       })
     }
   },
-
-
-  
-
-
-
-
-
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

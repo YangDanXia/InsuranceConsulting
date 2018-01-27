@@ -4,7 +4,7 @@ page
 }
 .f
 {
-  margin: 4% 4% 0% 4%;
+  margin: 3% 3% 0% 3%;
   background-color: #fff;
   padding:3%;
 }
@@ -19,6 +19,36 @@ page
 }
 .f_text
 {
+  display: flex;
   color: #515151;
-  margin-bottom:20rpx;
+  margin-bottom:25rpx;
+}
+.fengexian
+{
+  border-bottom:1px solid #f6f6f6;
+}
+.jiejue_text
+{
+  display: flex;
+  margin-top:20rpx;
+  line-height: 45rpx;
+}
+.jiejue_img
+{
+  display: flex;
+  margin-top:20rpx;
+  width:80rpx;
+  height:80rpx;
+}
+.jiejue
+{
+  display: flex;
+}
+.yi
+{
+  display: flex;
+  font-size: 38rpx;
+  color:#939393;
+  margin-top:35rpx;
+  margin-left:20rpx;
 }

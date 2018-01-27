@@ -5,7 +5,7 @@ background-color: #fff;
 display: flex;
 height:350rpx;
 margin-bottom:30rpx;
-background-color: #83c6c2;
+background-color: #8da0bd;
 }
 .delete_icon
 {
@@ -52,7 +52,7 @@ flex-direction: row;
 {
 display: flex;
 flex-direction: column;
-background-color: #d4edec;
+background-color: #acdbf4;
 padding:20rpx;
 }
 .border_all.two

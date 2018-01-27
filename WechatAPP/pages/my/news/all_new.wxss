@@ -5,12 +5,103 @@ page
 }
 .f
 {
-  margin: 4% 4% 0% 4%;
+  margin: 3% 3% 0% 3%;
   background-color: #fff;
-  padding:3%;
+}
+.question_tishi
+{
+  display: flex;
+  background-color:#a3cee4;
+  width:100%;
+  height:75rpx;
+}
+.question_tishi_text
+{
+  font-size:36rpx;
+  margin-top: 15rpx;
+  margin-left:10rpx;
+}
+.icon
+{
+  display: flex;
+  width:45rpx;
+  height:45rpx;
+  border-radius: 50%;
+  margin:15rpx;
+}
+.question_content
+{
+  padding:15rpx;
 
 }
-.f_text
+.question_content_text
 {
-  color: #515151;
+  font-size: 36rpx;
+  color:#87a7d6;
+}
+.question_text
+{
+  margin-bottom:20rpx;
+  display:flex;
+}
+.question_content
+{
+  margin-bottom:20rpx;
+}
+.question_content_text.two
+{
+  font-size:33rpx;
+  line-height:45rpx;
+  color: #13227a;
+}
+/* .xiangguan
+{
+  margin-left:20rpx;
+} */
+.wu
+{
+  color:#939393;
+}
+.leixing
+{
+  display: flex;
+  margin-bottom:30rpx;
+  font-size:28rpx;
+  color:#939393;
+}
+.leixing.TWO
+{
+  margin-top:17px;
+  margin-left:40%;
+  margin-bottom:0rpx;
+}
+.question_text.Time
+{
+  margin-left:40%;
+  margin-top:30rpx;
+  margin-bottom:0rpx;
+}
+.shijian{
+  display: flex;
+  margin-top:40rpx;
+}
+.evaluate
+{
+  display: flex;
+  width:100%;
+  height:70rpx;
+  border:1px solid #13227a;
+}
+.appraise
+{
+  display: flex;
+  width:50rpx;
+  height:50rpx;
+  margin-top:10rpx;
+  margin-right:20rpx;
+  border-radius:50%;
+}
+.evaluate_text{
+  color:#87a7d6;
+  font-size:34rpx;
 }
