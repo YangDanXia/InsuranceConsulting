@@ -2,7 +2,7 @@
 * @Author: YDX
 * @Date:   2017-12-11 10:20:24
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-12-13 18:29:14
+* @Last Modified time: 2018-01-24 09:07:49
 */
 
 $(document).ready(function(){
@@ -17,7 +17,7 @@ $(document).ready(function(){
         $.post(url,data, function(res) { 
             var result = JSON.parse(res);
             if(result.code == "200"){
-                window.location="index.html";
+                window.location="admin/index.html";
             }else if(result.code=="404"){
                 alert("账号或密码错误");
             }
