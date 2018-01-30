@@ -5,8 +5,8 @@ FUNCTION     - | URL
 [历史记录](#3) | http://120.78.89.170/question/list
 [精品问题列表](#4)| http://120.78.89.170/boutique/list
 [回复问题](#5) | http://120.78.89.170/question/replay
-[评价问题](#6) | http://120.78.89.170/evaluate
-[保险顾问申请](#7)| http://120.78.89.170/consultant/add
+[评价问题](#7) | http://120.78.89.170/evaluate
+[保险顾问申请](#6)| http://120.78.89.170/consultant/add
 [发送验证码](#8)| http://120.78.89.170/code
 [登记号码](#9) | http://120.78.89.170/Phone
 [图片上传](#10) | http://120.78.89.170/upload
@@ -231,7 +231,7 @@ code|404
 msg|评价失败！
 data|
 
-<h4 id="8" > 8.添加用户</h4>
+<h4 id="8" > 8.发送验证码</h4>
 
 URL|http://120.78.89.170/code
 ---|---
