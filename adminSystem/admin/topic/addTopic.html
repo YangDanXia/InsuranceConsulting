@@ -26,6 +26,8 @@ $(function(){
 <div id="right_ctn">
     <div class="right_m">
         <div class="hy_list">
+            <div class="space_hx">&nbsp;</div> 
+            <div class="space_hx">&nbsp;</div> 
             <div class="box_t">
                 <span class="name">添加话题</span>
                 <div class="position">
@@ -42,23 +44,21 @@ $(function(){
             <div class="xjhy"> 
                 <ul class="hypz">
                     <li class="clearfix">
-                        <span class="title">标题：</span>
+                        <span class="title">   </span>
                         <div class="li_r">
-                            <input  name="" type="text">
+                            <input  name="topicTitle" type="text">
                             <i>*</i>
                         </div>
                     </li>
                     <li class="clearfix">
-                        <span class="title">内容：</span>
+                        <span class="title">   </span>
                         <div class="li_r">
-                            <textarea rows="10" cols="30">
-                             
-                            </textarea>
+                            <textarea name="topicContent" rows="10" cols="30"></textarea>
                             <i>*</i>
                         </div>
                     </li>
                     <li class="tj_btn">
-                        <a href="">保存</a>
+                        <a name="Submit" >保存</a>
                         <a href="" class="back">返回</a>
                         
                     </li>
@@ -69,4 +69,94 @@ $(function(){
     </div>
 </div>
 </body>
+<script type="text/javascript">
+
+  $(document).ready(function() { 
+//输入提示
+var str1="请填写标题";  
+$("input[name='topicTitle']").attr('style','font-size:14px;color:gray;');  
+$("input[name='topicTitle']").val(str1);  
+$("input[name='topicTitle']").focus(function(){  
+   var v=this.value;  
+   if(v == str1){  
+        $("input[name='topicTitle']").attr('style','color:;');  
+        $(this).val("").attr('name','topicTitle');  
+    }  
+}).blur(function(){  
+    var v=this.value;  
+    if(v == ""){  
+        $("input[name='topicTitle']").attr('style','font-size:14px;color:gray;');  
+        $(this).val(str1).attr('name','topicTitle');       
+    }  
+});  
+var str="在此编辑内容";  
+$("textarea[name='topicContent']").attr('style','padding-top:100px; padding-left:350px;font-size:14px;color:gray;');  
+$("textarea[name='topicContent']").val(str);  
+$("textarea[name='topicContent']").focus(function(){  
+   var v=this.value;  
+   if(v == str){  
+        $("textarea[name='topicContent']").attr('style','color:;');  
+        $(this).val("").attr('name','topicContent');  
+    }  
+}).blur(function(){  
+    var v=this.value;  
+    if(v == ""){  
+        $("textarea[name='topicContent']").attr('style','padding-top:100px; padding-left:350px;font-size:14px;color:gray;');  
+        $(this).val(str).attr('name','topicContent');       
+    }  
+});  
+
+//提交按钮
+   $("a[name='Submit']").click(function(){
+    var topicTitle=$(" input[ name='topicTitle' ] ").val();
+     var topicContent=$(" textarea[ name='topicContent' ] ").val();
+      var data = {
+            key:"haiqian",
+            topicTitle:topicTitle,
+            topicContent:topicContent
+           }; 
+           console.log(data);
+
+            $.post('http://120.78.89.170/topic/add',data, function(res){
+                if(JSON.parse(res).code == "200"){
+                   alert("话题添加成功！");
+                   // location.reload();
+                 }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                };
+           })
+    });
+})
+   
+          
+   
+    //   var data={
+    //     key:"haiqian"
+    //   };
+    //   $.post('http://120.78.89.170/user/list',data,function(res) { 
+
+    //      $('#fresh-table').bootstrapTable({
+    //         toolbar: ".toolbar",
+    //         pagination: true,
+    //         striped: true,
+    //         search: true,
+    //         pageSize: 8,
+    //         pageList: [8,10,25,50,100],
+    //         data:JSON.parse(res).data,
+    //         formatShowingRows: function(pageFrom, pageTo, totalRows){
+    //             //do nothing here, we don't want to show the text "showing x of y from..." 
+    //         }
+    //      });
+    // }); 
+// for(var i=1;i++;i<=8)
+  // });
+
+
+   // $(document).onload(function(){
+
+   //    var tab = document.getElementById("fresh-table") ;
+   //    console.log(tab.rows.length);
+   // });
+
+</script>
 </html>

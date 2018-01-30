@@ -17,7 +17,7 @@ $(document).ready(function(){
         $.post(url,data, function(res) { 
             var result = JSON.parse(res);
             if(result.code == "200"){
-                window.location="index.html";
+                window.location="admin/index.html";
             }else if(result.code=="404"){
                 alert("账号或密码错误");
             }

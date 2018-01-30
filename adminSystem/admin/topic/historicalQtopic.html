@@ -7,29 +7,40 @@
 <link rel="stylesheet" type="text/css" href="../../CSS/thems.css">
 <link rel="stylesheet" type="text/css" href="../../CSS/layer.css" />
 <script type="text/javascript" src="../../JS/jquery-1.11.2.min.js"></script>
-<script type="text/javascript">
+ <script type="text/javascript">
 $(function(){
-	//自适应屏幕宽度
-	window.onresize=function(){ location=location }; 
-	
-	var main_h = $(window).height();
-	$('.hy_list').css('height',main_h-45+'px');
-	
-	var search_w = $(window).width()-40;
-	$('.search').css('width',search_w+'px');
-	$('.list_hy').css('width',search_w-100+'px');
+    //自适应屏幕宽度
+    window.onresize=function(){ location=location }; 
+    
+    var main_h = $(window).height();
+    $('.hy_list').css('height',main_h-45+'px');
+    
+    var search_w = $(window).width()-40;
+    $('.search').css('width',search_w+'px');
+    $('.list_hy').css('width',search_w-100+'px');
 });
-</script>
+</script> 
+<style type="text/css" media="screen">
+/*  .list_discucc{
+height:500px;
+
+  }*/
+.list_discucc th{
+height:100px;
+width:150px;
+  }
+
+</style>
 </head>
 
 <body>
 <div id="right_ctn">
-	<div class="right_m">
+    <div class="right_m">
         <div class="hy_list">
-        	<div class="box_t">
-            	<span class="name">查看详情</span>
+            <div class="box_t">
+                <span class="name">话题详情</span>
                 <div class="position">
-                	<a href=""><img src="../../Image/icon5.png" alt=""/></a>
+                    <a href=""><img src="../../Image/icon5.png" alt=""/></a>
                     <a href="">首页</a>
                     <span><img src="../../Image/icon3.png" alt=""/></span>
                     <a href="">审核管理</a>
@@ -39,7 +50,7 @@ $(function(){
                     <a href="">资料详情</a>
                 </div>
             </div>
-            <div class="space_hx">&nbsp;</div>
+         
             <form action="" method="post">
             <table cellpadding="0" cellspacing="0" class="list_hy" id="detailTable">
               <tr>
@@ -47,20 +58,20 @@ $(function(){
                 <th scope="col">内容</th>
               </tr>
               <tr>
-                <td>姓名</td>
-                <td><div class="mkkz">{{infos.consultantName}}</div></td>
+                <td>标题</td>
+                <td><div class="mkkz">{{infos.topicTitle}}</div></td>
               </tr>
               <tr>
-                <td>照片</td>
+                <td>内容</td>
+                <td><div class="mkkz">{{infos.topicContent}}</div></td>
+              </tr> 
+            <!--   <tr>
+                <td>照片资料</td>
                 <td>
                   <div class="mkkz layer-photos-demo" id="layer-photos-demo">
                     <img v-bind:src="infos.consultantPhoto"/>
                   <div>
                 </td>
-              </tr>
-              <tr>
-                <td>手机号</td>
-                <td><div class="mkkz">{{infos.consultantPhone}}</div></td>
               </tr>
               <tr>
                 <td>专业资格证</td>
@@ -69,7 +80,20 @@ $(function(){
               <tr>
                 <td>工作经历</td>
                 <td><div class="mkkz"><ul class="clearfix">{{infos.consultantExp}}</ul></div></td>
-              </tr>
+              </tr> -->
+            </table>
+            </form>
+
+              <div class="space_hx">&nbsp;</div>
+          <form>
+            <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
+              <thead class="list_discucc">
+                 <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
+                 <th data-field="commentCreateTime" scope="col">回复时间</th>
+                 <th data-field="userId" class="zt" scope="col">用户编号</th>
+                 <th data-field="userNickName" scope="col">名称</th>
+                 <th data-field="commentContent" scope="col">回复内容</th>
+              </thead>            
             </table>
             </form>
         </div>
@@ -77,14 +101,14 @@ $(function(){
 </div>
 
 <script type="text/javascript" src="../../JS/vue.min.js"></script>
+<script type="text/javascript" src="../../JS/bootstrap-table.js"></script>
 <script type="text/javascript">
 
-
-  var userId = GetQueryString("userId"); 
+  var topicId = GetQueryString("topicId"); 
   var img_src = "Image/loading-2.gif";
   var data = {
             key:"haiqian",
-            userId:userId
+            topicId:topicId
            };
   var info = new Vue({
     el:"#detailTable",
@@ -93,17 +117,16 @@ $(function(){
     },
     methods:{
        getInfo:function(){
-          $.post('http://120.78.89.170/consultant/list',data, function(res) {
-             console.log(res);
-               info.infos = JSON.parse(res).data[0]; 
-                 console.log(info.infos.consultantName);
+          $.post('http://120.78.89.170/topic/select1',data, function(res) {
+          console.log(res);
+               info.infos = JSON.parse(res).msg;
+                console.log(info.infos.topicTitle);
            });
        }
     }
   });
 
   info.getInfo();
-
 
 
   function GetQueryString(variable)
@@ -116,6 +139,24 @@ $(function(){
        }
        return(false);
    }
+
+  $(document).ready(function() {
+      $.post('http://120.78.89.170/topic/select1',data,function(res) { 
+        console.log(res),
+         $('#fresh-table').bootstrapTable({
+            toolbar: ".toolbar",
+            pagination: true,
+            striped: true,
+            pageSize: 2,
+            pageList: [8,10,25,50,100],
+            data:JSON.parse(res).data,
+            formatShowingRows: function(pageFrom, pageTo, totalRows){
+                //do nothing here, we don't want to show the text "showing x of y from..." 
+            }
+         });
+    }); 
+  });
+
 
   $(".layer-photos-demo").click(function(){
     img_src = $(this).children('img').attr('src');
@@ -133,5 +174,6 @@ $(function(){
 
 
 </script>
+<script type="text/javascript" src="../../JS/common.js"></script>
 </body>
 </html>
