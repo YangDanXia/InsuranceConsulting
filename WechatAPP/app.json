@@ -1,34 +1,29 @@
 {
   "pages":[
-        "pages/index/index",
-          "pages/index/search/questionDetail",
-        "pages/discuss/discuss",
-
-
-
-    "pages/index/ask/addPhone",
-    "pages/index/search/searchList",
-    "pages/discuss/discussList",
-   
+    "pages/index/index",
+    "pages/discuss/discuss",
     "pages/my/my",
-
-
-   "pages/my/user_or_in/all/user_new",
+    "pages/index/ask/addPhone",
+    "pages/index/ask/question",
+    "pages/index/search/search",
+    "pages/index/search/searchList",
+    "pages/index/search/questionDetail",
     "pages/index/case/classicCase",
     "pages/index/case/detail",
+    "pages/index/solve/solve_problem",
+    "pages/index/solve/answer/answer_question",
+    "pages/discuss/discussList",
+    "pages/discuss/discussAll/discuss_all",
+    "pages/my/user_or_in/all/user_new",
     "pages/my/user_or_in/me_user",
     "pages/my/user_or_in/me_insurance",
-    "pages/my/insurance_consultant/insurance_consultant",
     "pages/my/feedback/feedback",
     "pages/my/black/black",
     "pages/my/black/black_xx",
     "pages/my/news/news",
     "pages/my/news/all_new",
-    "pages/index/ask/question",
-
-    "pages/index/search/search"
-
-    
+    "pages/my/news/all_new2",
+    "pages/my/insurance_consultant/insurance_consultant"
   ],
   "window": {
     "backgroundTextStyle": "light",

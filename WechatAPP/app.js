@@ -1,4 +1,5 @@
 //app.js
+var timer;
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -13,13 +14,12 @@ App({
         that.globalData.scrHeight = res.screenHeight
       }
     });
-
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx2b32ac8600d1cef0&secret=acee0956f77f65e0f6b30744aa3e7a86&js_code='+res.code+'&grant_type=authorization_code',
+          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=wx144ac6748a028520&secret=988cdef945e5fdb98df88d422257b5e6&js_code='+res.code+'&grant_type=authorization_code',
           success:function(res){
             that.saveCache("openid",res.data.openid)
           }
@@ -49,8 +49,8 @@ App({
     })
 
     /**
- * 读取缓存
-*/
+   * 读取缓存
+   */
     try {
       var data = wx.getStorageInfoSync();
       if (data && data.keys.length) {
@@ -60,13 +60,12 @@ App({
             that.cache[key] = value;
           }
         });
+      
       }
     } catch (e) {
       console.warn('获取缓存失败');
     }
   },
-
-
 
   /**
    * 保存缓存
@@ -94,8 +93,6 @@ App({
       key: key
     });
   },
-
-
   /**
  * 获取随机数
  */
@@ -113,6 +110,10 @@ App({
     userInfo: null,
     id: '',
     question: '',
-    content: ''
+    content: '',
+    topic_userNickName:'',//话题讨论，下面评价的用户昵称
+    topic_userPicture: '',//话题讨论，下面评价的用户头像
+    topic_commentContent: '',//话题讨论，下面评价的用户内容
+    topic_commentCreateTime: '',//话题讨论，下面评价的用户时间
   }
 })

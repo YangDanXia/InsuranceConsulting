@@ -6,51 +6,58 @@
 
 <view class='body'>
 
- <view class="search-bar">
-    <view class="search-wrap">
-        <input type="text" placeholder="说说你的看法..." class="search-input"  bindtap='commentInput' />
+  <view class="title">
+    <view class="headline">
+      <view class="head-text">{{title}}</view>
+        <view class="data1">
+          <image class="my_icon" src="../../image/icon/riqi.png"></image>
+          <text class="my_check">{{date}}</text>
+        </view>
+      <text class="body-text" >{{bodytext}}</text>
+       <image class="headImage" ></image>
     </view>
- <view class="bodyhead2" bindtap="sendcomment">
- <image class="sendcom" src="../../image/icon/send.png"></image>
-  <text class="bodyhead-text" >发布</text>
-</view>
   </view>
 
-<view class="title">
-<view class="headline">
-
-  <view class="head-text" >{{title}}</view>
-  <view class="data1">
- <image class="my_icon" src="../../image/icon/riqi.png">
-  </image><text class="my_check">{{date}}</text>
-  </view>
- <text class="body-text" >{{bodytext}}</text>
-<image class="headimage" src="../../image/show/head.jpg" bindtap="toast" ></image>
-</view>
-</view>
-
-
-
-<view class="recbackground">
-
- <view class="bodyhead">
- <image class="recommendicon" src="../../image/icon/tuijian.png"></image>
-  <text class="bodyhead-text" >讨论</text>
-  <text class="bodyhead-textb" >默认排序</text>
-  <image class="recommendiconb" src="../../image/icon/paixv.png"></image>
-</view>
-
-
-<view wx:for="{{answ}}" class='recommend-list'>
-    <view class="recommend"><image class="tou" src="{{item.userPicture}}"></image><view>
-    <view  class='data2'><text class="small">{{item.userNickName}}</text></view>
-    <view class='data2'><text class='small2'>{{item.commentCreateTime}}</text></view>
-</view>
-</view>
-  <view class="border_all recommend">   
-    <text class="two_question" bindtap="totake_part">{{item.commentContent}}</text>
+  <view class="recbackground">
+    <view class="bodyhead">
+      <image class="recommendicon" src="../../image/icon/tuijian.png">
+      </image>
+        <text class="bodyhead-text" >讨论</text>
+        <text class="bodyhead-textb" >默认排序</text>
+      <image class="recommendiconb" src="../../image/icon/paixv.png">
+      </image>
+    </view>
+    <view wx:for="{{answ}}" wx:key="unique" id="{{index}}" class='recommend-list' bindtap="godiscuss_all">
+      <view class="recommend">
+        <image class="tou" src="{{item.userPicture}}">
+        </image>
+          <view>
+            <view  class='data2'>
+              <text class="small">{{item.userNickName}}</text>
+            </view>
+            <view class='data2'>
+              <text class='small2'>{{item.commentCreateTime}}
+              </text>
+            </view>
+          </view>
+      </view>
+      <view class="border_all recommend">   
+        <text class="two_question" bindtap="totake_part">{{item.commentContent}}
+        </text>
+      </view>
+    </view>
   </view>
 </view>
 
-</view>
-</view>
+  <view class="search-bar">
+    <view class="search-wrap">
+        <textarea type="text" value="{{comment}}"
+        bindinput="commentInput" maxlength='500' placeholder='说说你的看法......' fixed="true" auto-height="true"> 
+        </textarea>
+    </view>
+    <view bindtap="sendcomment">
+      <image class="bodyhead-text" src="../../image/icon/fabu.png"></image>
+    </view> 
+  </view> 
+
+

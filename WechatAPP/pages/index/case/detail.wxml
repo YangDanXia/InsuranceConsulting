@@ -19,17 +19,16 @@
     <image class="content-img" src='../../../image/icon/best.png'></image>
 		<view class="contView">{{comments.questionReply}}</view>
 	</view>
-
   <!-- 点赞 -->
-  <view class="submit-btn"  bindtap="submit">
-   <view bindtap="agree">
-     <image src="../../../image/icon/zan.png" class="extra-share-img" />
-     <text>11</text>
-   </view>
-   <view bindtap="disagree">
-	 	 <image src="../../../image/icon/notzan.png" class="extra-share-img"/>
-     <text>11</text>
-   </view>
+  <view class="submit-btn">
+    <view bindtap="agree">
+      <image src="../../../image/icon/zan.png" class="extra-share-img" />
+      <text>{{agree_num}}</text>
+    </view>
+    <view bindtap="disagree">
+	 	  <image src="../../../image/icon/notzan.png" class="extra-share-img"/>
+      <text>{{disagree_num}}</text>
+    </view>
   </view>
 </scroll-view>
 

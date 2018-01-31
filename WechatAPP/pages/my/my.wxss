@@ -1,16 +1,22 @@
 /**my.wxss**/
-
+.Name
+{
+  font-size:45rpx;
+  margin-bottom:50rpx;
+  margin-left:15rpx;
+}
 .go_icon
 {
   display: flex;
   margin-top:30rpx;
-  margin-left:62.5%;
+  margin-left:87%;
   width:40rpx;
   height:40rpx;
+  position: fixed;
 }
 .go_icon.two
 {
-  margin-left:54%;
+  margin-left:87%;
 }
 .w_h
 {
@@ -38,7 +44,7 @@
 {
   font-size: 70rpx;
   color:#efb336;
-  margin-bottom:35rpx;
+  margin-bottom:40rpx;
 }
 .userinfo-nickname {
   display: flex;
@@ -82,7 +88,7 @@
   width:45rpx;
   height:30rpx;
   border-radius: 25px;
-  margin:37rpx 0rpx 20rpx 20rpx;
+  margin:26rpx 0rpx 10rpx 20rpx;
   text-align: center;
 
 }

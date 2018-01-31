@@ -1,7 +1,7 @@
 <!--pages/my/black_xx/black_xx.wxml-->
 <view class="a">
-  <image class="img" src="/pages/image/none_xx.png"></image>
+  <image class="img" src="../../../image/icon/none_xx.png"></image>
   <view>
-    <text class="text">您还没有消息哦~</text>
+    <text class="text">您还没有新的消息哦~</text>
   </view>
 </view>

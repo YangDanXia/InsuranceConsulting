@@ -23,8 +23,8 @@
 <view class="t">
   <text >请填写工作经历:</text>
 </view>
- <view class="question_border two">
-    <input type="text" value="{{q_content}}" bindinput="formtext" name="textarea" placeholder='请输入详细内容...'  auto-height="true" maxlength="500"></input>
+  <view class="question_border two">
+    <textarea class="content_Input" type="text" value="{{q_content}}" bindinput="formtext" name="textarea" placeholder='请输入详细内容...' maxlength="500"></textarea>
   </view>
 <view class="t">
   <text>请上传证件照</text>

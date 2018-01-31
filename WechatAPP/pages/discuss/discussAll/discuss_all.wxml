@@ -1,0 +1,13 @@
+<view class="question a">
+  <image class="tou" src="{{discuss_userPicture}}"></image>
+  <text class="nicheng">{{discuss_userNickName}}</text>
+</view>
+<view class="big-one">
+  
+  <view class="question">
+    <text class="content-text">{{discuss_commentContent}}</text>
+  </view>
+  <view class="question shijian">
+    <text class="time">回答时间：{{discuss_commentCreateTime}}</text>
+  </view>
+</view>

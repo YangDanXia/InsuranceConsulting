@@ -23,6 +23,7 @@ Page({
       },
       method: 'POST',
       success:function(res){
+        console.log(res)
         that.setData({
           topicList:res.data
         })

@@ -1,9 +1,4 @@
-/* pages/me/account/findPassword.wxss */
-/*  
-page{
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(244,244,244,0)), color-stop(0.1, #f4f4f4), to(#f4f4f4));
-} */
- 
+
  
 .bd {
   position: relative;

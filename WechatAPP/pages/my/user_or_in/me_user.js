@@ -7,18 +7,21 @@ Page({
     n: '',
     control: false
   },
+  
   //图标的显示
   handleTap1: function () {
     this.setData({
       control: true
     })
   },
+
 //图标的隐藏
   handleTap2: function () {
     this.setData({
       control: false
     })
   },
+
   //获取下标及当前下标和内容
   gotoall:function(event){
     var id = event.currentTarget.id
@@ -54,13 +57,13 @@ Page({
       key: 'userInfo',
       success: function (res) {
         console.log("提问问题者编号")
-        console.log(res.data)
+        console.log(res.data.userId) 
         wx.request({
           url: "http://120.78.89.170/question/list",
           method: "POST",
           data: {
             key: "haiqian",
-            userId: res.data
+            userId: res.data.userId
           },
           header: {
             'content-type': 'application/x-www-form-urlencoded; charset=utf-8'

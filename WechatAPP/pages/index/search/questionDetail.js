@@ -1,5 +1,5 @@
 const app = getApp()
-Page( {
+Page({
     data: {
        // loading
         loadhidden: false,
@@ -28,15 +28,14 @@ Page( {
         */
         shareShow: 'none',
         shareOpacity: {},
-        shareBottom: {},
-        userType:app.cache.userInfo.userType
-
+        shareBottom: {}
+        
     },
     onLoad: function( options ) {
       var questionId = options.id
       var that = this
       wx.request({
-        url:'http://120.78.89.170/boutique/list' ,
+        url:'http://120.78.89.170/question/list' ,
         data: {
           key: 'haiqian',
           questionId: questionId
@@ -46,9 +45,11 @@ Page( {
         },
         method: 'POST',
         success: function (res) {
+          console.log(res)
           console.log(res.data.data[0])
           that.setData({
-            introduction: res.data.data[0]
+            introduction: res.data.data[0],
+            userType: app.cache.userInfo.userType
           })
         }
       })
@@ -57,7 +58,7 @@ Page( {
     },
  
     /**
-    * 显示分享
+    * 显示回复
     */
     showShare: function (e) {
 
@@ -87,7 +88,7 @@ Page( {
     },
 
     /**
-     * 关闭分享
+     * 关闭回复
      */
     shareClose: function () {
       // 创建动画

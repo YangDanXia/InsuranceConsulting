@@ -1,66 +1,42 @@
 // pages/my/news/all_new/all_new.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    title:'',
+    concreteness:'',
+    who:'',
+    response:'',
+    TYPE:'',
+    items: [
+      { name: '0', value: '满意' },
+      { name: '1', value: '不满意' },
+    ],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
+  onReady: function () {},
   onShow: function () {
-  
+    var that = this
+    wx.getStorage({
+      key: 'new',
+      success: function (res) {
+        that.setData({
+          title: res.data.questionTitle,
+          concreteness: res.data.questionDetail,
+          response: res.data.questionReply,
+          TYPE:res.data.questionType,
+          TIME:res.data.questionTime
+        })
+      },
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
   onHide: function () {
-  
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-  
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
   onPullDownRefresh: function () {
-  
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-  
   },
-
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-  
   }
 })

@@ -71,7 +71,7 @@
 
 </scroll-view>
 
-<!-- 分享层 -->
+<!-- 回复层 -->
 <view class="extra-share-box" style="display:{{shareShow}}">
 
 	<view class="share-box-show" animation="{{shareBottom}}">

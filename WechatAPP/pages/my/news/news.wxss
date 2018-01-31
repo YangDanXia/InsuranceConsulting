@@ -32,6 +32,14 @@ page{
   padding:20rpx;
   margin-top: 20rpx;
 }
+.ti
+{
+   margin-bottom:30rpx;
+}
+.tishi
+{
+  font-size: 38rpx;
+}
 .secondtext
 {
   color: #8a8a8a;
@@ -49,7 +57,7 @@ page{
   display: -webkit-box;
   height:100%;
   color:#000000;
-  line-height:60rpx;
+  line-height:50rpx;
   word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp:2;
@@ -59,7 +67,7 @@ page{
 
 .two_question.answer
 {  
-  color:#515151;
-  font-size:36rpx;
+  color:#939393;
+  font-size:34rpx;
   -webkit-line-clamp:3;
 }
