@@ -23,6 +23,8 @@ $(function(){
 <div id="right_ctn">
 	<div class="right_m">
         <div class="hy_list">
+         <div class="space_hx">&nbsp;</div>
+          <div class="space_hx">&nbsp;</div>
         	<div class="box_t">
             	<span class="name">用户列表</span>
               <div class="position">
@@ -34,7 +36,6 @@ $(function(){
                   <a href="">查看用户</a>
               </div>
           </div>
-          <div class="space_hx">&nbsp;</div>
           <form>
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
@@ -57,10 +58,12 @@ $(function(){
         key:"haiqian"
       };
       $.post('http://120.78.89.170/user/list',data,function(res) { 
+console.log(res),
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
             striped: true,
+             showRefresh: false,
             search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
@@ -70,7 +73,14 @@ $(function(){
             }
          });
     }); 
+    
+// for(var i=1;i++;i<=8)
   });
+   // $(document).onload(function(){
+
+   //    var tab = document.getElementById("fresh-table") ;
+   //    console.log(tab.rows.length);
+   // });
 
 </script>
 <script type="text/javascript" src="../../JS/common.js"></script>

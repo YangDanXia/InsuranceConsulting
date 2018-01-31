@@ -8,6 +8,9 @@
 
 // 保存ID的值在删除时有用
 var chooseUserId =[];
+var deletemark;
+var historyansw=["1","2","3"];
+var count=0;
 
 $(document).ready(function(){ 
 
@@ -42,10 +45,11 @@ $(document).ready(function(){
     };
 
 
-   // 选择栏
+   // 用户列表选择栏
     window.chooseEvents = {
        'click .choose': function (e, value, row, index) {
-          var _id = row.id;
+          var _id = row.userId;
+            console.log(_id);
           var flag = 1; // flag为1则表示无此项需进行添加，为0则有此项不操作
           for(var i=0;i<chooseUserId.length;i++){
              if(chooseUserId[i] == _id){
@@ -58,7 +62,26 @@ $(document).ready(function(){
           }
         } 
     };
-   
+
+     // 官方顾问选择栏
+    window.chooseEvents_offcon = {
+       'click .choose': function (e, value, row, index) {
+          var _id = row.adminAccount;
+          deletemark='offcon';
+            console.log(_id);
+              console.log(deletemark);
+          var flag = 1; // flag为1则表示无此项需进行添加，为0则有此项不操作
+          for(var i=0;i<chooseUserId.length;i++){
+             if(chooseUserId[i] == _id){
+               flag = 0;
+               chooseUserId.splice(i,1);
+             }
+           }
+          if(flag){
+           chooseUserId.push(_id);
+          }
+        } 
+    };
    // 保险顾问的个人资料
     window.detailInfoEvents = {
        'click .detailBtn': function (e, value, row, index) {
@@ -219,15 +242,30 @@ $(document).ready(function(){
 
        }
     };
-
-
-   
-
 });
 
   // 删除数据
    function deleteData(){
       console.log(chooseUserId);
+      var deletecount=chooseUserId.length;
+         console.log(deletecount);
+      for (var i = 0; i <deletecount ; i++) {
+         console.log(chooseUserId[i]);
+           var data = {
+            key:"haiqian",
+            adminAccount:JSON.parse(chooseUserId[i])
+           }
+           $.post('http://120.78.89.170/revoke',data, function(res) {
+             console.log(res);
+                // if(JSON.parse(res).code == "200"){
+                //   alert("设置成功！");
+                //   location.reload();
+                // }else if(JSON.parse(res).code == "404"){
+                //    alert("系统出错，请稍后重试");
+                // }
+                 });
+      };
+       
    }
  
   // 选项栏内的内容
@@ -279,9 +317,92 @@ $(document).ready(function(){
 
     }
 
-  // 查看详细资料内的内容
+  //查看详细资料内的内容
    function detailFormatter(value, row, index) {
-        return ['<a class="detailBtn btn" style="cursor:pointer;">查看</a>'].join('');
+         var id = row.userId;
+     console.log(id);
+    console.log(historyansw[id]);
+        return '<a class="detailBtn btn" style="cursor:pointer;">查看</a>';
     }
 
 
+  
+    window.historicalQtopic = {
+       'click .detailBtn': function (e, value, row, index) {
+            var topicId= row.topicId;
+            window.location = "historicalQtopic.html?topicId="+topicId;
+       
+        }
+    };
+
+
+    // window.detailInfoEvents = {
+    //    'click .detailBtn': function (e, value, row, index) {
+    //      //  JSON.stringify(row)是字符串；row是整行的JSON格式的值
+    //        var userId = row.userId; 
+    //        window.location = "advisorInfoDetail.html?userId="+userId;
+    //     }
+    // };
+
+   // function detailFormatterhistory(value, row, index){
+   //    var countansw= countasn( value, row, index);
+   //    console.log("AAAAAA");
+   //      console.log(countansw);
+   //   // return ['<a class="detailBtn btn" style="cursor:pointer;">查看</a>'].join('') 
+   //     // countan(e,value,row,index),
+   
+   //   // count=count+1,
+   //   //  console.log(row), console.log(count)
+   // }
+
+
+  // var countansw= countasn( value, row, index);
+  //     console.log("AAAAAA");
+  //       console.log(countansw);
+
+    // function countasn(value, row, index){ 
+    //   var countansw;
+    //        var userId = row.userId;
+    //         var data = {
+    //         key:"haiqian",
+    //         userId:userId
+    //        };
+    //        $.post('http://120.78.89.170/question/list',data, function(res) {
+            
+    //         // console.log(res),
+    //         countansw=JSON.parse(res).data.length,
+         
+    //          // count=res.data.length,为什么不能这样用
+    //           console.log(countansw)
+    //        });  
+    //         return countansw
+    //     }
+    
+    // function countasn(value, row, index){ 
+    //   var countansw;
+    //        var userId = row.userId;
+    //         var data = {
+    //         key:"haiqian",
+    //         userId:userId
+    //        };
+    //        $.post('http://120.78.89.170/question/list',data, function(res) {
+            
+    //         // console.log(res),
+    //         countansw=JSON.parse(res).data.length,
+         
+    //          // count=res.data.length,为什么不能这样用
+    //           console.log(countansw)
+    //        });  
+    //         return countansw
+    //     }
+
+//计算表格的行数
+//     function show()
+// {
+// var tab = document.getElementById("fresh-table") ;
+//       //表格行数
+//       var rows = tab.rows.length ;
+//       //表格列数
+//       var cells = tab.rows.item(0).cells.length ;
+// alert("行数"+rows+"列数"+cells);
+// }

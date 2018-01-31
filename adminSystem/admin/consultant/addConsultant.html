@@ -44,19 +44,19 @@ $(function(){
                     <li class="clearfix">
                         <span class="title">姓名：</span>
                         <div class="li_r">
-                            <input  name="" type="text">
+                            <input  name="adminNickName" type="text">
                             <i>*</i>
                         </div>
                     </li>
                     <li class="clearfix">
                         <span class="title">手机号：</span>
                         <div class="li_r">
-                            <input  name="" type="text">
+                            <input  name="adminPhone" type="text">
                             <i>*</i>
                         </div>
                     </li>
                     <li class="tj_btn">
-                        <a href="" style="margin-top: 20px;">保存</a>
+                        <a name="Submit" style="margin-top: 20px;">保存</a>
                         <a href="" class="back" style="margin-top: 20px;">返回</a>
                         
                     </li>
@@ -67,4 +67,32 @@ $(function(){
     </div>
 </div>
 </body>
+<script type="text/javascript">
+
+  $(document).ready(function() { 
+   $("a[name='Submit']").click(function(){
+    var adminNickName=$(" input[ name='adminNickName'] ").val();
+     var adminPhone=$(" input[ name='adminPhone' ] ").val();
+      var data = {
+            key:"haiqian",
+            adminNickName:adminNickName,
+            adminPhone:adminPhone
+           };    
+
+           console.log(data);
+
+            $.post('http://120.78.89.170/official/add',data, function(res){
+
+                console.log(res);
+                if(JSON.parse(res).code == "200"){
+                   alert("话题官方顾问成功！");
+
+                   // location.reload();
+                 }else if(JSON.parse(res).code == "404"){
+                   alert("系统出错，请稍后重试");
+                };
+           })
+    });
+})
+</script>>
 </html>

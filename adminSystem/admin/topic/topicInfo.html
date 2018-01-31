@@ -23,6 +23,8 @@ $(function(){
 <div id="right_ctn">
 	<div class="right_m">
         <div class="hy_list">
+         <div class="space_hx">&nbsp;</div> 
+            <div class="space_hx">&nbsp;</div> 
         	<div class="box_t">
             	<span class="name">查看话题</span>
               <div class="position">
@@ -39,10 +41,10 @@ $(function(){
             <table cellpadding="0" cellspacing="0" class="list_hy table" id="fresh-table">
               <thead>
                  <th class="xz" scope="col" data-formatter="chooseFormatter" data-events="chooseEvents">选择</th>
-                 <th data-field="userId" scope="col">用户编号</th>
-                 <th data-field="userNickName" class="zt" scope="col">用户昵称</th>
-                 <th data-field="userPhone" scope="col">手机号</th>
-                 <th class="col detailBtn" data-formatter="detailFormatter" data-events="historicalQEvents">&nbsp;&nbsp;历史提问</th>
+                 <th data-field="topicId" scope="col">话题编号</th>
+                 <th data-field="gmt_modified" class="zt" scope="col">发布日期</th>
+                 <th data-field="topicTitle" scope="col">话题概述</th>
+                 <th class="col detailBtn" data-formatter="detailFormatter" data-events="historicalQtopic">&nbsp;&nbsp;历史讨论</th>
               </thead>            
             </table>
             </form>
@@ -56,7 +58,8 @@ $(function(){
       var data={
         key:"haiqian"
       };
-      $.post('http://120.78.89.170/user/list',data,function(res) { 
+      $.post('http://120.78.89.170/topic/list',data,function(res) { 
+        console.log(res),
          $('#fresh-table').bootstrapTable({
             toolbar: ".toolbar",
             pagination: true,
@@ -64,7 +67,7 @@ $(function(){
             search: true,
             pageSize: 8,
             pageList: [8,10,25,50,100],
-            data:JSON.parse(res).data,
+            data:JSON.parse(res),
             formatShowingRows: function(pageFrom, pageTo, totalRows){
                 //do nothing here, we don't want to show the text "showing x of y from..." 
             }

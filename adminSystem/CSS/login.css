@@ -3,8 +3,7 @@
 * @Date:   2017-12-09 22:24:25
 * @Last Modified by:   anchen
 * @Last Modified time: 2017-12-11 10:19:45
-*/
-       body{
+*/  body{
     background-image:url("../Image/bg.jpg") ;
     background-repeat:no-repeat;
      overflow-y:hidden;
@@ -14,13 +13,13 @@
 
         #login{
             width: 450px;
-            height:370px;
+            height:450px;
             background-color:whitesmoke;
             position: absolute;
             top:50%;
             left: 50%;
             margin-left: -250px;
-            margin-top: -220px;
+            margin-top: -270px;
             border: 3px solid lightskyblue;
             padding: 10px;
             -webkit-border-radius: 60px;
@@ -73,12 +72,12 @@
             margin-right: 5px;
         }
         #submit{
-            margin:40px 0px 0px 120px;
+            margin:20px 0px 0px 80px;
             display:inline-block;
-            width: 50%;
-            height:47px;
+            width: 70%;
+            height:37px;
             margin-bottom:15px;
-            font-size:20px;
+            font-size:15px;
             font-weight:bold;
            color:  #FFFFFF;
            background:#66B3FF;
@@ -111,6 +110,6 @@
             display:none;
         }
         #demoForm .form-group{
-            line-height: 30px;
+            line-height: 20px;
             width:100%;
         }
