@@ -52,3 +52,47 @@ page
   margin-top:35rpx;
   margin-left:20rpx;
 }
+.pingjia
+{
+  display: flex;
+  margin-top:10rpx;
+  margin-bottom: 15rpx;
+
+}
+.jiejue_img.pingjia_img
+{
+  width:55rpx;
+  height:55rpx;
+  margin-left:100rpx;
+  margin-right:20rpx;
+}
+.attr_value
+{
+  margin-right:20rpx;
+  position:relative;
+}
+.ping_text
+{
+  font-size:34rpx;
+  margin-top:6.5%;
+  display:flex;
+  margin-right:20rpx;
+}
+.choose
+{
+  display: flex;
+  margin-left:25%;
+  margin-bottom:3%;
+}
+.end
+{
+  margin:3%;
+  background-color:#fff;
+}
+.ok
+{
+  display: flex;
+  width:130rpx;
+  height:80rpx;
+  border: 1px solid #939393;
+}
