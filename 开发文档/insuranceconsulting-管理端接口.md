@@ -7,6 +7,7 @@ FUNCTION| URL
 |[保险顾问列表查看](#4)|http://120.78.89.170/consultant/list|
 |[保险顾问申请表查看](#5)|http://120.78.89.170/consultant/application/list|
 |[问题列表查看](#6)|http://120.78.89.170/question/list|
+|[问题反馈](#23)|http://120.78.89.170/evaluate|
 |[问题申请表查看](#7)|http://120.78.89.170/question/application/list|
 |[精品问题查看](#8)|http://120.78.89.170/boutique/list|
 |[修改密码](#9)|http://120.78.89.170/changepwd|
@@ -287,7 +288,7 @@ consultantExp	</td>
 </table>
 
 
-
+[回到顶部](#30)
 <table>
  <tr>
  <td>功能</td><td colspan="5"><h1><span id="5"></a>保险顾问申请表查看</td></tr>
@@ -821,14 +822,12 @@ consultantExp	</td>
     <td>秘钥(haiqian)</td>
 </tr>
 <tr>
-   <td>adminCount</td>
+   <td>adminAccount</td>
     <td> String </td>
     <td>√</td>
     <td> </td>
     <td>官方顾问编号</td>
-
-
-
+    </tr>
 <tr>
     <td rowspan="8">返回值(json)</td>
     <td rowspan="4">Success</td>
@@ -1131,6 +1130,97 @@ consultantExp	</td>
 
 <table>
  <tr>
+ <td>功能</td><td colspan="5"><h1><span id="23"></a>问题反馈</td></tr>
+ <tr>
+ <td>URL</td><td colspan="5">http://120.78.89.170/evaluate</td>
+ </tr>
+<tr>
+    <td rowspan="5">参数(post)<br/>
+        </td>
+    <td>参数名</td>
+    <td> 类型 </td>
+    <td>必填</td>
+    <td>默认</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>key</td>
+    <td> String </td>
+    <td>√</td>
+    <td> </td>
+    <td>秘钥(haiqian)</td>
+</tr>
+
+<tr>
+   <td>questionId</td>
+    <td>int </td>
+    <td>√</td>
+    <td> </td>
+    <td>问题编号</td>
+</tr>
+<tr>
+   <td>questionSatis</td>
+    <td> char </td>
+    <td>×</td>
+    <td>0 </td>
+    <td>问题满意度：2:满意；1：不满意;0：未选择满意度；默认为0</td>
+</tr>
+<tr>
+   <td>isResolve</td>
+    <td> bit </td>
+    <td>×</td>
+    <td>0</td>
+    <td>是否解决：0：未解决1：已解决;默认为0</td>
+</tr>
+<tr>
+    <td rowspan="8">返回值(json)</td>
+    <td rowspan="4">Success</td>
+    <td>   </td>
+    <td colspan="2">内容</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>code</td>
+    <td colspan="2"> 200 </td>
+    <td></td>
+</tr>
+<tr>
+   <td>msg</td>
+    <td colspan="2"> 评价成功!</td>
+    <td></td>
+</tr>
+<tr>
+   <td>data</td>
+    <td colspan="2">	</td>
+    <td></td>
+</tr>
+<tr>
+    <td rowspan="4">Failed</td>
+    <td>   </td>
+    <td colspan="2">内容</td>
+    <td>说明</td>
+</tr>
+<tr>
+   <td>	code</td>
+    <td colspan="2"> 404 </td>
+    <td></td>
+</tr>
+<tr>
+   <td>msg</td>
+    <td colspan="2">评价失败!</td>
+    <td></td>
+</tr>
+<tr>
+   <td>	data</td>
+    <td colspan="2">  </td>
+    <td></td>
+</tr>
+
+</table>
+
+
+<table>
+ <tr>
  <td>功能</td><td colspan="5"><h1><span id="14"></a>问题审核通过</td></tr>
  <tr>
  <td>URL</td><td colspan="5">http://120.78.89.170/question/pass</td>
@@ -1207,6 +1297,7 @@ consultantExp	</td>
 </tr>
 
 </table>
+
 
 
 <table>
