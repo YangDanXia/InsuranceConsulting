@@ -7,7 +7,11 @@ Page({
    */
   data: {
     user_question:'',
-    user_content: ''
+    user_content: '',
+    items: [
+      { name: '满意', value: '满意', checked: 'true' },
+      { name: '不满意', value: '不满意' }
+    ]
   },
 
   /**

@@ -3,13 +3,13 @@
   <view class="head">
     <text class="headtext">系统消息</text>
   </view>
-  <view  wx:for="{{list}}" wx:key="unique" wx:for-index='key' wx:for-item='item' id="{{key}}" class="background"  bindtap="toall_new">
+   <view  wx:for="{{list}}" wx:key="unique" wx:for-index='key' wx:for-item='item' id="{{key}}" class="background"  bindtap="toall_new"> 
     <view class="ti">
       <text class="tishi">您提问过的问题有新的回复了！~</text>
     </view>
     <view class="border_all">
-      <text class=" two_question answer">{{item.questionTitle}}</text>
+       <text class=" two_question answer">{{item.questionTitle}}</text> 
     </view>
     <text class="secondtext">查看详情</text>
-  </view>
+   </view> 
 </view>

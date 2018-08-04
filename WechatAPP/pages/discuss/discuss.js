@@ -17,7 +17,7 @@ Page({
     interval: 3000,
     duration: 1000,
     showView: true,
-    topicId:1,
+    topicId:'',
     answ:'',
     id:'',
     P:'',
@@ -39,10 +39,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    
     var id = options.id
-    console.log("onload")
-    console.log(id)
     var that=this
     wx.request({
       url: 'http://120.78.89.170/topic/select',
@@ -57,14 +54,17 @@ Page({
       success: function (res){
         console.log("返回")
         console.log(res)
-        console.log()
         that.setData({
-          P: res.data[0].topicPicture,
           title: res.data[0].topicTitle,
           topicId: res.data[0].topicId,
           date: res.data[0].gmt_modified,
           bodytext: res.data[0].topicContent,
-          answ:res.data[1]
+          answ:res.data[1],
+          avatar_Url: app.cache.userInfo.avatarUrl
+        })
+        wx.setStorage({
+          key: 'topic',
+          data: res.data[1]
         })
       }
     })
@@ -83,6 +83,7 @@ Page({
       })
     } 
     else {
+      console.log("话题讨论userId")
       console.log(app.cache.userInfo.userId)
       wx.request({
         url: 'http://120.78.89.170/comment/add',
@@ -90,7 +91,7 @@ Page({
           key: "haiqian",
           userId: app.cache.userInfo.userId,
           commentContent: that.data.comment,
-          topicId: topicId
+          topicId: that.data.topicId
         },
         header: {
           'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
@@ -102,7 +103,7 @@ Page({
             title: '提交成功！',
             duration:2000
           })
-       
+        
         }
       })
     }
@@ -118,10 +119,6 @@ Page({
         loadhidden: true
       })
     }, 500);
-    wx.setStorage({
-      key: 'topic',
-      data: that.data.answ,
-    })
   }
 
 })
